@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import {
   doc,
-  setDoc,
+  writeBatch,
   serverTimestamp
 } from "firebase/firestore";
 
@@ -69,22 +69,47 @@ export default function MentorSignup() {
         displayName: name
       });
 
-      await setDoc(doc(db, "users", createdUser.uid), {
+      const batch = writeBatch(db);
+
+      // Private account profile
+      const userRef = doc(db, "users", createdUser.uid);
+
+      batch.set(userRef, {
         uid: createdUser.uid,
-  name,
-  fullName: name,
-  email,
-  role: "mentor",
-  status: "pending",
-  createdAt: serverTimestamp(),
-  updatedAt: serverTimestamp()
-});
+        name,
+        fullName: name,
+        email,
+        role: "mentor",
+        status: "pending",
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      });
+
+      // Public mentor profile used by the Student Meetings page
+      const mentorRef = doc(db, "mentorProfiles", createdUser.uid);
+
+      batch.set(mentorRef, {
+        uid: createdUser.uid,
+        name,
+        email,
+        expertise: "",
+        bio: "",
+        approved: false,
+        status: "pending",
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      });
+
+      // Save both documents together
+      await batch.commit();
+
       setCurrentUser({
         ...createdUser,
         displayName: name,
         name,
         fullName: name,
-        role: "mentor"
+        role: "mentor",
+        status: "pending"
       });
 
       navigate("/mentor/dashboard", { replace: true });
@@ -92,8 +117,6 @@ export default function MentorSignup() {
     } catch (err) {
       console.error("Mentor registration error:", err);
 
-      // If Firestore profile creation fails, remove the newly
-      // created authentication account to avoid an incomplete account.
       if (createdUser) {
         try {
           await deleteUser(createdUser);

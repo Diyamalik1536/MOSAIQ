@@ -298,6 +298,18 @@ function AppRoutes() {
             }
           />
 
+          {/* Student Meetings */}
+          <Route
+            path="/meetings"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <DashboardLayout>
+                  <MeetingsPage />
+                </DashboardLayout>
+              </ProtectedRoute>
+            }
+          />
+
           {/* Profile */}
           <Route
             path="/profile"

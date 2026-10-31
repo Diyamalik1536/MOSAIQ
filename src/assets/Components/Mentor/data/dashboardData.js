@@ -13,6 +13,7 @@ export const initialProjects = [
     { id: 12, title: "Runtime Visualization Platform", student: "Misthi Rawal", initials: "MR", category: "Developer Tools", members: 1, reviewEstimate: "10 min", color: "mint", version: "v1.0", status: "Pending", repositoryUrl: "https://github.com/misthirawal/Runtime-Visualization-Platform" },
 ];
 
+
 export const navigation = [
     { label: "Overview", icon: "⌂", section: "Workspace" },
     { label: "Review Queue", icon: "▤", section: "Workspace", badge: true },
@@ -26,9 +27,14 @@ export const navigation = [
     { label: "Reports", icon: "▧", section: "Insights" },
     { label: "Meetings", icon: "◷", section: "More" },
     { label: "Messages", icon: "▱", section: "More" },
+
+    // NEW: Student-Mentor Meetings
+    { label: "Meetings", icon: "◷", section: "More" },
+
     { label: "Rubrics", icon: "☷", section: "More" },
     { label: "Settings", icon: "⚙", section: "More" },
 ];
+
 
 export const activities = [
     { initials: "MR", title: "Misha Rawal submitted v2.4", detail: "MemoVision AI", time: "2 hours ago", color: "lavender" },
