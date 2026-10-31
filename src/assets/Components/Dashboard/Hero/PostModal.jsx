@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { extractRequiredSkills } from "../recommendationUtils";
 import "./PostModal.css";
 import { useUser } from "../../../../context/UserContext";
@@ -38,6 +39,19 @@ function PostModal({ onClose }) {
         .filter(Boolean);
 
     const descriptionWordLength = projectDescriptionWords.length;
+
+    useEffect(() => {
+        const previousBodyOverflow = document.body.style.overflow;
+        const previousRootOverflow = document.documentElement.style.overflow;
+
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+
+        return () => {
+            document.body.style.overflow = previousBodyOverflow;
+            document.documentElement.style.overflow = previousRootOverflow;
+        };
+    }, []);
 
     const titleInvalid =
         projectTitleCharacters < 10 || projectTitleCharacters > 100;
@@ -175,12 +189,17 @@ const savePost = async (postData) => {
             helpFormat: needHelpData.helpFormat
         });
     };
-    return (
+    return createPortal(
         <div className="post-modal-overlay">
-            <div className="post-modal">
+            <div
+                className="post-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="create-post-modal-title"
+            >
                 <div className="post-modal-header">
                     <div className="Heading">
-                        <h1>{t("dashboard.postModal.title", "CREATE A POST")}</h1>
+                        <h1 id="create-post-modal-title">{t("dashboard.postModal.title", "CREATE A POST")}</h1>
                         <p>{t("dashboard.postModal.subtitle", "Share what you're working on or what kind of collaboration you're looking for")}</p>
                     </div>
                     <button
@@ -724,7 +743,8 @@ const savePost = async (postData) => {
 
             </div>
 
-        </div>
+        </div>,
+        document.body
     );
 }
 
