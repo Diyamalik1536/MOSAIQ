@@ -17,6 +17,7 @@ import MentorLogin from "./assets/Components/Authentication/RecruiterLogin/Mento
 import MentorSignup from "./assets/Components/Authentication/Signup/MentorSignup";
 import MentorDashboard from "./assets/Components/Mentor/Mentordashboard";
 import "./RoleSelection.css";
+
 import {
   BrowserRouter,
   Routes,
@@ -24,6 +25,7 @@ import {
   Navigate,
   Link
 } from 'react-router-dom';
+
 import RecruiterSignup from "./assets/Components/Authentication/Signup/RecruiterSignup";
 import DashboardLayout from './assets/Components/Dashboard/DashboardLayout/DashboardLayout';
 
@@ -36,6 +38,7 @@ import CollaborationPlanner from './assets/Components/Dashboard/CollaborationPla
 import ResumeBuilder from './assets/Components/Dashboard/ResumeBuilder/ResumeBuilder';
 import ConnectionsPage from './assets/Components/Dashboard/Connections/ConnectionsPage';
 import MessagesPage from './assets/Components/Dashboard/Messages/MessagesPage';
+import MeetingsPage from './assets/Components/Dashboard/Meetings/MeetingsPage';
 import NotFound from './pages/NotFound';
 import CareerAnalytics from './assets/Components/Dashboard/Analytics/CareerAnalytics';
 
@@ -207,7 +210,7 @@ function AppRoutes() {
             }
           />
 
-          {/* Actual Mentor Dashboard */}
+          {/* Mentor Dashboard */}
           <Route
             path="/mentor/dashboard"
             element={
@@ -223,6 +226,18 @@ function AppRoutes() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Student Meetings */}
+          <Route
+            path="/meetings"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <DashboardLayout>
+                  <MeetingsPage />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />

@@ -24,6 +24,7 @@ export const navigation = [
     { label: "Analytics", icon: "▥", section: "Insights" },
     { label: "Skill Insights", icon: "◈", section: "Insights" },
     { label: "Reports", icon: "▧", section: "Insights" },
+    { label: "Meetings", icon: "◷", section: "More" },
     { label: "Messages", icon: "▱", section: "More" },
     { label: "Rubrics", icon: "☷", section: "More" },
     { label: "Settings", icon: "⚙", section: "More" },

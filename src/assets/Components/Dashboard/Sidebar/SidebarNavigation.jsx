@@ -1,3 +1,4 @@
+
 import { useLocation } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
 import { useNotifications } from "../../../../context/NotificationContext";
@@ -59,6 +60,13 @@ function SidebarNavigation() {
                 icon="bi bi-chat"
                 active={currentPath === "/messages"}
                 badge={unreadMessages > 0 ? unreadMessages : undefined}
+            />
+
+            <SidebarItem
+                label="Meetings"
+                href="/meetings"
+                icon="bi bi-calendar-check"
+                active={currentPath === "/meetings"}
             />
 
             <SidebarItem
