@@ -33,19 +33,37 @@ const postsCollection = collection(db, "posts");
 // Add a new community post
 
 export async function createPost(postData) {
+  // Firebase restores persisted sessions asynchronously on page load. Wait
+  // for that initial check so a valid official account is not treated as
+  // signed out when the post form is submitted quickly.
+  await auth.authStateReady();
   const user = requireAuthenticatedUser();
 
-  return await addDoc(postsCollection, {
-    ...postData,
-    upvoteCount: 0,
-    author: {
-      ...postData.author,
-      id: user.uid,
-      uid: user.uid,
-      email: user.email,
-    },
-    createdAt: serverTimestamp(),
-  });
+  try {
+    return await addDoc(postsCollection, {
+      ...postData,
+      upvoteCount: 0,
+      author: {
+        ...postData.author,
+        id: user.uid,
+        uid: user.uid,
+        email: user.email,
+      },
+      createdAt: serverTimestamp(),
+    });
+  } catch (error) {
+    if (error?.code === "permission-denied") {
+      throw new Error(
+        "Firestore denied this post. Check the Firebase project's Firestore rules for create access to the posts collection."
+      );
+    }
+    if (error?.code === "unavailable") {
+      throw new Error(
+        "Firestore is currently unreachable. Check your connection and Firebase project configuration, then try again."
+      );
+    }
+    throw error;
+  }
 }
 
 
