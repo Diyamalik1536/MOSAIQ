@@ -1,0 +1,382 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function hasValidUserProfileFields(data) {
+      return data.keys().hasAll([
+        'uid', 'name', 'email', 'role',
+        'createdAt', 'updatedAt'
+      ])
+      && data.keys().hasOnly([
+        'uid', 'name', 'fullName', 'email', 'role',
+        'status', 'createdAt', 'updatedAt'
+      ])
+      && data.uid is string
+      && data.name is string
+      && data.email is string
+      && data.role in ['student', 'recruiter', 'mentor']
+      && data.createdAt is timestamp
+      && data.updatedAt is timestamp
+      && (
+        !('fullName' in data) || data.fullName is string
+      )
+      && (
+        data.role != 'mentor'
+        || data.status == 'pending'
+      );
+    }
+
+    // ==========================================
+    // USER PROFILES
+    // ==========================================
+
+    match /users/{uid} {
+
+      allow get: if isSignedIn()
+        && request.auth.uid == uid;
+
+      allow list: if false;
+
+      allow create: if isSignedIn()
+        && request.auth.uid == uid
+        && request.resource.data.uid == request.auth.uid
+        && (
+          (
+            request.resource.data.role == 'student'
+            && !('status' in request.resource.data)
+          )
+          ||
+          (
+            request.resource.data.role == 'mentor'
+            && request.resource.data.status == 'pending'
+          )
+          ||
+          (
+            request.resource.data.role == 'recruiter'
+            && request.resource.data.status == 'pending'
+          )
+        )
+        && hasValidUserProfileFields(request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      allow update: if isSignedIn()
+        && request.auth.uid == uid
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['name', 'fullName', 'updatedAt'])
+        && request.resource.data.updatedAt == request.time
+        && hasValidUserProfileFields(request.resource.data);
+
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // MENTOR PROFILES
+    // ==========================================
+
+    match /mentorProfiles/{mentorId} {
+
+      // Mentor can read own profile.
+      // Other authenticated users can read approved profiles.
+      allow get: if isSignedIn()
+        && (
+          request.auth.uid == mentorId
+          || resource.data.approved == true
+        );
+
+      // Students can query approved mentor profiles.
+      allow list: if isSignedIn()
+        && resource.data.approved == true;
+
+      // Mentor signup creates own profile.
+      allow create: if isSignedIn()
+        && request.auth.uid == mentorId
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasAll([
+          'uid', 'name', 'email', 'expertise', 'bio',
+          'approved', 'status', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'uid', 'name', 'email', 'expertise', 'bio',
+          'approved', 'status', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.name is string
+        && request.resource.data.email is string
+        && request.resource.data.expertise is string
+        && request.resource.data.bio is string
+        && request.resource.data.approved == false
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      // Mentor can update basic profile fields only.
+      // Mentor cannot approve their own profile.
+      allow update: if isSignedIn()
+        && request.auth.uid == mentorId
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.approved == resource.data.approved
+        && request.resource.data.status == resource.data.status
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly([
+            'name', 'email', 'expertise', 'bio', 'updatedAt'
+          ])
+        && request.resource.data.updatedAt == request.time;
+
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // PLANNER AVAILABILITY
+    // ==========================================
+
+    function hasValidAvailabilityFields(data) {
+      return data.keys().hasAll([
+        'ownerId', 'type', 'startAt', 'endAt',
+        'allDay', 'timeZone', 'recurrence',
+        'createdAt', 'updatedAt'
+      ])
+      && data.keys().hasOnly([
+        'ownerId', 'type', 'startAt', 'endAt',
+        'allDay', 'timeZone', 'recurrence',
+        'createdAt', 'updatedAt'
+      ])
+      && data.ownerId is string
+      && data.type in ['available', 'busy', 'tentative']
+      && data.startAt is timestamp
+      && data.endAt is timestamp
+      && data.endAt > data.startAt
+      && data.allDay is bool
+      && data.timeZone is string
+      && data.recurrence is map
+      && data.recurrence.keys().hasAll(['frequency', 'days', 'until'])
+      && data.recurrence.keys().hasOnly(['frequency', 'days', 'until'])
+      && data.recurrence.frequency in ['none', 'weekly']
+      && data.recurrence.days is list
+      && data.recurrence.days.size() <= 7
+      && data.recurrence.days.hasOnly([0, 1, 2, 3, 4, 5, 6])
+      && (data.recurrence.until == null || data.recurrence.until is string)
+      && data.createdAt is timestamp
+      && data.updatedAt is timestamp;
+    }
+
+    match /plannerAvailability/{availabilityId} {
+
+      allow create: if isSignedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && hasValidAvailabilityFields(request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      allow read: if isSignedIn()
+        && resource.data.ownerId == request.auth.uid;
+
+      allow update: if isSignedIn()
+        && resource.data.ownerId == request.auth.uid
+        && request.resource.data.ownerId == resource.data.ownerId
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time
+        && hasValidAvailabilityFields(request.resource.data);
+
+      allow delete: if isSignedIn()
+        && resource.data.ownerId == request.auth.uid;
+    }
+
+    // ==========================================
+    // CONNECTIONS
+    // ==========================================
+
+    function connectionDocumentId(firstUid, secondUid) {
+      return firstUid < secondUid
+        ? string(firstUid.size()) + '_' + firstUid + '_' + string(secondUid.size()) + '_' + secondUid
+        : string(secondUid.size()) + '_' + secondUid + '_' + string(firstUid.size()) + '_' + firstUid;
+    }
+
+    function hasValidConnectionRequest(data) {
+      return data.keys().hasAll([
+        'requesterId', 'recipientId', 'participants',
+        'status', 'createdAt', 'updatedAt'
+      ])
+      && data.keys().hasOnly([
+        'requesterId', 'recipientId', 'participants',
+        'status', 'createdAt', 'updatedAt'
+      ])
+      && data.requesterId is string
+      && data.recipientId is string
+      && data.requesterId != data.recipientId
+      && data.participants == [data.requesterId, data.recipientId]
+      && data.status == 'pending'
+      && data.createdAt is timestamp
+      && data.updatedAt is timestamp;
+    }
+
+    match /connections/{connectionId} {
+
+      allow read: if isSignedIn()
+        && request.auth.uid in resource.data.participants;
+
+      allow create: if isSignedIn()
+        && request.resource.data.requesterId == request.auth.uid
+        && request.resource.data.recipientId != request.auth.uid
+        && hasValidConnectionRequest(request.resource.data)
+        && connectionId == connectionDocumentId(
+          request.resource.data.requesterId,
+          request.resource.data.recipientId
+        )
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      allow update: if isSignedIn()
+        && request.auth.uid == resource.data.recipientId
+        && resource.data.status == 'pending'
+        && request.resource.data.status in ['accepted', 'rejected']
+        && request.resource.data.requesterId == resource.data.requesterId
+        && request.resource.data.recipientId == resource.data.recipientId
+        && request.resource.data.participants == resource.data.participants
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['status', 'updatedAt']);
+    }
+
+    // ==========================================
+    // STUDENT-MENTOR MEETINGS
+    // ==========================================
+
+    match /meetings/{meetingId} {
+
+      // Only student and assigned mentor can read.
+      allow read: if isSignedIn()
+        && (
+          resource.data.studentId == request.auth.uid
+          || resource.data.mentorId == request.auth.uid
+        );
+
+      // Students can create meeting requests.
+      allow create: if isSignedIn()
+        && request.resource.data.studentId == request.auth.uid
+        && request.resource.data.mentorId is string
+        && request.resource.data.mentorId != request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.startAt is timestamp
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      // Only assigned mentor can update meetings.
+      allow update: if isSignedIn()
+        && resource.data.mentorId == request.auth.uid
+        && request.resource.data.studentId == resource.data.studentId
+        && request.resource.data.mentorId == resource.data.mentorId
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly([
+            'status',
+            'meetingLink',
+            'startAt',
+            'endAt',
+            'rescheduledBy',
+            'updatedAt'
+          ])
+        && request.resource.data.status in [
+          'pending',
+          'accepted',
+          'rejected',
+          'completed'
+        ]
+        && (
+          !('meetingLink' in request.resource.data)
+          || request.resource.data.meetingLink is string
+        )
+        && (
+          !('startAt' in request.resource.data)
+          || request.resource.data.startAt is timestamp
+        )
+        && (
+          !('endAt' in request.resource.data)
+          || request.resource.data.endAt is timestamp
+        )
+        && (
+          !('rescheduledBy' in request.resource.data)
+          || request.resource.data.rescheduledBy == 'mentor'
+        );
+
+      // Clients cannot delete meetings.
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // COMMUNITY POSTS
+    // ==========================================
+
+    function communityVotePath(postId, userId) {
+      return /databases/$(database)/documents/posts/$(postId)/votes/$(userId);
+    }
+
+    function communityPostPath(postId) {
+      return /databases/$(database)/documents/posts/$(postId);
+    }
+
+    match /posts/{postId} {
+      // Posts are shared with all authenticated MOSAIQ users.
+      allow read: if isSignedIn();
+
+      // Only accept posts attributed to the signed-in author.
+      allow create: if isSignedIn()
+        && request.resource.data.author.uid == request.auth.uid
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.upvoteCount == 0;
+
+      // Votes may only change the counter together with the voter's own
+      // vote document in the same Firestore transaction.
+      allow update: if isSignedIn()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['upvoteCount'])
+        && resource.data.upvoteCount is int
+        && request.resource.data.upvoteCount is int
+        && (
+          (
+            request.resource.data.upvoteCount == resource.data.upvoteCount + 1
+            && !exists(communityVotePath(postId, request.auth.uid))
+            && getAfter(communityVotePath(postId, request.auth.uid)).data.uid == request.auth.uid
+          )
+          ||
+          (
+            request.resource.data.upvoteCount == resource.data.upvoteCount - 1
+            && exists(communityVotePath(postId, request.auth.uid))
+            && !existsAfter(communityVotePath(postId, request.auth.uid))
+          )
+        );
+
+      // A user may delete only their own post.
+      allow delete: if isSignedIn()
+        && resource.data.author.uid == request.auth.uid;
+
+      match /votes/{userId} {
+        allow read: if isSignedIn() && request.auth.uid == userId;
+
+        allow create: if isSignedIn()
+          && request.auth.uid == userId
+          && request.resource.data.uid == request.auth.uid
+          && request.resource.data.createdAt == request.time
+          && getAfter(communityPostPath(postId)).data.upvoteCount
+            == get(communityPostPath(postId)).data.upvoteCount + 1;
+
+        allow delete: if isSignedIn()
+          && request.auth.uid == userId
+          && getAfter(communityPostPath(postId)).data.upvoteCount
+            == get(communityPostPath(postId)).data.upvoteCount - 1;
+
+        allow update: if false;
+      }
+    }
+  }
+}
