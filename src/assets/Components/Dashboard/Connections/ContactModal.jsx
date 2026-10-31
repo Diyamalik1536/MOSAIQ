@@ -28,7 +28,7 @@ const PRESET_TEMPLATES = [
     {
         id: "intro",
         label: "Quick Intro",
-        subject: "Great to connect on TalentForge!",
+        subject: "Great to connect on MOSAIQ!",
         body: (name) =>
             `Hey ${name}, thank you for connecting! Looking forward to following each other's progress and collaborating.`
     }
@@ -38,7 +38,7 @@ function ContactModal({ connection, isOpen, onClose }) {
     const navigate = useNavigate();
     const { sendMessage } = useMessages();
 
-    const [subject, setSubject] = useState("Networking & Collaboration on TalentForge");
+    const [subject, setSubject] = useState("Networking & Collaboration on MOSAIQ");
     const [message, setMessage] = useState("");
     const [selectedPreset, setSelectedPreset] = useState("");
     const [copiedEmail, setCopiedEmail] = useState(false);
@@ -48,9 +48,9 @@ function ContactModal({ connection, isOpen, onClose }) {
     // Reset form when connection changes or modal opens
     useEffect(() => {
         if (connection && isOpen) {
-            setSubject("Networking & Collaboration on TalentForge");
+            setSubject("Networking & Collaboration on MOSAIQ");
             setMessage(
-                `Hi ${connection.name || "there"}, great to connect with you on TalentForge! Would love to chat about potential collaboration opportunities.`
+                `Hi ${connection.name || "there"}, great to connect with you on MOSAIQ! Would love to chat about potential collaboration opportunities.`
             );
             setSelectedPreset("");
             setCopiedEmail(false);
@@ -121,7 +121,7 @@ function ContactModal({ connection, isOpen, onClose }) {
 
     if (!isOpen || !connection) return null;
 
-    const emailSubject = encodeURIComponent(subject || "TalentForge Networking");
+    const emailSubject = encodeURIComponent(subject || "MOSAIQ Networking");
     const emailBody = encodeURIComponent(message || "");
     const mailtoUrl = connection.email ? `mailto:${connection.email}?subject=${emailSubject}&body=${emailBody}` : null;
 

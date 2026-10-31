@@ -20,7 +20,7 @@ function getInitialSeedMessages(userKey) {
             senderAvatar: 'https://img.magnific.com/premium-photo/memoji-emoji-handsome-smiling-man-white-background_826801-6987.jpg?semt=ais_hybrid&w=740&q=80',
             recipientId: userKey,
             recipientName: 'You',
-            text: 'Hey! Loved connecting with you on TalentForge. Are you open to collaborating on a hackathon project this semester?',
+            text: 'Hey! Loved connecting with you on MOSAIQ. Are you open to collaborating on a hackathon project this semester?',
             timestamp: new Date(Date.now() - 3600000 * 3).toISOString(),
             read: false
         },

@@ -129,7 +129,7 @@ function UpgradeCheckout() {
                             <div className="brand-header">
                                 <div className="brand-logo">
                                     <i className="bi bi-stars"></i>
-                                    <span>TalentForge</span>
+                                    <span>MOSAIQ</span>
                                 </div>
                             </div>
 

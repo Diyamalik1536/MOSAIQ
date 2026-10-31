@@ -14,7 +14,7 @@ function getPostDate(post) {
     const time = new Date(post?.createdAt || 0).getTime();//getTime() return?The number of milliseconds elapsed since January 1, 1970 UTC.
     return Number.isFinite(time) ? time : 0;
 }
-//getKnownSkills() collects skills and interests from all students, safely cleans them, normalizes them case-insensitively using lowercase Map keys, removes duplicates, and returns a unique array of known skills that TalentForge can use for post skill detection and recommendations.
+//getKnownSkills() collects skills and interests from all students, safely cleans them, normalizes them case-insensitively using lowercase Map keys, removes duplicates, and returns a unique array of known skills that MOSAIQ can use for post skill detection and recommendations.
 export function getKnownSkills(students = studentData) {
     return [...new Map(
         asArray(students)
@@ -56,7 +56,7 @@ export function extractRequiredSkills(post, students = studentData) {
     const text = searchablePostText(post);
     return getKnownSkills(students).filter((skill) => skillMatchesText(skill, text));
 }
-//normalizePosts() is basically preparing the posts so that the rest of TalentForge can safely work with them.
+//normalizePosts() is basically preparing the posts so that the rest of MOSAIQ can safely work with them.
 //               normalizePosts()
 //                      │
 //        ┌─────────────┼─────────────┐

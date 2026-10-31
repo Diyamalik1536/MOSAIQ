@@ -97,7 +97,7 @@ const savePost = async (postData) => {
             detectedSkills: extractRequiredSkills(postData),
             author: {
                 id: currentUser?.uid || currentUser?.id || "",
-                name: currentUser?.displayName || currentUser?.name || "TalentForge User",
+                name: currentUser?.displayName || currentUser?.name || "MOSAIQ User",
                 email: currentUser?.email || "",
                 avatar: currentUser?.photoURL || currentUser?.avatar || ""
             }
@@ -108,7 +108,7 @@ const savePost = async (postData) => {
         alert("Your post has been created successfully!");
         onClose();
     } catch (error) {
-        console.error("Failed to create TalentForge post:", error);
+        console.error("Failed to create MOSAIQ post:", error);
         alert(error.message || "Could not create your post. Please try again.");
     }
 };

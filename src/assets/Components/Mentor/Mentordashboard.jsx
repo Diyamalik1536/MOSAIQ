@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import CoursesPage from "./pages/CoursesPage";
 import EvaluationWorkspace from "./pages/EvaluationWorkspace";
@@ -14,9 +16,13 @@ import DashboardSidebar from "./components/DashboardSidebar";
 import DashboardTopbar from "./components/DashboardTopbar";
 import Toast from "./components/Toast";
 import { defaultRatings, initialProjects } from "./data/dashboardData";
+import { auth } from "../../../config/firebase";
+import { useUser } from "../../../context/UserContext";
 import "./Mentordashboard.css";
 
 function MentorDashboard() {
+    const navigate = useNavigate();
+    const { setCurrentUser } = useUser();
     const [today] = useState(() => new Date());
     const [projects, setProjects] = useState(initialProjects);
     const [activePage, setActivePage] = useState("Overview");
@@ -30,6 +36,7 @@ function MentorDashboard() {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
     const [notificationsOpen, setNotificationsOpen] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
+    const [loggingOut, setLoggingOut] = useState(false);
     const [messageDraft, setMessageDraft] = useState("");
     const [preferences, setPreferences] = useState({ reviewAlerts: true, weeklySummary: true, showcaseUpdates: false });
 
@@ -45,6 +52,39 @@ function MentorDashboard() {
     const showToast = (message) => {
         setToast(message);
         window.setTimeout(() => setToast(""), 3000);
+    };
+
+    const handleLogout = async () => {
+        if (loggingOut) return;
+        setLoggingOut(true);
+
+        const testSessionKey = "talentforge_test_user";
+        let removedTestSession = null;
+
+        try {
+            const storedTestSession = localStorage.getItem(testSessionKey);
+            if (storedTestSession) {
+                localStorage.removeItem(testSessionKey);
+                removedTestSession = storedTestSession;
+            }
+
+            await signOut(auth);
+            setCurrentUser(null);
+            setProfileOpen(false);
+            navigate("/mentor/login", { replace: true });
+        } catch (error) {
+            if (removedTestSession) {
+                try {
+                    localStorage.setItem(testSessionKey, removedTestSession);
+                } catch (storageError) {
+                    console.error("Could not restore the saved test session:", storageError);
+                }
+            }
+            console.error("Mentor logout failed:", error);
+            showToast("Unable to log out. Please try again.");
+        } finally {
+            setLoggingOut(false);
+        }
     };
 
     const changePage = (page) => {
@@ -129,6 +169,8 @@ function MentorDashboard() {
                     onMarkNotificationsRead={() => { setNotificationsOpen(false); showToast("All caught up!"); }}
                     onOpenSettings={() => { setProfileOpen(false); showToast("Profile settings opened."); }}
                     onOpenMobileNav={() => setMobileNavOpen(true)}
+                    onLogout={handleLogout}
+                    loggingOut={loggingOut}
                 />
                 <main className="main-content" onClick={() => { if (notificationsOpen) setNotificationsOpen(false); if (profileOpen) setProfileOpen(false); }}>
                     <div className="content-inner" key={activePage}>

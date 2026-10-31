@@ -18,7 +18,7 @@ function SearchPage() {
                 <h1>
                     {query
                         ? t("search.resultsFor", { query, defaultValue: `Results for "${query}"` })
-                        : t("search.resultsForDefault", "Results for TalentForge")}
+                        : t("search.resultsForDefault", "Results for MOSAIQ")}
                 </h1>
             </div>
             <SearchResults results={results} />

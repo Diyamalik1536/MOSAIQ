@@ -125,7 +125,7 @@ const confirmDelete = async () => {
     <div className="dashboard-section-header">
 
         <div>
-            <h2>Latest from TalentForge</h2>
+            <h2>Latest from MOSAIQ</h2>
 
             <p>
                 See what students are building and looking for.
@@ -146,7 +146,7 @@ const confirmDelete = async () => {
                 <h3>{t("dashboard.feed.noPosts", "No posts yet")}</h3>
 
                 <p>
-                    Be the first to share something with the TalentForge
+                    Be the first to share something with the MOSAIQ
                     community.
                 </p>
 

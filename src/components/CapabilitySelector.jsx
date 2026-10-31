@@ -86,7 +86,7 @@ export default function CapabilitySelector() {
         </div>
       </section>
 
-      <nav className="tf-capability-nav" aria-label="TalentForge sections">
+      <nav className="tf-capability-nav" aria-label="MOSAIQ sections">
         {capabilities.map(({ key, id, target }) => (
           <Link
             key={id}

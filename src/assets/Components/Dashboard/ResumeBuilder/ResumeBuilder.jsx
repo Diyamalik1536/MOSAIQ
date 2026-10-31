@@ -332,7 +332,7 @@ function ResumeBuilder() {
         <div className="resume-builder-page">
             <header className="resume-builder-header">
                 <div className="resume-builder-heading">
-                    <p className="resume-builder-kicker"><span className="kicker-mark" />TALENTFORGE / CAREER TOOLS</p>
+                    <p className="resume-builder-kicker"><span className="kicker-mark" />MOSAIQ / CAREER TOOLS</p>
                     <h1>Resume Builder</h1>
                     <p className="resume-builder-subtitle">Choose a design. Your saved profile becomes a polished, editable Word resume.</p>
                     <p className="resume-data-note"><i className="bi bi-arrow-repeat" aria-hidden="true" /> {t("resume.dataNote", "Your profile, education, experience, and projects are used automatically.")}</p>

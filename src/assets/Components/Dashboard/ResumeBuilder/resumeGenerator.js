@@ -44,16 +44,16 @@ const noTableBorders = {
 };
 
 function sanitizeName(value) {
-    const cleaned = (value || 'TalentForge')
+    const cleaned = (value || 'MOSAIQ')
         .replace(/[^a-zA-Z0-9 _-]/g, '')
         .trim();
 
-    return cleaned || 'TalentForge';
+    return cleaned || 'MOSAIQ';
 }
 
 function buildResumeFilename(name) {
     const safeName = sanitizeName(name).replace(/\s+/g, '_');
-    return `TalentForge_Resume_${safeName}.docx`;
+    return `MOSAIQ_Resume_${safeName}.docx`;
 }
 
 function createParagraph(text, options = {}) {

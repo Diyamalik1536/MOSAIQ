@@ -92,7 +92,11 @@ function HeaderActions() {
             </button>
 
             <div className="profile-wrapper">
-                <button onClick={toggleProfile} className="profile-trigger">
+                <button
+                    onClick={toggleProfile}
+                    className="profile-trigger"
+                    aria-label={t("nav.profileMenuAria", "Open profile menu")}
+                >
                     {user?.avatar ? (
                         <img
                             src={user.avatar}
@@ -104,7 +108,7 @@ function HeaderActions() {
                     )}
                     <span className="user_name">{user?.name || "User"}</span>
                     {isPro && (
-                        <span className="header-pro-watermark" title="TalentForge Pro Member">
+                        <span className="header-pro-watermark" title="MOSAIQ Pro Member">
                             <i className="bi bi-crown-fill"></i> {t("nav.proMember", "Pro Member")}
                         </span>
                     )}
@@ -128,7 +132,7 @@ function HeaderActions() {
                         </div>
                         <div className="Logout">
                             <button onClick={UserLogout}><i className="bi bi-box-arrow-left"></i>{t("nav.userMenu.logout", "Logout")}</button>
-                            <p>{t("nav.userMenu.signOutSubtext", "Sign out from TalentForge")}</p>
+                            <p>{t("nav.userMenu.signOutSubtext", "Sign out from MOSAIQ")}</p>
                         </div>
                     </div>
                 )}

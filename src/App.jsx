@@ -70,7 +70,7 @@ function RoleSelection() {
   return (
     <div className="role-selection-page">
       <div className="role-selection-container">
-        <h1>Welcome to TalentForge</h1>
+        <h1>Welcome to MOSAIQ</h1>
         <p>Select your portal to continue</p>
 
         <div className="role-selection-grid">
@@ -114,7 +114,7 @@ function ProtectedRoute({ children, requiredRole = "student" }) {
         }}
       >
         <div style={{ fontSize: "1.2rem", color: "#4f46e5" }}>
-          {t('common.loading', 'Loading TalentForge...')}
+          {t('common.loading', 'Loading MOSAIQ...')}
         </div>
       </div>
     );

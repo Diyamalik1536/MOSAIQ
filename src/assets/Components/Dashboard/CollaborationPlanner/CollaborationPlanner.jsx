@@ -276,7 +276,7 @@ function CollaborationPlanner() {
     type: "availability",
     status: "available",
     allDay: false,
-    project: "TalentForge",
+    project: "MOSAIQ",
     visibility: "private",
     recurring: "none",
     recurringDays: [1, 3, 5],
@@ -404,7 +404,7 @@ function CollaborationPlanner() {
       type,
       status: type === "event" ? "busy" : "available",
       allDay: false,
-      project: "TalentForge",
+      project: "MOSAIQ",
       visibility: "private",
       recurring: "none",
       recurringDays: [selectedDate.getDay()],
@@ -430,7 +430,7 @@ function CollaborationPlanner() {
       type: originalEntry.type || "availability",
       status: originalEntry.status || "available",
       allDay: Boolean(originalEntry.allDay),
-      project: originalEntry.project || "TalentForge",
+      project: originalEntry.project || "MOSAIQ",
       visibility: "private",
       recurring: originalEntry.recurring || "none",
       recurringDays: originalEntry.recurringDays || [1, 3, 5],
@@ -647,7 +647,7 @@ function CollaborationPlanner() {
                 <span className="connection-avatar" aria-hidden="true">{connection.name.trim().charAt(0).toUpperCase()}</span>
                 <div>
                   <strong>{connection.name}</strong>
-                  <small>{connection.role || "TalentForge connection"}</small>
+                  <small>{connection.role || "MOSAIQ connection"}</small>
                 </div>
               </div>
               <div className="person-slot-row">

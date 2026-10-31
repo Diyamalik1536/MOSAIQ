@@ -136,7 +136,7 @@ function SignupForm() {
       </div>
 
       <h2>{t("auth.createAccount", "Create Account")}</h2>
-      <p>{t("auth.signupSubtitle", "Sign up to get started with TalentForge")}</p>
+      <p>{t("auth.signupSubtitle", "Sign up to get started with MOSAIQ")}</p>
 
       {error && (
         <div className="signup-error" role="alert">

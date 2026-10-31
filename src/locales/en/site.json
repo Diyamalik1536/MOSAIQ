@@ -3,23 +3,23 @@
     "badge": "Chitkara University Students Only",
     "lineOne": "Find People.",
     "lineTwo": "Build Projects.",
-    "description": "Connect with students, collaborate on projects, and grow your skills together on TalentForge.",
+    "description": "Connect with students, collaborate on projects, and grow your skills together on MOSAIQ.",
     "headlinePhrases": ["Grow Together.", "Build Together.", "Learn Together.", "Create Together."],
-    "videoLabel": "TalentForge product demonstration"
+    "videoLabel": "MOSAIQ product demonstration"
   },
   "faq": {
     "eyebrow": "GOOD TO KNOW",
     "title": "Frequently asked questions",
-    "description": "A few helpful details about finding people and building together on TalentForge.",
+    "description": "A few helpful details about finding people and building together on MOSAIQ.",
     "items": [
       {
         "id": "about",
-        "question": "What is TalentForge?",
-        "answer": "TalentForge helps students discover peers with complementary skills, explore student-built projects, and find opportunities to work together."
+        "question": "What is MOSAIQ?",
+        "answer": "MOSAIQ helps students discover peers with complementary skills, explore student-built projects, and find opportunities to work together."
       },
       {
         "id": "eligibility",
-        "question": "Who can use TalentForge?",
+        "question": "Who can use MOSAIQ?",
         "answer": "The current experience is presented for Chitkara University students. The site displays student and project examples to help you explore the platform."
       },
       {
@@ -114,7 +114,7 @@
   },
   "projects": {
     "pageIntroduction": "Project directory",
-    "directoryEyebrow": "THE TALENTFORGE PROJECT DIRECTORY",
+    "directoryEyebrow": "THE MOSAIQ PROJECT DIRECTORY",
     "titleLineOne": "Ideas become real when",
     "titleLineTwo": "people build together.",
     "description": "Explore student-built projects, discover new approaches, and find collaborators who can help turn your next idea into something meaningful.",
@@ -200,7 +200,7 @@
     "viewProfile": "View profile for {{name}}",
     "timelineContext": "TIMELINE & CONTEXT",
     "activeAcademic": "Active academic project",
-    "campusBuild": "TalentForge campus build",
+    "campusBuild": "MOSAIQ campus build",
     "projectStatus": "PROJECT STATUS",
     "requestSent": "Interest noted",
     "requestJoin": "Request to join team",
@@ -226,7 +226,7 @@
     "applyNoted": "Interest noted"
   },
   "footer": {
-    "logo": "TalentForge home",
+    "logo": "MOSAIQ home",
     "description": "Where student talent meets real collaboration. Discover collaborators, build projects, and grow your skills together.",
     "highlights": ["Connect with students", "Build real projects", "Grow your skills"],
     "groups": [
@@ -240,7 +240,7 @@
       },
       {
         "title": "PLATFORM",
-        "links": ["About TalentForge", "How It Works", "Features", "TalentForge Pro", "Community Guidelines", "Blog"]
+        "links": ["About MOSAIQ", "How It Works", "Features", "MOSAIQ Pro", "Community Guidelines", "Blog"]
       },
       {
         "title": "SUPPORT & LEGAL",
@@ -253,6 +253,6 @@
     "terms": "Terms",
     "community": "Community Guidelines",
     "social": "Social media",
-    "copyright": "© {{year}} TalentForge. All rights reserved."
+    "copyright": "© {{year}} MOSAIQ. All rights reserved."
   }
 }

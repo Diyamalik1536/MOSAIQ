@@ -8,7 +8,7 @@
   },
   "capabilitySelector": {
     "eyebrow": "ONE CAMPUS. MORE WAYS TO BUILD.",
-    "heading": "Find your next step on TalentForge.",
+    "heading": "Find your next step on MOSAIQ.",
     "description": "Discover the people, projects, and possibilities around you.",
     "hint": "Select a capability to explore it",
     "capabilities": {
@@ -54,7 +54,7 @@
   },
   "talentStream": {
     "eyebrow": "THE TALENT STREAM",
-    "title": "Meet the builders on TalentForge.",
+    "title": "Meet the builders on MOSAIQ.",
     "viewportLabel": "Continuous showcase of student builder cards",
     "cardDescription": "{{name}}, {{major}} at {{college}}. {{action}}",
     "cardFlipped": "Card shows details.",
@@ -71,7 +71,7 @@
     "projects": "Projects",
     "links": "Links & Portfolio",
     "viewProfile": "View Full Profile",
-    "connect": "Connect on TalentForge",
+    "connect": "Connect on MOSAIQ",
     "status": {
       "open": "Available to Build",
       "open_to_collaborate": "Open to Collaborate",
@@ -86,12 +86,12 @@
       "projects": "Projects & Stack",
       "collabGoal": "Looking For",
       "links": "Links & Portfolio",
-      "connect": "Connect on TalentForge",
+      "connect": "Connect on MOSAIQ",
       "close": "Close profile modal"
     }
   },
   "browseProjects": {
-    "eyebrow": "THE TALENTFORGE PROJECT DIRECTORY",
+    "eyebrow": "THE MOSAIQ PROJECT DIRECTORY",
     "title": "Ideas become real when people build together.",
     "description": "Explore student-built projects, discover new approaches, and find collaborators who can help turn your next idea into something meaningful.",
     "exploreProjects": "Explore Projects",

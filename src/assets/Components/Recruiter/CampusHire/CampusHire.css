@@ -250,3 +250,125 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.campushire-dashboard .pie-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(92px, 0.85fr);
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  min-height: 168px;
+}
+
+.campushire-dashboard .pie-chart {
+  width: 100%;
+  min-width: 0;
+  height: 168px;
+}
+
+.campushire-dashboard .pie-chart .recharts-responsive-container {
+  width: 100% !important;
+  min-width: 0;
+}
+
+.campushire-dashboard .pie-legend {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+}
+
+.campushire-dashboard .pie-legend-item {
+  display: grid;
+  grid-template-columns: 9px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  color: #64758e;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.campushire-dashboard .pie-legend-item i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.campushire-dashboard .pie-legend-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.campushire-dashboard .pie-legend-item strong {
+  color: #233b5d;
+  font-size: 11px;
+}
+
+@media (max-width: 360px) {
+  .campushire-dashboard .pie-wrap {
+    grid-template-columns: minmax(0, 1fr) minmax(82px, 0.8fr);
+    gap: 4px;
+  }
+}
+
+@media (max-width: 720px) {
+  .campushire-dashboard .app-shell {
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .campushire-dashboard .sidebar {
+    position: relative;
+    top: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+    padding: 12px;
+    overflow: hidden;
+  }
+
+  .campushire-dashboard .brand > div:last-child {
+    display: block;
+  }
+
+  .campushire-dashboard .nav-list {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+
+  .campushire-dashboard .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .campushire-dashboard .nav-item {
+    width: auto;
+    min-width: max-content;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+
+  .campushire-dashboard .nav-item span {
+    display: inline;
+  }
+
+  .campushire-dashboard .sidebar-bottom {
+    display: none;
+  }
+
+  .campushire-dashboard .main-area {
+    width: 100%;
+    min-width: 0;
+  }
+}

@@ -585,6 +585,17 @@ html[data-theme="dark"] .theme-toggle:active .theme-toggle-thumb {
         order: 2;
     }
 
+    .Headeractions .user_name,
+    .Headeractions .header-pro-watermark,
+    .Headeractions .profile-trigger > .bi-chevron-compact-down {
+        display: none;
+    }
+
+    .Headeractions .profile-trigger {
+        width: 38px;
+        justify-content: center;
+    }
+
     .main-header .search_icons {
         order: 3;
 
@@ -1007,12 +1018,12 @@ html[data-theme="dark"] .theme-toggle:active .theme-toggle-thumb {
 }
 .dashboard_body {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
     max-width: none;
     box-sizing: border-box;
     gap: 16px;
-    padding: 0 24px 28px 0;
+    padding: 0 24px 28px 24px;
     margin: 0;
 }
 .dashboard_main {
@@ -1024,6 +1035,26 @@ html[data-theme="dark"] .theme-toggle:active .theme-toggle-thumb {
     background: var(--app-bg);
     min-height: calc(100vh - 72px);
 }
+
+@media (max-width: 1050px) {
+    .dashboard_body {
+        gap: 12px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dashboard_body {
+        gap: 0;
+        padding: 0 12px calc(68px + 24px);
+    }
+
+    .dashboard_main {
+        width: 100%;
+    }
+}
+
 .profile-wrapper {
     position: relative;
 }

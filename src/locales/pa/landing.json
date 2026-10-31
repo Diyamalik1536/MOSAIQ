@@ -8,7 +8,7 @@
   },
   "capabilitySelector": {
     "eyebrow": "ਇੱਕ ਕੈਂਪਸ। ਬਣਾਉਣ ਦੇ ਕਈ ਰਾਹ।",
-    "heading": "TalentForge 'ਤੇ ਆਪਣਾ ਅਗਲਾ ਕਦਮ ਲੱਭੋ।",
+    "heading": "MOSAIQ 'ਤੇ ਆਪਣਾ ਅਗਲਾ ਕਦਮ ਲੱਭੋ।",
     "description": "ਆਪਣੇ ਆਲੇ-ਦੁਆਲੇ ਦੇ ਲੋਕਾਂ, ਪ੍ਰੋਜੈਕਟਾਂ ਅਤੇ ਮੌਕਿਆਂ ਨੂੰ ਲੱਭੋ।",
     "hint": "ਖੋਜਣ ਲਈ ਇੱਕ ਯੋਗਤਾ ਚੁਣੋ",
     "capabilities": {
@@ -54,7 +54,7 @@
   },
   "talentStream": {
     "eyebrow": "ਟੈਲੈਂਟ ਸਟ੍ਰੀਮ",
-    "title": "TalentForge ਦੇ ਨਿਰਮਾਤਾਵਾਂ ਨੂੰ ਮਿਲੋ।",
+    "title": "MOSAIQ ਦੇ ਨਿਰਮਾਤਾਵਾਂ ਨੂੰ ਮਿਲੋ।",
     "viewportLabel": "ਵਿਦਿਆਰਥੀ ਨਿਰਮਾਤਾ ਕਾਰਡਾਂ ਦੀ ਲਗਾਤਾਰ ਝਲਕ",
     "cardDescription": "{{name}}, {{college}} ਵਿੱਚ {{major}}। {{action}}",
     "cardFlipped": "ਕਾਰਡ ਉੱਤੇ ਵੇਰਵੇ ਹਨ।",
@@ -71,7 +71,7 @@
     "projects": "ਪ੍ਰੋਜੈਕਟ",
     "links": "ਲਿੰਕ ਅਤੇ ਪੋਰਟਫੋਲੀਓ",
     "viewProfile": "ਪੂਰੀ ਪ੍ਰੋਫ਼ਾਈਲ ਵੇਖੋ",
-    "connect": "TalentForge 'ਤੇ ਜੁੜੋ",
+    "connect": "MOSAIQ 'ਤੇ ਜੁੜੋ",
     "status": {
       "open": "ਉਪਲਬਧ",
       "open_to_collaborate": "ਸਹਿਯੋਗ ਲਈ ਤਿਆਰ",
@@ -86,7 +86,7 @@
       "projects": "ਪ੍ਰੋਜੈਕਟ ਅਤੇ ਤਕਨੀਕ",
       "collabGoal": "ਲੋੜ ਹੈ",
       "links": "ਲਿੰਕ ਅਤੇ ਪੋਰਟਫੋਲੀਓ",
-      "connect": "TalentForge 'ਤੇ ਜੁੜੋ",
+      "connect": "MOSAIQ 'ਤੇ ਜੁੜੋ",
       "close": "ਬੰਦ ਕਰੋ"
     }
   },

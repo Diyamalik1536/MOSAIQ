@@ -110,28 +110,31 @@ export function StrengthsChart({ students = [] }) {
 
   return (
     <div className="pie-wrap">
-      <ResponsiveContainer width="58%" height={160}>
-        <PieChart>
-          <Pie
-            data={categories}
-            dataKey="value"
-            nameKey="name"
-            innerRadius={43}
-            outerRadius={65}
-            paddingAngle={3}
-          >
-            {categories.map((entry, index) => (
-              <Cell key={entry.name} fill={colors[index]} />
-            ))}
-          </Pie>
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
-      <div className="pie-legend">
+      <div className="pie-chart">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={categories}
+              dataKey="value"
+              nameKey="name"
+              innerRadius="43%"
+              outerRadius="68%"
+              paddingAngle={3}
+            >
+              {categories.map((entry, index) => (
+                <Cell key={entry.name} fill={colors[index]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="pie-legend" aria-label="Candidate strengths">
         {categories.map((item, index) => (
-          <div key={item.name}>
-            <i style={{ background: colors[index] }} />
-            {item.name}
+          <div className="pie-legend-item" key={item.name}>
+            <i style={{ background: colors[index] }} aria-hidden="true" />
+            <span>{item.name}</span>
+            <strong>{item.value}</strong>
           </div>
         ))}
       </div>

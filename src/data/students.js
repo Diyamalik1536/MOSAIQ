@@ -12,7 +12,7 @@ export const studentData = [
     lookingFor: "Frontend collaborators and hackathon teammates",
     availability: "open",
     projects: [
-      { title: "TalentForge", stack: "React + Vite" },
+      { title: "MOSAIQ", stack: "React + Vite" },
       { title: "AI Resume Screener", stack: "Python + Flask" }
     ]
   },

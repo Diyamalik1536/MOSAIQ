@@ -1,5 +1,5 @@
 export const initialProjects = [
-    { id: 1, title: "TalentForge", student: "Ayush Thakur", initials: "AT", category: "Web", members: 3, reviewEstimate: "8 min", color: "lavender", version: "v2.4", status: "Pending", repositoryUrl: "https://github.com/Ayush-thakur07/TalentForge" },
+    { id: 1, title: "MOSAIQ", student: "Ayush Thakur", initials: "AT", category: "Web", members: 3, reviewEstimate: "8 min", color: "lavender", version: "v2.4", status: "Pending", repositoryUrl: "https://github.com/Ayush-thakur07/MOSAIQ" },
     { id: 2, title: "Smart Campus Navigator", student: "Aarav Mehta", initials: "AM", category: "Web", members: 4, reviewEstimate: "6 min", color: "mint", version: "v1.8", status: "Pending", repositoryUrl: "https://github.com/openstreetmap/openstreetmap-website" },
     { id: 3, title: "AI Resume Analyzer", student: "Karan Malhotra", initials: "KM", category: "NLP", members: 2, reviewEstimate: "10 min", color: "peach", version: "v1.3", status: "Pending", repositoryUrl: "https://github.com/adrianhajdin/ai-resume-analyzer" },
     { id: 4, title: "Blockchain Voting System", student: "Riya Kapoor", initials: "RK", category: "Blockchain", members: 3, reviewEstimate: "12 min", color: "blue", version: "v1.1", status: "Pending", repositoryUrl: "https://github.com/ethereum-boilerplate/ethereum-boilerplate" },

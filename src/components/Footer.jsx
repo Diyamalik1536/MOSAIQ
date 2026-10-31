@@ -31,10 +31,10 @@ const footerGroups = [
   {
     title: "PLATFORM",
     links: [
-      { label: "About TalentForge", href: "/about" },
+      { label: "About MOSAIQ", href: "/about" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Features", href: "/features" },
-      { label: "TalentForge Pro", href: "/pro", badge: "NEW" },
+      { label: "MOSAIQ Pro", href: "/pro", badge: "NEW" },
       { label: "Community Guidelines", href: "/community-guidelines" },
       { label: "Blog", href: "/blog" },
     ],

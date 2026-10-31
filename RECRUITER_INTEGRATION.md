@@ -1,4 +1,4 @@
-# TalentForge recruiter portal integration
+# MOSAIQ recruiter portal integration
 
 This project keeps the existing student login and student routes. Recruiters use a separate page at `/recruiter/login`; after successful role verification they are sent to `/recruiter/dashboard`.
 
@@ -52,7 +52,7 @@ service cloud.firestore {
 }
 ```
 
-**Important:** These rules are only a minimal example for role-document reads. The existing TalentForge student features also use Firestore services such as posts and messages; their required access rules need to be reviewed and merged before replacing all existing rules. Never publish `allow read, write: if true`.
+**Important:** These rules are only a minimal example for role-document reads. The existing MOSAIQ student features also use Firestore services such as posts and messages; their required access rules need to be reviewed and merged before replacing all existing rules. Never publish `allow read, write: if true`.
 
 ## Environment file
 

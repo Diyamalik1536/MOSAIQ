@@ -40,7 +40,7 @@ function PostsSection({ posts, onAdd, onDelete }) {
             <form className="post-form" onSubmit={handleSubmit}>
                 <textarea
                     value={postText}
-                    placeholder={t("profile.postsSection.placeholder", "Share something with the TalentForge community...")}
+                    placeholder={t("profile.postsSection.placeholder", "Share something with the MOSAIQ community...")}
                     rows="4"
                     onChange={(e) => setPostText(e.target.value)}
                 />

@@ -134,7 +134,7 @@ export default function MentorSignup() {
 
         <div className="mentor-signup-brand">
           <div className="mentor-signup-logo">TF</div>
-          <span>TalentForge</span>
+          <span>MOSAIQ</span>
         </div>
 
         <div className="mentor-signup-heading">
@@ -222,7 +222,7 @@ export default function MentorSignup() {
         </div>
 
         <p className="mentor-signup-bottom">
-          TALENTFORGE · EMPOWERING THE NEXT GENERATION
+          MOSAIQ · EMPOWERING THE NEXT GENERATION
         </p>
 
       </section>

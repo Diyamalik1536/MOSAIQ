@@ -41,7 +41,7 @@ function createPostNotification(post) {
         post.author?.name ||
         post.author?.fullName ||
         post.authorName ||
-        'A TalentForge student';
+        'A MOSAIQ student';
 
     return {
         id: `post_${post.id}`,

@@ -17,12 +17,12 @@ function SignupBrand() {
             <div className="header_logo">
                 <img
                     src={`${import.meta.env.BASE_URL}favicon.svg`}
-                    alt="TalentForge logo"
+                    alt="MOSAIQ logo"
                     className="signup_logo"
                 />
 
                 <span className="signup_brand_name">
-                    TalentForge
+                    MOSAIQ
                 </span>
             </div>
 

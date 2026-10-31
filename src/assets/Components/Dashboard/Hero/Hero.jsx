@@ -87,7 +87,7 @@ function Hero() {
                 <h1 className="greetings">
                     {greeting}{userName && <>, <span className="greeting-name">{userName}</span></>}!
                     {isPro && (
-                        <span className="hero-pro-watermark-pill" title="TalentForge Pro Member">
+                        <span className="hero-pro-watermark-pill" title="MOSAIQ Pro Member">
                             <i className="bi bi-crown-fill"></i> {t("dashboard.proMember", "Pro Member")}
                         </span>
                     )}

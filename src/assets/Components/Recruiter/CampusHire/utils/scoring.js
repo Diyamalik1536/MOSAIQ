@@ -47,7 +47,7 @@ export function calculateMatchScore(student, filters = {}, allStudents = []) {
 
   const projectScore = getAvailableScore(projects.length, maxProjects);
 
-  // These values are not present in the current TalentForge studentData.
+  // These values are not present in the current MOSAIQ studentData.
   // Keep them unavailable instead of inventing values.
   const experienceScore = Number.isFinite(student.experienceMonths)
     ? getAvailableScore(student.experienceMonths, 12)

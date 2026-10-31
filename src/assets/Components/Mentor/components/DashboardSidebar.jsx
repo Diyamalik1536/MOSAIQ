@@ -7,7 +7,7 @@ function DashboardSidebar({ activePage, pendingCount, mobileNavOpen, onChangePag
         <>
             {mobileNavOpen && <button className="mobile-scrim" aria-label="Close navigation" onClick={onClose} />}
             <aside className={`sidebar${mobileNavOpen ? " sidebar--open" : ""}`}>
-                <button className="brand" onClick={() => onChangePage("Overview")} aria-label="TalentForge home"><span className="brand__mark">✦</span><span>Talent<span>Forge</span></span></button>
+                <button className="brand" onClick={() => onChangePage("Overview")} aria-label="MOSAIQ home"><span className="brand__mark">✦</span><span>Talent<span>Forge</span></span></button>
                 <div className="sidebar__nav">
                     {navigationSections.map((section) => (
                         <div className="nav-section" key={section}>

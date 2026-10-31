@@ -63,7 +63,7 @@ export function getGlobalSearchResults(value) {
         .map((student) => ({
             id: student.id,
             name: student.name || "Unnamed student",
-            subtitle: student.major || student.role || student.headline || "TalentForge student",
+            subtitle: student.major || student.role || student.headline || "MOSAIQ student",
             details: asArray(student.skills).join(", "),
             student
         }));
@@ -87,7 +87,7 @@ export function getGlobalSearchResults(value) {
         .map((project) => ({
             id: project.id,
             name: project.title || project.name || "Untitled project",
-            subtitle: project.description || `By ${project.owner || "TalentForge member"}`,
+            subtitle: project.description || `By ${project.owner || "MOSAIQ member"}`,
             details: asArray(project.technologies).join(" · "),
             project
         }));

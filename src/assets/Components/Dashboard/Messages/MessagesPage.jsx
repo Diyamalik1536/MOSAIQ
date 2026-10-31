@@ -383,7 +383,7 @@ function MessagesPage() {
                                     />
                                 )}
                                 <h3>{activePeer.name}</h3>
-                                <p>This is the beginning of your direct conversation on TalentForge.</p>
+                                <p>This is the beginning of your direct conversation on MOSAIQ.</p>
                             </div>
 
                             {activeConversation?.messages?.map((msg) => {
@@ -425,7 +425,7 @@ function MessagesPage() {
                                 <button
                                     type="button"
                                     className="chat-suggestion-chip"
-                                    onClick={() => handleSuggestionClick("Thanks for connecting with me on TalentForge!")}
+                                    onClick={() => handleSuggestionClick("Thanks for connecting with me on MOSAIQ!")}
                                 >
                                     ✨ Thanks for connecting!
                                 </button>

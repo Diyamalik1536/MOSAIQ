@@ -250,7 +250,7 @@ export default function StudentModal({ student, onClose }) {
             className="tf-modal-btn-connect"
             onClick={onClose}
           >
-            <span>{t("talentStream.modal.connect", "Connect on TalentForge")}</span>
+            <span>{t("talentStream.modal.connect", "Connect on MOSAIQ")}</span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
               <path
                 d="M5 12h14m-6-6 6 6-6 6"

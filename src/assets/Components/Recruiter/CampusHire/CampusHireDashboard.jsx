@@ -327,7 +327,7 @@ function App() {
                 </p>
               </div>
               <span className="demo-badge">
-                <i /> TalentForge student data
+                <i /> MOSAIQ student data
               </span>
             </div>
 

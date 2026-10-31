@@ -92,10 +92,10 @@ export default function RecruiterSignup() {
     <main className="recruiter-signup-page">
       <section className="recruiter-signup-card">
         <div className="recruiter-signup-logo">TF</div>
-        <p className="recruiter-signup-eyebrow">TALENTFORGE · RECRUITER PORTAL</p>
+        <p className="recruiter-signup-eyebrow">MOSAIQ · RECRUITER PORTAL</p>
         <h1>Create Recruiter Account</h1>
         <p className="recruiter-signup-intro">
-          Join TalentForge to discover and connect with talented students.
+          Join MOSAIQ to discover and connect with talented students.
         </p>
 
         <form onSubmit={handleSubmit}>

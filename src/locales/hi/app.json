@@ -25,7 +25,7 @@
       "editProfile": "प्रोफ़ाइल संपादित करें",
       "accountSettings": "खाता सेटिंग्स",
       "logout": "लॉगआउट",
-      "signOutSubtext": "TalentForge से साइन आउट करें",
+      "signOutSubtext": "MOSAIQ से साइन आउट करें",
       "proMemberEmail": "👑 प्रो सदस्य • {{email}}"
     },
     "searchPlaceholder": "कौशल, प्रोजेक्ट्स, लोग खोजें...",
@@ -40,7 +40,7 @@
   },
   "auth": {
     "welcomeBack": "वापसी पर स्वागत है!",
-    "loginSubtitle": "TalentForge जारी रखने के लिए लॉगिन करें",
+    "loginSubtitle": "MOSAIQ जारी रखने के लिए लॉगिन करें",
     "emailLabel": "ईमेल पता",
     "emailPlaceholder": "अपना कॉलेज ईमेल दर्ज करें",
     "passwordLabel": "पासवर्ड",
@@ -58,7 +58,7 @@
     "noAccount": "खाता नहीं है?",
     "signUpLink": "साइन अप करें",
     "createAccount": "खाता बनाएं",
-    "signupSubtitle": "TalentForge शुरू करने के लिए साइन अप करें",
+    "signupSubtitle": "MOSAIQ शुरू करने के लिए साइन अप करें",
     "signUpButton": "साइन अप करें",
     "creatingAccount": "खाता बनाया जा रहा है...",
     "alreadyHaveAccount": "पहले से ही एक खाता है?",
@@ -117,7 +117,7 @@
     },
     "feed": {
       "noPosts": "अभी कोई पोस्ट नहीं है",
-      "noPostsSubtext": "TalentForge समुदाय के साथ कुछ साझा करने वाले पहले व्यक्ति बनें।",
+      "noPostsSubtext": "MOSAIQ समुदाय के साथ कुछ साझा करने वाले पहले व्यक्ति बनें।",
       "deleteTitle": "क्या यह पोस्ट हटाना चाहते हैं?",
       "deleteText": "क्या आप वाकई इस पोस्ट को हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।",
       "cancel": "रद्द करें",
@@ -225,8 +225,8 @@
     "shareProfile": "प्रोफ़ाइल साझा करें",
     "editProfile": "प्रोफ़ाइल संपादित करें",
     "resumeBuilder": "बायोडाटा निर्माता",
-    "verifiedMember": "सत्यापित TalentForge सदस्य",
-    "proMember": "TalentForge प्रो सदस्य",
+    "verifiedMember": "सत्यापित MOSAIQ सदस्य",
+    "proMember": "MOSAIQ प्रो सदस्य",
     "stats": {
       "projects": "प्रोजेक्ट्स",
       "connections": "कनेक्शन्स",
@@ -316,7 +316,7 @@
     "postsSection": {
       "title": "गतिविधि",
       "subtitle": "अपने विचार, अपडेट और उपलब्धियां साझा करें",
-      "placeholder": "TalentForge समुदाय के साथ कुछ साझा करें...",
+      "placeholder": "MOSAIQ समुदाय के साथ कुछ साझा करें...",
       "createPost": "पोस्ट बनाएं",
       "postButton": "पोस्ट करें",
       "emptyTitle": "अभी कोई गतिविधि नहीं है",
@@ -324,7 +324,7 @@
     },
     "editModal": {
       "title": "प्रोफ़ाइल संपादित करें",
-      "subtitle": "अपनी TalentForge प्रोफ़ाइल अपडेट करें",
+      "subtitle": "अपनी MOSAIQ प्रोफ़ाइल अपडेट करें",
       "roleLabel": "भूमिका",
       "rolePlaceholder": "सॉफ्टवेयर डेवलपर",
       "yearLabel": "वर्ष",
@@ -380,7 +380,7 @@
   "search": {
     "header": "खोज परिणाम",
     "resultsFor": "\"{{query}}\" के लिए परिणाम",
-    "resultsForDefault": "TalentForge के लिए परिणाम",
+    "resultsForDefault": "MOSAIQ के लिए परिणाम",
     "noResults": "कोई परिणाम नहीं मिला",
     "tryDifferent": "किसी अन्य कौशल, प्रोजेक्ट या छात्र को खोजने का प्रयास करें।",
     "studentsGroup": "छात्र",
@@ -474,7 +474,7 @@
     "projectTeam": "प्रोजेक्ट टीम"
   },
   "common": {
-    "loading": "TalentForge लोड हो रहा है...",
+    "loading": "MOSAIQ लोड हो रहा है...",
     "error": "त्रुटि",
     "save": "सहेजें",
     "cancel": "रद्द करें",

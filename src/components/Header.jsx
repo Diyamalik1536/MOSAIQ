@@ -6,7 +6,7 @@ import "./Header.css";
 
 const defaultMenuContent = {
   Explore: {
-    eyebrow: "EXPLORE TALENTFORGE",
+    eyebrow: "EXPLORE MOSAIQ",
     columns: [
       {
         title: "DISCOVER",
@@ -27,7 +27,7 @@ const defaultMenuContent = {
         title: "GET STARTED",
         items: [
           ["Create Your Profile", "Introduce yourself to the community."],
-          ["Join TalentForge", "Start discovering your campus network."]
+          ["Join MOSAIQ", "Start discovering your campus network."]
         ]
       }
     ]
@@ -80,13 +80,13 @@ const defaultMenuContent = {
         title: "MENTORING",
         items: [
           ["Mentor Community", "Explore mentorship opportunities."],
-          ["Getting Started", "Learn about TalentForge mentoring."]
+          ["Getting Started", "Learn about MOSAIQ mentoring."]
         ]
       }
     ]
   },
   Resources: {
-    eyebrow: "YOUR TALENTFORGE GUIDE",
+    eyebrow: "YOUR MOSAIQ GUIDE",
     columns: [
       {
         title: "GET STARTED",
@@ -438,7 +438,7 @@ function MegaMenu({ menu, content, footerData, onNavigate, onItemClick, onMouseE
 
             <div className="tf-mega-footer">
               <span className="tf-footer-tagline">
-                {footerData?.tagline || "TalentForge · Find your people. Build together."}
+                {footerData?.tagline || "MOSAIQ · Find your people. Build together."}
               </span>
               <a className="tf-footer-link" href="/#faq" onClick={onNavigate}>
                 <span>{footerData?.help || "Need help?"}</span>

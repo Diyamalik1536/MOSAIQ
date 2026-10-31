@@ -33,7 +33,7 @@ function getInitialLanguage() {
       ? savedLanguage
       : "en";
   } catch (error) {
-    console.warn("Unable to read the saved TalentForge language preference:", error);
+    console.warn("Unable to read the saved MOSAIQ language preference:", error);
     return "en";
   }
 }
@@ -64,7 +64,7 @@ function updateDocumentLanguage(language) {
   try {
     localStorage.setItem("talentforge-language", language);
   } catch (error) {
-    console.warn("Unable to persist the TalentForge language preference:", error);
+    console.warn("Unable to persist the MOSAIQ language preference:", error);
   }
 }
 

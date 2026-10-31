@@ -136,7 +136,7 @@ function PostCard({
                 <div className="post-author-info">
                     <div className="post-author-name">
                         <strong>
-                            {post.author?.name || "TalentForge User"}
+                            {post.author?.name || "MOSAIQ User"}
                         </strong>
                         <i className="bi bi-patch-check-fill"></i>
                     </div>

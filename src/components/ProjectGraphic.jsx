@@ -2,9 +2,9 @@ import "./ProjectGraphic.css";
 
 /**
  * ProjectGraphic
- * Renders an editorial, vector-based preview canvas for TalentForge projects.
+ * Renders an editorial, vector-based preview canvas for MOSAIQ projects.
  * Adheres to rule #231: Reusable fallback treatment using project's real category,
- * title, technology tags, and TalentForge violet/lavender design system.
+ * title, technology tags, and MOSAIQ violet/lavender design system.
  */
 export default function ProjectGraphic({ project, variant = "card" }) {
   const { category, stack, visualTheme } = project;

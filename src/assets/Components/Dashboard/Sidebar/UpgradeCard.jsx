@@ -71,7 +71,7 @@ function UpgradeCard() {
 
                 <div className="upgrade-content">
                     <div className="pro-card-title-row">
-                        <h3>TalentForge Pro</h3>
+                        <h3>MOSAIQ Pro</h3>
                         <span className="pro-active-tag">
                             {t("nav.proActive", "ACTIVE")}
                         </span>

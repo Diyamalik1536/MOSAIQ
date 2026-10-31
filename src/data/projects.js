@@ -1,7 +1,7 @@
 import { studentData } from "./students";
 
 /**
- * Rich demo project data for TalentForge.
+ * Rich demo project data for MOSAIQ.
  * Integrated with canonical student builder records (stu_001 to stu_006).
  * Includes long-form case study data inspired by Stefano Girardelli's OBSIDIAN case study.
  */
@@ -9,7 +9,7 @@ export const projectsData = [
   {
     id: "proj_talentforge",
     slug: "talentforge-platform",
-    title: "TalentForge Platform",
+    title: "MOSAIQ Platform",
     tagline: "Decentralized campus collaboration platform connecting student builders, designers, and engineers.",
     description: "A student-first network that replaces fragmented campus WhatsApp groups and Discord servers with structured skill constellations, verified project listings, and intelligent teammate matching.",
     problemSolved: "Students struggle to find serious, complementary collaborators across engineering, design, and product disciplines within their university campus.",
@@ -40,9 +40,9 @@ export const projectsData = [
       clientContext: "Chitkara University Incubator Project",
       timeline: "4 Months · Spring Semester",
       role: "Lead Fullstack Architecture & Interaction Design",
-      executiveSummary: "TalentForge is an editorial-grade student collaboration platform that treats campus talent not as static CVs, but as dynamic, interconnected skill constellations. It merges 2.5D visual topology with high-performance React architecture.",
+      executiveSummary: "MOSAIQ is an editorial-grade student collaboration platform that treats campus talent not as static CVs, but as dynamic, interconnected skill constellations. It merges 2.5D visual topology with high-performance React architecture.",
       challenge: "University campuses suffer from severe talent fragmentation. A computer science student building a machine learning model rarely meets the communication designer in the next block who could craft the user interface. Traditional university noticeboards are ignored, while WhatsApp groups lose project briefs within minutes under conversational spam.",
-      solution: "We conceptualized a spatial skill mapping paradigm: students become stars, projects become collaborative gravities, and complementary capabilities form glowing visual constellations. Instead of resume scoreboards, TalentForge prioritizes mutual skill affinity, real project artifacts, and zero-latency discovery.",
+      solution: "We conceptualized a spatial skill mapping paradigm: students become stars, projects become collaborative gravities, and complementary capabilities form glowing visual constellations. Instead of resume scoreboards, MOSAIQ prioritizes mutual skill affinity, real project artifacts, and zero-latency discovery.",
       architecture: [
         { layer: "Presentation Layer", tech: "React 19 + Vite 8", detail: "Componentized modular UI with sub-60fps CSS 3D transforms and SVG vector canvas" },
         { layer: "Topology Engine", tech: "2.5D Coordinate System", detail: "Dynamic distance metrics computing skill complementarity vectors across 6 student builder nodes" },

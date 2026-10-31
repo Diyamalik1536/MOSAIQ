@@ -1,4 +1,4 @@
-# TalentForge recruiter login setup
+# MOSAIQ recruiter login setup
 
 ## Routes
 

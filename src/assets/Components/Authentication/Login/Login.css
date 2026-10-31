@@ -48,7 +48,7 @@
 
    ========================================================================== */
 
-.card {
+.data > .card {
 
     width: 100%;
 
@@ -78,7 +78,7 @@
 
 
 
-.card img {
+.data > .card img {
 
     position: absolute;
 
@@ -98,7 +98,7 @@
 
 
 
-.card-content {
+.data > .card > .card-content {
 
     position: relative;
 
@@ -116,7 +116,7 @@
 
 
 
-.card h1 {
+.data > .card h1 {
 
     margin: 0;
 
@@ -134,7 +134,7 @@
 
 
 
-.card-description {
+.data > .card .card-description {
 
     margin-top: 14px;
 
@@ -142,7 +142,7 @@
 
 
 
-.card-description p {
+.data > .card .card-description p {
 
     margin: 4px 0;
 
@@ -892,6 +892,24 @@
 
 }
 
+.signup a {
+    padding: 4px 6px;
+    color: var(--brand, #5b2be0);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+.login-error {
+    margin: -4px 0 16px;
+    color: #b42318;
+    font-size: 13px;
+    line-height: 1.5;
+}
 
 
 /* ==========================================================================
@@ -906,7 +924,7 @@
 
 @media (max-width: 900px) {
 
-    .card {
+    .data > .card {
 
         display: none !important;
 
@@ -1061,6 +1079,4 @@
     }
 
 }
-
-
 

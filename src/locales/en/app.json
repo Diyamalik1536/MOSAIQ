@@ -25,7 +25,7 @@
       "editProfile": "Edit Profile",
       "accountSettings": "Account Settings",
       "logout": "Logout",
-      "signOutSubtext": "Sign out from TalentForge",
+      "signOutSubtext": "Sign out from MOSAIQ",
       "proMemberEmail": "👑 Pro Member • {{email}}"
     },
     "searchPlaceholder": "Search Skills, projects, people...",
@@ -40,7 +40,7 @@
   },
   "auth": {
     "welcomeBack": "Welcome Back!",
-    "loginSubtitle": "Login to continue to TalentForge",
+    "loginSubtitle": "Login to continue to MOSAIQ",
     "emailLabel": "Email Address",
     "emailPlaceholder": "Enter your college email",
     "passwordLabel": "Password",
@@ -58,7 +58,7 @@
     "noAccount": "Don't have an account?",
     "signUpLink": "Sign up",
     "createAccount": "Create Account",
-    "signupSubtitle": "Sign up to get started with TalentForge",
+    "signupSubtitle": "Sign up to get started with MOSAIQ",
     "signUpButton": "Sign Up",
     "creatingAccount": "Creating account...",
     "alreadyHaveAccount": "Already have an account?",
@@ -117,7 +117,7 @@
     },
     "feed": {
       "noPosts": "No posts yet",
-      "noPostsSubtext": "Be the first to share something with the TalentForge community.",
+      "noPostsSubtext": "Be the first to share something with the MOSAIQ community.",
       "deleteTitle": "Delete this post?",
       "deleteText": "Are you sure you want to delete this post? This action cannot be undone.",
       "cancel": "Cancel",
@@ -225,8 +225,8 @@
     "shareProfile": "Share Profile",
     "editProfile": "Edit Profile",
     "resumeBuilder": "Resume Builder",
-    "verifiedMember": "Verified TalentForge Member",
-    "proMember": "TalentForge Pro Member",
+    "verifiedMember": "Verified MOSAIQ Member",
+    "proMember": "MOSAIQ Pro Member",
     "stats": {
       "projects": "Projects",
       "connections": "Connections",
@@ -316,7 +316,7 @@
     "postsSection": {
       "title": "Activity",
       "subtitle": "Share your thoughts, updates and achievements",
-      "placeholder": "Share something with the TalentForge community...",
+      "placeholder": "Share something with the MOSAIQ community...",
       "createPost": "Create a post",
       "postButton": "Post",
       "emptyTitle": "No activity yet",
@@ -324,7 +324,7 @@
     },
     "editModal": {
       "title": "Edit Profile",
-      "subtitle": "Update your TalentForge profile",
+      "subtitle": "Update your MOSAIQ profile",
       "roleLabel": "Role",
       "rolePlaceholder": "Software Developer",
       "yearLabel": "Year",
@@ -380,7 +380,7 @@
   "search": {
     "header": "Search Results",
     "resultsFor": "Results for \"{{query}}\"",
-    "resultsForDefault": "Results for TalentForge",
+    "resultsForDefault": "Results for MOSAIQ",
     "noResults": "No results found",
     "tryDifferent": "Try searching for a different skill, project, or student.",
     "studentsGroup": "Students",
@@ -414,7 +414,7 @@
     "aboutMe": "About me",
     "profile": "Profile",
     "subtitle": "Choose a design. Your saved profile becomes a polished, editable Word resume.",
-    "kicker": "TALENTFORGE / CAREER TOOLS",
+    "kicker": "MOSAIQ / CAREER TOOLS",
     "dataNote": "Your profile, education, experience, and projects are used automatically.",
     "badge": "PRO WORKSPACE",
     "selectDesign": "SELECT A DESIGN",
@@ -474,7 +474,7 @@
     "projectTeam": "PROJECT TEAM"
   },
   "common": {
-    "loading": "Loading TalentForge...",
+    "loading": "Loading MOSAIQ...",
     "error": "Error",
     "save": "Save",
     "cancel": "Cancel",

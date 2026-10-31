@@ -1,4 +1,16 @@
-function DashboardTopbar({ search, onSearchChange, notificationsOpen, profileOpen, onToggleNotifications, onToggleProfile, onMarkNotificationsRead, onOpenSettings, onOpenMobileNav }) {
+function DashboardTopbar({
+    search,
+    onSearchChange,
+    notificationsOpen,
+    profileOpen,
+    onToggleNotifications,
+    onToggleProfile,
+    onMarkNotificationsRead,
+    onOpenSettings,
+    onOpenMobileNav,
+    onLogout,
+    loggingOut
+}) {
     return (
         <header className="topbar">
             <button className="mobile-menu-button" aria-label="Open navigation" onClick={onOpenMobileNav}>☰</button>
@@ -10,7 +22,20 @@ function DashboardTopbar({ search, onSearchChange, notificationsOpen, profileOpe
                 </div>
                 <div className="popover-wrap">
                     <button className="profile-trigger" onClick={onToggleProfile}><span className="profile-avatar">DS</span><span className="profile-trigger__text"><strong>Dr. Sharma</strong><small>Faculty · CSE</small></span><span className="profile-chevron">⌄</span></button>
-                    {profileOpen && <div className="popover profile-popover"><strong>Dr. R. Sharma</strong><p>Faculty Mentor · Computer Science</p><button className="text-button" onClick={onOpenSettings}>Account settings →</button></div>}
+                    {profileOpen && (
+                        <div className="popover profile-popover">
+                            <strong>Dr. R. Sharma</strong>
+                            <p>Faculty Mentor · Computer Science</p>
+                            <button className="text-button" onClick={onOpenSettings}>Account settings →</button>
+                            <button
+                                className="text-button text-button--logout"
+                                onClick={onLogout}
+                                disabled={loggingOut}
+                            >
+                                {loggingOut ? "Signing out..." : "Log out"}
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>

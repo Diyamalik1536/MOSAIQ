@@ -22,7 +22,7 @@ function EditProfileModal({
                 <div className="edit-profile-header">
                     <div>
                         <h2>{t("profile.editModal.title", "Edit Profile")}</h2>
-                        <p>{t("profile.editModal.subtitle", "Update your TalentForge profile")}</p>
+                        <p>{t("profile.editModal.subtitle", "Update your MOSAIQ profile")}</p>
                     </div>
 
                     <button

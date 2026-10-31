@@ -240,7 +240,7 @@ function ManagePlan() {
                 <div className="hero-content">
                     <h1 className="hero-title">
                         Unlock Your Full Potential with <br />
-                        <span className="hero-title-highlight">TalentForge Pro</span>
+                        <span className="hero-title-highlight">MOSAIQ Pro</span>
                     </h1>
 
                     <p className="hero-subtitle">

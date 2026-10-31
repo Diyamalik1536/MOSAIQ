@@ -139,7 +139,7 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                 )}
 
                 {isPro && (
-                    <div className="cover-pro-watermark" title="TalentForge Pro Member">
+                    <div className="cover-pro-watermark" title="MOSAIQ Pro Member">
                         <i className="bi bi-crown-fill"></i> {t("dashboard.proMember", "Pro Member")}
                     </div>
                 )}
@@ -181,13 +181,13 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                         <h1>{user?.name || "Your Name"}</h1>
 
                         {(profile.isVerified || isPro) && (
-                            <span className="verified-badge" title={t("profile.verifiedMember", "Verified TalentForge Member")}>
+                            <span className="verified-badge" title={t("profile.verifiedMember", "Verified MOSAIQ Member")}>
                                 <i className="bi bi-patch-check-fill"></i>
                             </span>
                         )}
 
                         {isPro && (
-                            <span className="profile-pro-watermark" title={t("profile.proMember", "TalentForge Pro Member")}>
+                            <span className="profile-pro-watermark" title={t("profile.proMember", "MOSAIQ Pro Member")}>
                                 <i className="bi bi-crown-fill"></i> {t("dashboard.proMember", "Pro Member")}
                             </span>
                         )}
