@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "name": "Google",
+    "officialCareersDomain": "www.google.com"
+  },
+  "job": {
+    "title": "Software Engineer",
+    "jobId": "137359440260014790",
+    "location": "Mountain View, CA, USA",
+    "description": "The US base salary range for this full-time position is $152,800 - $211,000 + 15% bonus target + equity + benefits determined by role, level, and location. Individual pay is determined by additional factors, including job-related skills, experience, and relevant education or training. Learn more about benefits at Google.\n\nPosition reports to the Google office & may allow for a hybrid schedule per Google policy.\n\nArtificial intelligence will be one of humanity’s most transformative inventions. At Google DeepMind, we are a pioneering AI lab with exceptional interdisciplinary teams focused on advancing AI development to solve complex global challenges and accelerate high-quality product innovation for billions of users. We use our technologies for widespread public benefit and scientific discovery, ensuring safety and ethics are always our highest priority."
+  },
+  "qualifications": {
+    "minimum": [
+      "Bachelor’s degree in Computer Science, Engineering, Computer Information Systems, Mathematics, Physics or a related field and 2 years of experience in the job offered or in a Software Engineer-related occupation.",
+      "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+    ],
+    "preferred": []
+  },
+  "responsibilities": [
+    "Apply research to high-impact problems by prototyping GenAI solutions, curating datasets, and building ML pipelines for generative media, multimodal understanding, and reinforcement learning.",
+    "Develop and test robust product code, performing comprehensive testing that includes integration, performance, and security to ensure system quality and reliability.",
+    "Collaborate with peers through rigorous design and code reviews to enforce best practices, improve system testability, and ensure overall efficiency and accuracy.",
+    "Triage and resolve complex system issues by debugging, analyzing root causes, and implementing solutions to optimize hardware, network, and service operations.",
+    "Create and maintain technical documentation and educational materials, adapting content based on product updates and user feedback to ensure clarity and relevance. Manage the full deployment lifecycle by contributing to system qualification, monitoring, process automation, and paying down technical debt to improve long-term scalability."
+  ],
+  "requiredSkills": [
+    {
+      "skillId": "typescript",
+      "normalizedName": "TypeScript",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "python",
+      "normalizedName": "Python",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "java",
+      "normalizedName": "Java",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "c",
+      "normalizedName": "C",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "c++",
+      "normalizedName": "C++",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "go",
+      "normalizedName": "Go",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "kotlin",
+      "normalizedName": "Kotlin",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "data structures",
+      "normalizedName": "Data Structures",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    },
+    {
+      "skillId": "algorithms",
+      "normalizedName": "Algorithms",
+      "originalWording": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "requirementCategory": "required",
+      "proficiency": "unspecified",
+      "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+      "evidenceSnippets": [
+        "Position requires 2 years of experience in the following: Software development using Java, C, C++, Python, Go, Kotlin or Typescript; Designing and applying data structures or algorithms; Systems thinking or analyzing technical problems from a broad, systems-level perspective; Collaborating with cross-functional partners to deliver user facing features for high usage applications; and Participating in the full lifecycle of web frontend projects from proof-of-concept to implementation."
+      ],
+      "extractionBasis": "direct-text-match"
+    }
+  ],
+  "preferredSkills": [],
+  "sourceUrl": "https://www.google.com/about/careers/applications/jobs/results/137359440260014790-software-engineer?location=United+States&sort_by=date",
+  "extractedAt": "2026-10-31T11:05:23.488Z",
+  "lastVerifiedAt": "2026-10-31T11:05:23.488Z",
+  "extractionStatus": "successful",
+  "verificationStatus": "source-verified",
+  "extractionNotes": {
+    "skillNormalization": "Controlled term matches retain the exact source bullet; no proficiency or weights are inferred.",
+    "pageAccess": "direct-http"
+  }
+}
