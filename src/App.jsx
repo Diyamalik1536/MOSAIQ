@@ -37,6 +37,7 @@ import ResumeBuilder from './assets/Components/Dashboard/ResumeBuilder/ResumeBui
 import ConnectionsPage from './assets/Components/Dashboard/Connections/ConnectionsPage';
 import MessagesPage from './assets/Components/Dashboard/Messages/MessagesPage';
 import NotFound from './pages/NotFound';
+import CareerAnalytics from './assets/Components/Dashboard/Analytics/CareerAnalytics';
 
 import { UserProvider, useUser } from './context/UserContext';
 import { MessageProvider } from './context/MessageContext';
@@ -341,6 +342,18 @@ function AppRoutes() {
               <ProtectedRoute>
                 <DashboardLayout>
                   <ResumeBuilder />
+                </DashboardLayout>
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Career Analytics */}
+          <Route
+            path="/analytics"
+            element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <CareerAnalytics />
                 </DashboardLayout>
               </ProtectedRoute>
             }
