@@ -1,0 +1,16 @@
+{
+  "name": "talentforge-analytics-api",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dev": "node --watch --env-file-if-exists=.env src/server.js",
+    "test": "node --test src/tests/*.test.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.5.0"
+  }
+}

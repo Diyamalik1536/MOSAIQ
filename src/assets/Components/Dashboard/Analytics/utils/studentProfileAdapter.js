@@ -4,8 +4,8 @@ function readJson(key, fallback) {
 }
 
 export function getStudentProfile(user) {
-  const uid = user?.uid || user?.id || user?.email || "guest";
-  const profile = { ...user, ...readJson(`talentforge_profile_${uid}`, {}) };
+  const uid = typeof user?.uid === "string" ? user.uid : null;
+  const profile = { ...(uid ? user : {}), ...(uid ? readJson(`talentforge_profile_${uid}`, {}) : {}) };
   return {
     studentId: uid,
     name: profile.fullName || profile.name || profile.displayName || "Student",
@@ -13,14 +13,15 @@ export function getStudentProfile(user) {
     degree: profile.degree || profile.role || "", branch: profile.branch || "",
     academicYear: profile.year || "", graduationYear: profile.graduationYear || "",
     location: profile.location || "", headline: profile.headline || "", about: profile.about || "",
-    skills: asArray(profile.skills).map((skill) => typeof skill === "string" ? skill : skill?.name).filter(Boolean),
-    projects: asArray(readJson(`talentforge_projects_${uid}`, [])).map((project) => {
+    skills: asArray(profile.skills).map((skill) => typeof skill === "string" ? skill : ({ name: skill?.name || skill?.skill, proficiency: skill?.proficiency || null })).filter((skill) => typeof skill === "string" ? Boolean(skill) : Boolean(skill.name)),
+    projects: asArray(uid ? readJson(`talentforge_projects_${uid}`, []) : []).map((project) => {
       const sourceSkills = project.technologies || project.techStack || project.stack || [];
       const technologies = Array.isArray(sourceSkills) ? sourceSkills : typeof sourceSkills === "string" ? sourceSkills.split(",").map((item) => item.trim()).filter(Boolean) : [];
       return { ...project, technologies };
     }),
-    education: asArray(readJson(`talentforge_education_${uid}`, [])),
-    experience: asArray(readJson(`talentforge_experiences_${uid}`, [])),
+    education: asArray(uid ? readJson(`talentforge_education_${uid}`, []) : []),
+    experience: asArray(uid ? readJson(`talentforge_experiences_${uid}`, []) : []),
+    certifications: asArray(profile.certifications),
   };
 }
 
