@@ -157,19 +157,7 @@
     "contributorTitle": "{{name}} ({{college}})",
     "preview": "Preview",
     "previewTitle": "Quick preview without leaving the page",
-    "caseStudy": "Case study",
-    "bridge": "Student collaborators",
-    "bridgeSteps": [
-      "01 Discover Projects",
-      "02 Inspect Stack & Roles",
-      "03 Find Collaborators",
-      "04 Build Together"
-    ],
-    "community": "COMMUNITY & TALENT",
-    "bridgeTitle": "Find the people who can help you build it.",
-    "bridgeDescription": "Discover students with complementary skills, explore open collaborator roles, and bring campus project ideas to life together.",
-    "viewStudentProfile": "View profile for {{name}}",
-    "launchMatching": "Explore the student constellation"
+    "caseStudy": "Case study"
   },
   "projectModal": {
     "quickPreview": "QUICK PREVIEW",

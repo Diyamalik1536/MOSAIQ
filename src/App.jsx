@@ -39,6 +39,8 @@ import MessagesPage from './assets/Components/Dashboard/Messages/MessagesPage';
 import MeetingsPage from './assets/Components/Dashboard/Meetings/MeetingsPage';
 import NotFound from './pages/NotFound';
 import CareerAnalytics from './assets/Components/Dashboard/Analytics/CareerAnalytics';
+import BrowseProjects from './pages/BrowseProjects';
+import ProjectCaseStudy from './pages/ProjectCaseStudy';
 
 import { UserProvider, useUser } from './context/UserContext';
 import { MessageProvider } from './context/MessageContext';
@@ -222,6 +224,28 @@ function AppRoutes() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Student Project Directory and Details */}
+          <Route
+            path="/projects"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <DashboardLayout>
+                  <BrowseProjects />
+                </DashboardLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/projects/:projectId"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <DashboardLayout>
+                  <ProjectCaseStudy />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />

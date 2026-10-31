@@ -36,7 +36,7 @@ function SidebarNavigation() {
                 label={t("nav.browseProjects", "Browse Projects")}
                 href="/projects"
                 icon="bi bi-folder2-open"
-                active={currentPath === "/projects"}
+                active={currentPath === "/projects" || currentPath.startsWith("/projects/")}
             />
 
             <SidebarItem
