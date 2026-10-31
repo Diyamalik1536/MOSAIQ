@@ -1,6 +1,7 @@
 
 import Profile from './assets/Components/Profile/Profile';
 import Dashboard from './assets/Components/Dashboard/Dashboard';
+import CoreStabilityLoader from './components/CoreStabilityLoader';
 import './App.css';
 import LandingPage from './pages/LandingPage';
 import Header from './components/Header';
@@ -103,24 +104,10 @@ function RoleSelection() {
 
 // Protected Route
 function ProtectedRoute({ children, requiredRole = "student" }) {
-  const { t } = useTranslation();
   const { currentUser, loading } = useUser();
 
   if (loading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "100vh"
-        }}
-      >
-        <div style={{ fontSize: "1.2rem", color: "#4f46e5" }}>
-          {t('common.loading', 'Loading MOSAIQ...')}
-        </div>
-      </div>
-    );
+    return <CoreStabilityLoader fullScreen={true} />;
   }
 
   if (currentUser) {

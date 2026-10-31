@@ -54,12 +54,14 @@ export async function createPost(postData) {
   } catch (error) {
     if (error?.code === "permission-denied") {
       throw new Error(
-        "Firestore denied this post. Check the Firebase project's Firestore rules for create access to the posts collection."
+        "Firestore denied this post. Check the Firebase project's Firestore rules for create access to the posts collection.",
+        { cause: error }
       );
     }
     if (error?.code === "unavailable") {
       throw new Error(
-        "Firestore is currently unreachable. Check your connection and Firebase project configuration, then try again."
+        "Firestore is currently unreachable. Check your connection and Firebase project configuration, then try again.",
+        { cause: error }
       );
     }
     throw error;

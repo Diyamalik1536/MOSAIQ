@@ -59,30 +59,28 @@ function HeaderActions() {
                 />
             </div>
 
-            
-<button
-  type="button"
-  className="theme-toggle"
-  aria-label={
-    theme === "dark"
-      ? t("nav.lightMode", "Switch to light mode")
-      : t("nav.darkMode", "Switch to dark mode")
-  }
-  aria-pressed={theme === "dark"}
-  onClick={toggleTheme}
->
-  <span className="theme-toggle-thumb">
-    <i
-      className={
-        theme === "dark"
-          ? "bi bi-moon-fill"
-          : "bi bi-sun-fill"
-      }
-      aria-hidden="true"
-    />
-  </span>
-</button>
-
+            <button
+                type="button"
+                className="theme-toggle"
+                aria-label={
+                    theme === "dark"
+                        ? t("nav.lightMode", "Switch to light mode")
+                        : t("nav.darkMode", "Switch to dark mode")
+                }
+                aria-pressed={theme === "dark"}
+                onClick={toggleTheme}
+            >
+                <span className="theme-toggle-thumb">
+                    <i
+                        className={
+                            theme === "dark"
+                                ? "bi bi-moon-fill"
+                                : "bi bi-sun-fill"
+                        }
+                        aria-hidden="true"
+                    />
+                </span>
+            </button>
 
             <button aria-label={t("nav.messagesAria", "Messages")} onClick={msgcount}>
                 <i className="bi bi-chat-dots-fill" id="three"></i>
@@ -114,9 +112,7 @@ function HeaderActions() {
                     <div className="profile-dropdown">
                         <div className="head">
                             {user?.avatar ? <img src={user.avatar} alt="Profile"/> : <i className="bi bi-person-circle"></i>}
-                            <h1>
-                                {user?.name || "User"}
-                            </h1>
+                            <h1>{user?.name || "User"}</h1>
                             <p>{user?.email}</p>
                         </div>
                         <div className="buttons_profile">

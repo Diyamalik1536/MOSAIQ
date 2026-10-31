@@ -328,7 +328,8 @@ function CollaborationPlanner() {
 
   const connections = useMemo(() => {
     try {
-      const stored = JSON.parse(localStorage.getItem(`talentforge_connections_${userId}`) || "[]");
+      void connectionsVersion;
+    const stored = JSON.parse(localStorage.getItem(`talentforge_connections_${userId}`) || "[]");
       return Array.isArray(stored)
         ? stored.filter((connection) => connection && connection.id && typeof connection.name === "string" && connection.name.trim())
         : [];

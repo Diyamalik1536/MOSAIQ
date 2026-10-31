@@ -1,4 +1,3 @@
-
 import { useLocation } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
 import { useNotifications } from "../../../../context/NotificationContext";

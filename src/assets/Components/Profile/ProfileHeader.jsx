@@ -243,7 +243,7 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                                 type="button"
                                 className="profile-action-button secondary"
                                 onClick={() => navigate("/resume-builder")}
-                                title="Open Resume Builder"
+                                title={t("profile.resumeBuilder", "Resume Builder")}
                             >
                                 <i className="bi bi-file-earmark-richtext"></i>
                                 {t("profile.resumeBuilder", "Resume Builder")}

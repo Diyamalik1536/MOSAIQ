@@ -125,7 +125,9 @@ useEffect(() => {
                 const parsed = JSON.parse(raw);
                 if (Array.isArray(parsed)) setConnections(parsed);
             }
-        } catch {}
+        } catch (err) {
+            console.debug("Connections sync error:", err);
+        }
     };
     window.addEventListener("connectionsUpdated", handleSync);
     window.addEventListener("storage", handleSync);

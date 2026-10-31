@@ -34,3 +34,439 @@
 .google-analytics button:focus-visible,.google-analytics a:focus-visible,.google-analytics input:focus-visible,.google-analytics summary:focus-visible { outline:2px solid var(--ga-accent); outline-offset:2px; }
 @media(max-width:760px) { .google-analytics { padding:22px 17px 42px; }.ga-header { flex-direction:column; }.ga-brand { align-self:flex-start; }.ga-breakdown { grid-template-columns:1fr; } }
 @media(max-width:520px) { .google-analytics { padding:17px 12px 32px; }.ga-source-card,.ga-job-card,.ga-match-card { padding:15px; }.ga-card-heading { flex-direction:column; }.ga-url-controls,.ga-location-controls { flex-direction:column; }.ga-url-controls button,.ga-location-controls button { width:100%; }.ga-listing-card { align-items:stretch; flex-direction:column; }.ga-select-job { width:100%; }.ga-job-meta { grid-template-columns:1fr; gap:8px; }.ga-status-pill { align-self:flex-start; }.ga-match-intro { align-items:flex-start; }.ga-score strong { font-size:26px; } }
+
+
+/* ==========================================================================
+   ENHANCED VISUAL ANALYTICS, RECHARTS & LOCALSTORAGE COMPARISON
+   ========================================================================== */
+
+.ga-analytics-visuals {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ga-kpi-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ga-kpi-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--ga-border);
+  background: var(--ga-surface);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.ga-kpi-card.match-primary {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(139, 92, 246, 0.04) 100%);
+}
+
+.kpi-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+.kpi-icon-wrap.icon-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+}
+
+.kpi-icon-wrap.icon-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}
+
+.kpi-icon-wrap.icon-rose {
+  background: rgba(244, 63, 94, 0.12);
+  color: #f43f5e;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+}
+
+.kpi-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ga-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kpi-number-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 3px 0 6px;
+}
+
+.kpi-main-number {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ga-text);
+  letter-spacing: -0.03em;
+}
+
+.kpi-main-number.text-green { color: #10b981; }
+.kpi-main-number.text-amber { color: #f59e0b; }
+.kpi-main-number.text-rose { color: #f43f5e; }
+
+.kpi-sub-pill {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 2px 7px;
+  border-radius: 12px;
+}
+
+.kpi-note {
+  font-size: 11px;
+  color: var(--ga-muted);
+  margin-top: 2px;
+}
+
+.ga-progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ga-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #10b981);
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Charts Grid */
+.ga-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 16px;
+}
+
+.ga-chart-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--ga-border);
+  background: var(--ga-surface);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.ga-chart-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 750;
+  color: var(--ga-text);
+}
+
+.ga-chart-header p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: var(--ga-muted);
+}
+
+.ga-chart-body {
+  margin-top: 10px;
+  position: relative;
+  min-height: 260px;
+}
+
+.pie-chart-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-center-stat {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.donut-center-stat strong {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ga-text);
+  line-height: 1;
+}
+
+.donut-center-stat span {
+  font-size: 9px;
+  font-weight: 750;
+  color: var(--ga-muted);
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+.chart-legend-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ga-text);
+}
+
+.ga-chart-tooltip {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+}
+
+.ga-chart-tooltip p {
+  margin: 2px 0;
+}
+
+.tooltip-title {
+  font-weight: 700;
+  font-size: 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 3px;
+  margin-bottom: 4px !important;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10.5px;
+}
+
+.ga-chart-empty {
+  min-height: 220px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: var(--ga-muted);
+  font-size: 12px;
+}
+
+.ga-chart-empty i {
+  font-size: 28px;
+  margin-bottom: 6px;
+  opacity: 0.6;
+}
+
+/* Skill Gap Card */
+.ga-gap-card {
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: color-mix(in srgb, #f59e0b 6%, var(--ga-surface));
+}
+
+.gap-card-head .gap-title-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.gap-title-group i {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.gap-title-group h4 {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 750;
+  color: var(--ga-text);
+}
+
+.gap-title-group p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--ga-muted);
+  line-height: 1.5;
+}
+
+.gap-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.gap-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--ga-surface);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-size: 11px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.gap-chip-name {
+  font-weight: 700;
+  color: var(--ga-text);
+}
+
+.gap-chip-cat {
+  font-size: 9.5px;
+  color: var(--ga-muted);
+  padding: 1px 5px;
+  background: var(--ga-soft);
+  border-radius: 4px;
+}
+
+.gap-add-btn {
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 750;
+  padding: 2px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.gap-add-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.04);
+}
+
+/* Skills Matrix */
+.ga-skills-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.matrix-column {
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--ga-border);
+  background: var(--ga-surface);
+}
+
+.matrix-column-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.matrix-column-head h5 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: var(--ga-text);
+}
+
+.matrix-column-head i {
+  font-size: 16px;
+}
+
+.matrix-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.matrix-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.matrix-pill small {
+  font-size: 9px;
+  opacity: 0.85;
+}
+
+.matched-pill {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.supporting-pill {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.matrix-empty {
+  margin: 0;
+  font-size: 11px;
+  color: var(--ga-muted);
+  font-style: italic;
+}
+
+/* LocalStorage Saved Badge */
+.ga-saved-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  font-size: 11px;
+  color: #4338ca;
+}
+
+.ga-saved-badge-row i {
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .ga-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ga-charts-row {
+    grid-template-columns: 1fr;
+  }
+  .ga-skills-matrix {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .ga-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}

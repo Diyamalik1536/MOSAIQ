@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:backend\" --names \"frontend,backend\" --prefix-colors \"cyan,magenta\"",
+    "start:backend": "npm --prefix backend start",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -24,8 +27,8 @@
     "react-i18next": "^17.1.8",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.18.3",
-    "three": "^0.186.1",
-    "recharts": "^2.15.0"
+    "recharts": "^2.15.0",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -33,6 +36,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
+    "concurrently": "^10.0.6",
     "eslint": "^10.9.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.4",

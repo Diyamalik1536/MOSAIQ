@@ -1,0 +1,229 @@
+.core-loader-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #140d0f;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: #ded7ce;
+  font-family: 'SF Mono', 'Courier New', 'Consolas', monospace;
+  user-select: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.core-loader-container.fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+}
+
+.core-loader-hud {
+  position: relative;
+  width: min(92vw, 560px);
+  height: min(84vh, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+}
+
+/* 4 Corner HUD Brackets */
+.core-hud-bracket {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-color: #dfd7ce;
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.core-hud-bracket.tl {
+  top: 0;
+  left: 0;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+  border-top-left-radius: 10px;
+}
+
+.core-hud-bracket.tr {
+  top: 0;
+  right: 0;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+  border-top-right-radius: 10px;
+}
+
+.core-hud-bracket.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+  border-bottom-left-radius: 10px;
+}
+
+.core-hud-bracket.br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Top Left HUD Text */
+.core-hud-tl {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.25;
+  color: #ded7ce;
+  pointer-events: none;
+}
+
+/* Top Right HUD Hatched Icon */
+.core-hud-tr {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #ded7ce;
+  background: repeating-linear-gradient(
+    45deg,
+    #ded7ce,
+    #ded7ce 1.5px,
+    transparent 1.5px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+/* Center Bottom Loading Status */
+.core-hud-status {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #ded7ce;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(222, 215, 206, 0.45);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.core-hud-status-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #ded7ce;
+  border-radius: 50%;
+  animation: core-pulse 1.4s ease-in-out infinite;
+}
+
+.core-hud-status-dots {
+  display: inline-block;
+  min-width: 16px;
+  text-align: left;
+}
+
+@keyframes core-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 6px rgba(222, 215, 206, 0.85);
+  }
+}
+
+/* Bottom Right Indicator */
+.core-hud-br {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.core-br-box-small {
+  width: 6px;
+  height: 6px;
+  background-color: #ded7ce;
+}
+
+.core-br-box-large {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #ded7ce;
+  box-sizing: border-box;
+}
+
+.core-br-box-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.core-br-box-tiny {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #ded7ce;
+  box-sizing: border-box;
+}
+
+/* Bottom Left Telemetry */
+.core-hud-bl {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  color: #ded7ce;
+  min-height: 48px;
+  pointer-events: none;
+}
+
+.core-telemetry-line {
+  white-space: nowrap;
+  opacity: 0.95;
+  text-shadow: 0 0 4px rgba(222, 215, 206, 0.4);
+}
+
+.core-telemetry-line:last-child {
+  opacity: 1;
+}
+
+/* Center Canvas */
+.core-loader-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

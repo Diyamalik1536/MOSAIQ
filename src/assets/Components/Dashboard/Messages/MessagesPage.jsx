@@ -121,13 +121,13 @@ function MessagesPage() {
     // Handle initial targetUserId from URL
     useEffect(() => {
         if (targetUserId) {
-            setActiveConversationId(targetUserId);
-            setShowMobileChat(true);
-            markConversationAsRead(targetUserId);
-            // Focus composer
-            setTimeout(() => {
+            const timer = setTimeout(() => {
+                setActiveConversationId(targetUserId);
+                setShowMobileChat(true);
+                markConversationAsRead(targetUserId);
                 inputRef.current?.focus();
-            }, 100);
+            }, 0);
+            return () => clearTimeout(timer);
         }
     }, [targetUserId, markConversationAsRead]);
 

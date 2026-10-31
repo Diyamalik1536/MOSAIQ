@@ -5,6 +5,7 @@ import { useUser } from '../../../../context/UserContext';
 import { downloadResume } from './resumeGenerator';
 import { normalizeResumeData } from './resumeData';
 import './ResumeBuilder.css';
+import CoreStabilityLoader from '../../../../components/CoreStabilityLoader';
 
 const templates = [
     {
@@ -105,7 +106,7 @@ function readStoredJson(key, fallback) {
 function ResumeBuilder() {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const { currentUser } = useUser();
+    const { currentUser, loading } = useUser();
     const [selectedTemplateId, setSelectedTemplateId] = useState('classic');
     const [showDetail, setShowDetail] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
@@ -294,6 +295,13 @@ function ResumeBuilder() {
         );
     };
 
+    if (loading) {
+        return (
+            <div className="resume-builder-page" style={{ minHeight: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <CoreStabilityLoader fullScreen={false} text="LOADING RESUME BUILDER" />
+            </div>
+        );
+    }
     return (
         <div className="resume-builder-page">
             <header className="resume-builder-header">
@@ -303,6 +311,7 @@ function ResumeBuilder() {
                     <p className="resume-builder-subtitle">Choose a design. Your saved profile becomes a polished, editable Word resume.</p>
                     <p className="resume-data-note"><i className="bi bi-arrow-repeat" aria-hidden="true" /> {t("resume.dataNote", "Your profile, education, experience, and projects are used automatically.")}</p>
                 </div>
+                <span className="resume-builder-badge"><i className="bi bi-file-earmark-richtext" aria-hidden="true" /> RESUME BUILDER</span>
             </header>
 
             {!showDetail ? (
