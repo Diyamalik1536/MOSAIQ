@@ -1,0 +1,336 @@
+
+/* =========================================
+   TALENTFORGE HERO — GLOBAL STYLES
+========================================= */
+
+.tf-hero {
+  --tf-ink: #111111;
+  --tf-muted: #444444;
+  --tf-purple: #5035ff;
+
+  width: 100%;
+  overflow: clip;
+  background: #ffffff;
+  color: var(--tf-ink);
+  padding-top: 54px;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.tf-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(calc(100% - 48px), 1320px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* University badge */
+
+.tf-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding: 10px 16px;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 999px;
+  background: #ffffff;
+
+  color: #292929;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tf-hero-badge span {
+  color: var(--tf-purple);
+  font-size: 17px;
+}
+
+/* =========================================
+   HEADLINE
+========================================= */
+
+.tf-hero-title {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+
+  color: var(--tf-ink);
+  font-size: clamp(42px, 5.4vw, 78px);
+  font-weight: 750;
+  letter-spacing: -0.065em;
+  line-height: 1.12;
+  text-align: center;
+}
+
+.tf-hero-line {
+  display: block;
+}
+
+.tf-hero-second-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.18em;
+  white-space: nowrap;
+}
+
+/* Fixed-width animated word slot */
+
+.tf-hero-pill-slot {
+  display: inline-flex;
+  flex: 0 0 5.8em;
+  width: 5.8em;
+  height: 1.08em;
+  min-width: 0;
+  vertical-align: middle;
+
+  border-radius: 999px;
+  background-color: var(--tf-pill-bg, #d0f4d8);
+  color: #111111;
+
+  transition: background-color 300ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.tf-hero-pill {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 0.02em 0.12em 0.07em;
+  overflow: hidden;
+
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+
+  font-size: 0.76em;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  white-space: nowrap;
+
+  animation: tf-word-enter 450ms ease both;
+}
+
+@keyframes tf-word-enter {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+    clip-path: inset(0 0 100% 0 round 999px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0 round 999px);
+  }
+}
+
+/* Supporting description */
+
+.tf-hero-description {
+  width: 100%;
+  max-width: 780px;
+  margin: 22px auto 0;
+
+  color: var(--tf-muted);
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================
+   PRODUCT VIDEO + CHARACTER ARTWORK
+========================================= */
+
+.tf-product-film {
+  position: relative;
+  isolation: isolate;
+
+  width: min(calc(100% - 48px), 1180px);
+  margin: 44px auto 70px;
+}
+
+/* Video frame */
+
+.tf-video-frame {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  border: 1px solid #e8e8ef;
+  border-radius: 14px;
+  background: #f5f5f7;
+
+  box-shadow: 0 18px 50px rgba(24, 20, 70, 0.12);
+}
+
+.tf-product-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f5f5f7;
+}
+
+/* Crops retain the source artwork's original scale relative to its 1024px canvas. */
+
+.tf-hero-girl,
+.tf-hero-boy {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.tf-hero-girl {
+  top: 6.640625%;
+  left: calc(0px - var(--tf-video-border-left, 1px));
+  height: 86.1328125%;
+  width: auto;
+}
+
+.tf-hero-boy {
+  right: calc(0px - var(--tf-video-border-right, 1px));
+  bottom: calc(0px - var(--tf-video-border-bottom, 1px));
+  height: 64.16015625%;
+  width: auto;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .tf-hero {
+    padding-top: 44px;
+  }
+
+  .tf-hero-title {
+    font-size: clamp(36px, 5.6vw, 52px);
+  }
+
+  .tf-hero-second-line {
+    flex-wrap: wrap;
+    white-space: normal;
+    row-gap: 0.08em;
+  }
+
+  .tf-hero-pill-slot {
+    flex-basis: 5.8em;
+    width: 5.8em;
+  }
+
+  .tf-hero-description {
+    max-width: 650px;
+  }
+
+  .tf-product-film {
+    width: calc(100% - 32px);
+    margin-top: 32px;
+    margin-bottom: 44px;
+  }
+
+  .tf-video-frame {
+    border-radius: 10px;
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .tf-hero {
+    padding-top: 36px;
+  }
+
+  .tf-hero-inner {
+    width: calc(100% - 32px);
+  }
+
+  .tf-hero-badge {
+    margin-bottom: 22px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .tf-hero-title {
+    font-size: clamp(29px, 7.5vw, 38px);
+    letter-spacing: -0.055em;
+    line-height: 1.16;
+  }
+
+  .tf-hero-second-line {
+    column-gap: 0.14em;
+    row-gap: 0.1em;
+  }
+
+  .tf-hero-pill-slot {
+    flex-basis: 5.8em;
+    width: 5.8em;
+  }
+
+  .tf-hero-description {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .tf-product-film {
+    width: calc(100% - 32px);
+    margin: 28px auto 36px;
+  }
+
+  .tf-video-frame {
+    border-radius: 9px;
+  }
+
+}
+
+/* Very small mobile screens */
+
+@media (max-width: 380px) {
+  .tf-hero-title {
+    font-size: clamp(27px, 7.2vw, 32px);
+  }
+
+  .tf-hero-second-line {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .tf-product-film {
+    width: calc(100% - 24px);
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-hero-pill-slot,
+  .tf-hero-pill {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,1021 @@
+/* ==========================================================================
+   TalentForge — Cinematic Student Matching Constellation Experience
+   ========================================================================== */
+
+.tf-matching-section {
+  position: relative;
+  width: 100%;
+  padding: 88px 0 100px;
+  background: radial-gradient(circle at 50% 12%, rgba(80, 53, 255, 0.05) 0%, transparent 68%),
+              linear-gradient(180deg, #ffffff 0%, #fafbfc 50%, #f4f6fa 100%);
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   SCENE 1: Background Universe & Violet Light Points
+   -------------------------------------------------------------------------- */
+.tf-universe-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.tf-universe-glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(80, 53, 255, 0.07) 0%, rgba(139, 92, 246, 0.03) 45%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.tf-universe-star {
+  position: absolute;
+  border-radius: 50%;
+  background: #5035ff;
+  opacity: 0.35;
+  box-shadow: 0 0 6px rgba(80, 53, 255, 0.5);
+  animation: tf-star-twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes tf-star-twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 0.65;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(80, 53, 255, 0.7);
+  }
+}
+
+.tf-matching-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Typography
+   -------------------------------------------------------------------------- */
+.tf-matching-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 48px;
+}
+
+.tf-matching-eyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin: 0 0 16px;
+}
+
+.tf-matching-title {
+  font-size: clamp(30px, 4.4vw, 44px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #0b1021;
+  margin: 0 0 14px;
+}
+
+.tf-purple-constellation {
+  color: #5035ff;
+  background: linear-gradient(135deg, #5035ff 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.tf-matching-description {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #4b5563;
+  margin: 0 0 28px;
+  font-weight: 450;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Controls: Search & Skill Filter Bar (Phase 4)
+   -------------------------------------------------------------------------- */
+.tf-matching-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tf-matching-search-box {
+  position: relative;
+  width: min(100%, 420px);
+  display: flex;
+  align-items: center;
+}
+
+.tf-matching-search-box svg {
+  position: absolute;
+  left: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.tf-matching-search-input {
+  width: 100%;
+  padding: 10px 36px 10px 40px;
+  font-size: 13.5px;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 180ms ease;
+}
+
+.tf-matching-search-input:focus {
+  border-color: #5035ff;
+  box-shadow: 0 0 0 3px rgba(80, 53, 255, 0.15);
+}
+
+.tf-search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tf-search-clear-btn:hover {
+  color: #111827;
+}
+
+.tf-matching-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tf-filter-pill {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  font-weight: 550;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.tf-filter-pill:hover {
+  border-color: #5035ff;
+  color: #5035ff;
+}
+
+.tf-filter-pill.is-active {
+  background: #5035ff;
+  border-color: #5035ff;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(80, 53, 255, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   2.5D Constellation Stage (Scenes 2, 3, 4, 5)
+   -------------------------------------------------------------------------- */
+.tf-constellation-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 620px;
+  margin: 16px auto 32px;
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.tf-constellation-stage::before {
+  position: absolute;
+  inset: 8% 7%;
+  z-index: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(196, 181, 253, 0.2), transparent 66%),
+    radial-gradient(ellipse at 26% 34%, rgba(221, 214, 254, 0.14), transparent 42%);
+  content: "";
+  pointer-events: none;
+  transform: translateZ(-64px);
+}
+
+/* SCENE 3: Dynamic SVG Constellation Streams */
+.tf-constellation-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+  transform: translateZ(-28px);
+  transform-style: preserve-3d;
+  transition: opacity 540ms ease;
+}
+
+.tf-constellation-mesh {
+  fill: none;
+  stroke: rgba(80, 53, 255, 0.1);
+  stroke-width: 1.1;
+  stroke-dasharray: 4 4;
+}
+
+.tf-stream-line {
+  fill: none;
+  stroke: rgba(80, 53, 255, 0.24);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 6 4;
+  transition:
+    stroke 300ms ease,
+    stroke-width 300ms ease,
+    opacity 300ms ease;
+}
+
+.tf-stream-line.is-active {
+  stroke: #5035ff;
+  stroke-width: 2.5;
+  stroke-dasharray: none;
+  filter: drop-shadow(0 0 4px rgba(80, 53, 255, 0.38));
+}
+
+.tf-stream-pulse-line {
+  fill: none;
+  stroke: url(#tf-stream-grad);
+  stroke-width: 2.6;
+  stroke-dasharray: 28 200;
+  stroke-linecap: round;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.tf-stream-pulse-line.is-active-pulse {
+  opacity: 1;
+  animation: tf-travel-stream 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes tf-travel-stream {
+  0% {
+    stroke-dashoffset: 228;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Constellation Cards (Scene 2 — Profile Cards Emerge)
+   -------------------------------------------------------------------------- */
+.tf-constellation-card {
+  position: absolute;
+  width: 280px;
+  transform-style: preserve-3d;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e7ebf1;
+  box-shadow:
+    0 14px 30px -8px rgba(34, 27, 82, 0.11),
+    0 4px 12px -3px rgba(16, 24, 40, 0.04);
+  padding: 18px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  pointer-events: auto;
+  transform-style: preserve-3d;
+  transition:
+    transform 560ms cubic-bezier(0.2, 0.75, 0.2, 1),
+    box-shadow 420ms cubic-bezier(0.2, 0.75, 0.2, 1),
+    border-color 300ms ease,
+    opacity 480ms ease;
+  z-index: 10;
+}
+
+.tf-constellation-card.is-dimmed {
+  opacity: 0.3;
+  filter: grayscale(40%);
+}
+
+.tf-constellation-card.is-matching {
+  opacity: 1;
+}
+
+/* SCENE 4: Focus & 3D Depth Shift */
+.tf-constellation-card:hover,
+.tf-constellation-card.is-focused-match,
+.tf-candidate-card:focus-visible {
+  border-color: #5035ff;
+  box-shadow:
+    0 28px 52px -12px rgba(80, 53, 255, 0.24),
+    0 10px 20px -5px rgba(16, 24, 40, 0.1);
+  z-index: 30;
+}
+
+.tf-constellation-card:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 3px;
+}
+
+/* Card Geometry in 2.5D Coordinate Space */
+.tf-central-card {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 22px) rotateX(-1deg);
+  width: 295px;
+  border: 1.5px solid #dcd7fe;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaff 100%);
+  box-shadow:
+    0 22px 42px -10px rgba(80, 53, 255, 0.2),
+    0 8px 18px -4px rgba(16, 24, 40, 0.07),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  z-index: 20;
+}
+
+.tf-central-card:hover,
+.tf-central-card:focus-visible {
+  transform: translate3d(-50%, -51%, 30px) rotateX(0deg) scale(1.015);
+}
+
+.tf-central-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #5035ff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.tf-anchor-ring {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5035ff;
+  box-shadow: 0 0 0 2px rgba(80, 53, 255, 0.3);
+}
+
+/* Peripheral Slots */
+.slot-pos-1 {
+  top: 4%;
+  right: 2%;
+  transform: rotateX(2.5deg) rotateY(-4deg) rotateZ(-0.8deg) translateZ(-6px);
+}
+.slot-pos-1:hover,
+.slot-pos-1.is-focused-match,
+.slot-pos-1:focus-visible {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -8px, 42px) scale(1.035);
+}
+
+.slot-pos-2 {
+  bottom: 2%;
+  right: 4%;
+  transform: rotateX(-2deg) rotateY(-3.5deg) rotateZ(0.7deg) translateZ(-22px);
+}
+.slot-pos-2:hover,
+.slot-pos-2.is-focused-match,
+.slot-pos-2:focus-visible {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -8px, 42px) scale(1.035);
+}
+
+.slot-pos-3 {
+  top: 4%;
+  left: 2%;
+  transform: rotateX(2deg) rotateY(4deg) rotateZ(0.7deg) translateZ(-18px);
+}
+.slot-pos-3:hover,
+.slot-pos-3.is-focused-match,
+.slot-pos-3:focus-visible {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -8px, 42px) scale(1.035);
+}
+
+.slot-pos-4 {
+  bottom: 2%;
+  left: 4%;
+  transform: rotateX(-2.5deg) rotateY(3deg) rotateZ(-0.7deg) translateZ(-10px);
+}
+.slot-pos-4:hover,
+.slot-pos-4.is-focused-match,
+.slot-pos-4:focus-visible {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -8px, 42px) scale(1.035);
+}
+
+/* --------------------------------------------------------------------------
+   Card Internal Structure
+   -------------------------------------------------------------------------- */
+.tf-card-top-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tf-card-avatar-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #5035ff;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  box-shadow: 0 3px 8px rgba(80, 53, 255, 0.16);
+}
+
+.tf-card-avatar-wrap.is-central {
+  width: 54px;
+  height: 54px;
+}
+
+.tf-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tf-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: #5035ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.tf-card-names {
+  flex: 1;
+  min-width: 0;
+}
+
+.tf-card-name {
+  margin: 0 0 2px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.tf-card-major {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5035ff;
+}
+
+.tf-card-college {
+  font-size: 11px;
+  color: #6b7280;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tf-card-skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.tf-card-chip {
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+}
+
+.tf-chip-more {
+  background: #f8fafc;
+  color: #64748b;
+  border-style: dashed;
+}
+
+.tf-card-looking-for {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fafafc;
+  border: 1px solid #eef1f6;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.tf-looking-heading {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5035ff;
+  margin-bottom: 2px;
+}
+
+.tf-card-looking-for p {
+  margin: 0;
+  color: #4b5563;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* SCENE 4: Match Insight Badge */
+.tf-match-insight-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #faf9ff;
+  border: 1px solid #ddd6fe;
+  margin-bottom: 12px;
+  animation: tf-badge-reveal 220ms ease both;
+}
+
+@keyframes tf-badge-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tf-insight-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.tf-insight-content strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #5035ff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.tf-insight-content p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #374151;
+}
+
+/* Actions: View Profile & Connect Button (Scene 5) */
+.tf-candidate-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tf-btn-view-profile {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.tf-btn-view-profile:hover {
+  border-color: #5035ff;
+  color: #5035ff;
+  background: #f5f3ff;
+}
+
+.tf-btn-connect-stream {
+  flex: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 180ms ease;
+}
+
+.tf-btn-connect-stream.is-none {
+  background: #5035ff;
+  border-color: #5035ff;
+  color: #ffffff;
+}
+
+.tf-btn-connect-stream.is-none:hover {
+  background: #3920e8;
+  border-color: #3920e8;
+  box-shadow: 0 4px 10px rgba(80, 53, 255, 0.25);
+}
+
+.tf-btn-connect-stream.is-pending {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #d97706;
+  cursor: wait;
+}
+
+.tf-connecting-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tf-mini-spinner {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(217, 119, 6, 0.3);
+  border-top-color: #d97706;
+  border-radius: 50%;
+  animation: tf-spin 0.7s linear infinite;
+}
+
+@keyframes tf-spin {
+  to { transform: rotate(360deg); }
+}
+
+.tf-btn-connect-stream.is-connected {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #059669;
+}
+
+/* --------------------------------------------------------------------------
+   SCENE 4: Match Analysis Deep-Dive Drawer
+   -------------------------------------------------------------------------- */
+.tf-match-analysis-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #ddd6fe;
+  box-shadow:
+    0 12px 30px -8px rgba(80, 53, 255, 0.12),
+    0 4px 10px -2px rgba(16, 24, 40, 0.04);
+  animation: tf-panel-slide-up 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tf-panel-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tf-panel-left {
+  flex: 1.2;
+}
+
+.tf-panel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5035ff;
+  margin-bottom: 4px;
+}
+
+.tf-sparkle {
+  color: #8b5cf6;
+}
+
+.tf-panel-title {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.tf-panel-reason {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #4b5563;
+}
+
+.tf-panel-middle {
+  flex: 1.5;
+  display: flex;
+  gap: 20px;
+}
+
+.tf-synergy-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tf-synergy-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.tf-synergy-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.tf-shared-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tf-shared-pill {
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #5035ff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tf-panel-right {
+  flex-shrink: 0;
+}
+
+.tf-panel-connect-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.tf-panel-connect-btn.is-none {
+  background: #5035ff;
+  color: #ffffff;
+  border-color: #5035ff;
+}
+
+.tf-panel-connect-btn.is-none:hover {
+  background: #3920e8;
+  border-color: #3920e8;
+  box-shadow: 0 4px 12px rgba(80, 53, 255, 0.25);
+}
+
+.tf-panel-connect-btn.is-pending {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #d97706;
+}
+
+.tf-panel-connect-btn.is-connected {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #059669;
+}
+
+@media (min-width: 961px) {
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-constellation-svg,
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-match-analysis-panel,
+  .tf-matching-section:not(.is-reduced-motion).stage-2 .tf-match-analysis-panel,
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .tf-match-analysis-panel {
+    opacity: 0;
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-constellation-svg {
+    transform: translate3d(0, 0, -44px);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-match-analysis-panel,
+  .tf-matching-section:not(.is-reduced-motion).stage-2 .tf-match-analysis-panel,
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .tf-match-analysis-panel {
+    animation: none;
+    pointer-events: none;
+    transform: translateY(12px);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-candidate-card,
+  .tf-matching-section:not(.is-reduced-motion).stage-2 .tf-candidate-card {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(0, 14px, -72px) scale(0.94);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-central-card,
+  .tf-matching-section:not(.is-reduced-motion).stage-2 .tf-central-card,
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .tf-central-card {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, -58px) rotateX(-3deg) scale(0.96);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .tf-candidate-card {
+    opacity: 1;
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-candidate-card:focus-within,
+  .tf-matching-section:not(.is-reduced-motion).stage-2 .tf-candidate-card:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(0, -8px, 42px) scale(1.035);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-1 .tf-central-card:focus-visible,
+  .tf-matching-section:not(.is-reduced-motion).stage-2 .tf-central-card:focus-visible,
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .tf-central-card:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(-50%, -50%, 22px) rotateX(-1deg);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .slot-pos-1 {
+    transition-delay: 0ms;
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .slot-pos-3 {
+    transition-delay: 80ms;
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .slot-pos-4 {
+    transition-delay: 160ms;
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-3 .slot-pos-2 {
+    transition-delay: 240ms;
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-4 .tf-central-card {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 12px) rotateX(-1deg);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-4 .tf-match-analysis-panel,
+  .tf-matching-section:not(.is-reduced-motion).stage-5 .tf-match-analysis-panel {
+    animation: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .tf-matching-section:not(.is-reduced-motion).stage-5 .tf-central-card {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 22px) rotateX(-1deg);
+  }
+
+  .tf-match-analysis-panel:focus-within {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility (prefers-reduced-motion)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .tf-universe-star {
+    animation: none !important;
+  }
+
+  .tf-stream-pulse-line {
+    animation: none !important;
+    opacity: 0.5 !important;
+  }
+
+  .tf-constellation-card {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .tf-match-insight-badge,
+  .tf-match-analysis-panel {
+    animation: none !important;
+  }
+}
+
+.tf-matching-section.is-reduced-motion .tf-universe-star {
+  animation: none !important;
+}
+
+.tf-matching-section.is-reduced-motion .tf-stream-pulse-line {
+  animation: none !important;
+}
+
+.tf-matching-section.is-reduced-motion .tf-constellation-svg {
+  transition: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layout (Tablet & Mobile <960px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .tf-matching-section {
+    padding: 64px 0 76px;
+  }
+
+  .tf-constellation-stage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .tf-constellation-svg {
+    display: none;
+  }
+
+  .tf-constellation-card {
+    position: static;
+    width: min(100%, 380px);
+    transform: none !important;
+  }
+
+  .tf-central-card {
+    width: min(100%, 380px);
+    transform: none !important;
+    margin-bottom: 8px;
+  }
+
+  .tf-match-analysis-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .tf-panel-middle {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .tf-panel-right {
+    width: 100%;
+  }
+
+  .tf-panel-connect-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

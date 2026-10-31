@@ -1,0 +1,758 @@
+/* ==========================================================================
+   TalentForge — Continuous 3D Flip Stream (Razorpay-Style Moving Showcase)
+   ========================================================================== */
+
+.tf-talent-stream {
+  position: relative;
+  width: 100%;
+  padding: 88px 0 110px;
+  background: radial-gradient(circle at 50% 0%, rgba(80, 53, 255, 0.04) 0%, transparent 65%),
+              linear-gradient(180deg, #ffffff 0%, #fafbfc 60%, #f4f6fa 100%);
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header
+   -------------------------------------------------------------------------- */
+.tf-stream-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 52px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.tf-stream-eyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin: 0 0 16px;
+}
+
+.tf-stream-title {
+  font-size: clamp(30px, 4.4vw, 44px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #0b1021;
+  margin: 0 0 14px;
+}
+
+.tf-stream-title .tf-brand-highlight {
+  color: #5035ff;
+  position: relative;
+  display: inline-block;
+}
+
+.tf-stream-title .tf-brand-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 5px;
+  background: rgba(80, 53, 255, 0.16);
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.tf-stream-description {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #4b5563;
+  margin: 0 0 18px;
+  font-weight: 450;
+  line-height: 1.5;
+}
+
+.tf-stream-badge-row {
+  display: flex;
+  justify-content: center;
+}
+
+.tf-stream-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.tf-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  position: relative;
+}
+
+.tf-pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.4);
+  animation: tf-pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes tf-pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Stream Viewport & Continuous Moving Track
+   -------------------------------------------------------------------------- */
+.tf-stream-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0 100px;
+}
+
+/* Fade gradients on viewport edges */
+.tf-stream-viewport::before,
+.tf-stream-viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.tf-stream-viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.tf-stream-viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #f4f6fa 0%, rgba(244, 246, 250, 0) 100%);
+}
+
+.tf-stream-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  will-change: transform;
+  animation: tf-marquee-stream 45s linear infinite;
+  align-items: flex-start;
+  transform-style: preserve-3d;
+}
+
+/* Moving stream animation loops seamlessly across 3 sets of cards */
+@keyframes tf-marquee-stream {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.333333%, 0, 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3D Card Wrapper & Flipper
+   -------------------------------------------------------------------------- */
+.tf-stream-card {
+  position: relative;
+  width: 310px;
+  height: 440px;
+  flex-shrink: 0;
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+  transform: translate3d(0, var(--stagger-offset, 0px), 0);
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    z-index 320ms ease;
+  cursor: pointer;
+  outline: none;
+  border-radius: 16px;
+}
+
+/* Elevate hovered/active card above neighbors in 3D stacking order */
+.tf-stream-card:hover,
+.tf-stream-card.is-flipped,
+.tf-stream-card:focus-visible {
+  transform: translate3d(0, calc(var(--stagger-offset, 0px) - 8px), 20px);
+  z-index: 50;
+}
+
+.tf-stream-card:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 4px;
+}
+
+/* 3D Preserving Inner Container */
+.tf-card-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* 3D Rotation Trigger (Hover, Focus, or Programmatic Flip) */
+.tf-stream-card.is-flipped .tf-card-flipper,
+.tf-stream-card:hover .tf-card-flipper,
+.tf-stream-card:focus-within .tf-card-flipper {
+  transform: rotateY(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   Card Faces (Front & Back)
+   -------------------------------------------------------------------------- */
+.tf-card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ---------------- FRONT FACE (0deg) ---------------- */
+.tf-card-front {
+  transform: rotateY(0deg);
+  background: #ffffff;
+  border: 1px solid #e7ebf1;
+  box-shadow:
+    0 10px 25px -5px rgba(16, 24, 40, 0.05),
+    0 4px 10px -2px rgba(16, 24, 40, 0.02);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tf-stream-card.is-hero-card .tf-card-front {
+  border-color: #dcd7fe;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaff 100%);
+}
+
+.tf-stream-card.is-hero-card .tf-card-front::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #5035ff, #8b5cf6);
+  border-radius: 0 0 3px 3px;
+}
+
+.tf-front-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tf-front-avatar-box {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.tf-front-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5035ff;
+  background: #f3f4f6;
+  box-shadow: 0 3px 8px rgba(80, 53, 255, 0.15);
+}
+
+.tf-front-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5035ff, #8b5cf6);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5035ff;
+}
+
+.tf-front-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.tf-front-status-dot.is-open {
+  background: #10b981;
+}
+
+.tf-front-status-dot.is-open_to_collaborate {
+  background: #5035ff;
+}
+
+.tf-front-status-dot.is-busy {
+  background: #f59e0b;
+}
+
+.tf-front-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tf-front-status-pill.is-open {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.tf-front-status-pill.is-open_to_collaborate {
+  background: #f5f3ff;
+  color: #5035ff;
+  border: 1px solid #ddd6fe;
+}
+
+.tf-front-status-pill.is-busy {
+  background: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.tf-front-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tf-front-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.tf-front-major {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5035ff;
+}
+
+.tf-front-college {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tf-front-college svg {
+  flex-shrink: 0;
+}
+
+.tf-front-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tf-skill-pill {
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 11.5px;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+}
+
+.tf-skill-more {
+  background: #f8fafc;
+  color: #64748b;
+  border-style: dashed;
+}
+
+.tf-front-collab-box {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fafafc;
+  border: 1px solid #eef1f6;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.tf-front-collab-label {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5035ff;
+  margin-bottom: 2px;
+}
+
+.tf-front-collab-text {
+  margin: 0;
+  color: #4b5563;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tf-front-flip-hint {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #5035ff;
+  padding-top: 6px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.tf-flip-icon {
+  font-size: 12px;
+  display: inline-block;
+  transition: transform 300ms ease;
+}
+
+.tf-stream-card:hover .tf-flip-icon {
+  transform: rotate(180deg);
+}
+
+/* ---------------- BACK FACE (180deg) ---------------- */
+.tf-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaff 100%);
+  border: 1.5px solid #5035ff;
+  box-shadow:
+    0 22px 48px -10px rgba(80, 53, 255, 0.22),
+    0 10px 20px -4px rgba(16, 24, 40, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-back-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ede9fe;
+  margin-bottom: 12px;
+}
+
+.tf-back-student-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tf-back-avatar-mini {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid #5035ff;
+  flex-shrink: 0;
+}
+
+.tf-back-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tf-back-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: #5035ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.tf-back-names {
+  flex: 1;
+  min-width: 0;
+}
+
+.tf-back-name {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tf-back-college {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tf-back-flip-badge {
+  font-size: 14px;
+  color: #5035ff;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tf-back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar for back face */
+.tf-back-content::-webkit-scrollbar {
+  width: 4px;
+}
+.tf-back-content::-webkit-scrollbar-thumb {
+  background: #ddd6fe;
+  border-radius: 4px;
+}
+
+.tf-back-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tf-back-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5035ff;
+}
+
+.tf-back-looking-for {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #374151;
+  background: #faf9ff;
+  padding: 6px 9px;
+  border-radius: 6px;
+  border: 1px solid #ede9fe;
+}
+
+.tf-back-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tf-back-chip {
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #f3f4f6;
+  color: #1f2937;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+}
+
+.tf-back-project-card {
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #f5f3ff;
+  border: 1px solid #ede9fe;
+}
+
+.tf-back-proj-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.tf-back-proj-top strong {
+  font-size: 11.5px;
+  color: #1e1b4b;
+}
+
+.tf-back-proj-top span {
+  font-size: 10.5px;
+  color: #6d28d9;
+  font-weight: 600;
+}
+
+.tf-back-proj-desc {
+  margin: 2px 0 0;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #4b5563;
+}
+
+.tf-back-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tf-back-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+.tf-back-link:hover {
+  border-color: #5035ff;
+  color: #5035ff;
+  background: #f5f3ff;
+}
+
+.tf-back-footer {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ede9fe;
+}
+
+.tf-back-modal-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #5035ff;
+  border: 1px solid #5035ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.tf-back-modal-btn:hover {
+  background: #3920e8;
+  border-color: #3920e8;
+  box-shadow: 0 4px 10px rgba(80, 53, 255, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .tf-stream-track {
+    animation: none !important;
+  }
+
+  .tf-card-flipper {
+    transition: none !important;
+  }
+
+  .tf-stream-viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 30px;
+  }
+
+  .tf-pulse-dot::after {
+    animation: none !important;
+  }
+}
+
+.tf-stream-viewport.is-reduced-motion .tf-stream-track {
+  animation: none !important;
+}
+
+.tf-stream-viewport.is-reduced-motion {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 30px;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Viewports (<768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .tf-talent-stream {
+    padding: 60px 0 76px;
+  }
+
+  .tf-stream-viewport {
+    padding: 24px 0 60px;
+  }
+
+  .tf-stream-viewport::before,
+  .tf-stream-viewport::after {
+    width: 36px;
+  }
+
+  .tf-stream-card {
+    width: 280px;
+    height: 420px;
+  }
+
+  .tf-card-front,
+  .tf-card-back {
+    padding: 18px;
+  }
+}

@@ -1,0 +1,4 @@
+.global-search-page { max-width: 900px; margin: 0 auto; padding: 34px 24px 48px; }
+.global-search-page-header { margin-bottom: 28px; }
+.global-search-page-header p { margin-bottom: 6px; color: var(--brand); font-size: 13px; font-weight: 600; }
+.global-search-page-header h1 { margin: 0; color: var(--text-primary); font-size: 28px; font-weight: 700; }

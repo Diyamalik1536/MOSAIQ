@@ -1,0 +1,121 @@
+.recruiter-signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  background: #f5f6fb;
+  font-family: inherit;
+}
+
+.recruiter-signup-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 38px;
+  background: #fff;
+  border: 1px solid #e9ebf2;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(37, 48, 76, 0.08);
+}
+
+.recruiter-signup-logo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #5e55df;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.recruiter-signup-eyebrow {
+  color: #5e55df;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.recruiter-signup-card h1 {
+  margin: 10px 0;
+  color: #202638;
+  font-size: 26px;
+}
+
+.recruiter-signup-intro {
+  color: #858da0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.recruiter-signup-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.recruiter-signup-card label {
+  color: #343b4d;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 13px 0 7px;
+}
+
+.recruiter-signup-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #dfe2eb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.recruiter-signup-card input:focus {
+  border-color: #5e55df;
+  box-shadow: 0 0 0 3px rgba(94, 85, 223, 0.1);
+}
+
+.recruiter-signup-card button {
+  margin-top: 22px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #5e55df;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.recruiter-signup-card button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.recruiter-signup-error {
+  color: #d93636;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.recruiter-signup-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: #858da0;
+  font-size: 13px;
+}
+
+.recruiter-signup-footer a {
+  color: #5e55df;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .recruiter-signup-card {
+    padding: 26px 20px;
+  }
+}

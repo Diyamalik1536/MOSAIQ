@@ -1,0 +1,241 @@
+.projects-section {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 18px var(--shadow);
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.projects-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.projects-header p {
+    margin: 6px 0 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.projects-header-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 20px;
+}
+
+.projects-form {
+    padding: 22px;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-alt);
+}
+
+.projects-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.projects-field label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.projects-field input,
+.projects-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: var(--surface);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.projects-field input {
+    height: 44px;
+}
+
+.projects-field input:focus,
+.projects-field textarea:focus {
+    border-color: #8065dc;
+    box-shadow: 0 0 0 3px rgba(128, 101, 220, 0.1);
+}
+
+.projects-add-button {
+    height: 44px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 9px;
+    background: var(--brand);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.projects-add-button:hover {
+    background: var(--brand-strong);
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card {
+    display: flex;
+    gap: 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-alt);
+}
+
+.project-card-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 19px;
+}
+
+.project-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.project-card-top h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.project-card-content > p {
+    margin: 9px 0 14px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-delete {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #9992a7;
+    cursor: pointer;
+}
+
+.project-delete:hover {
+    background: #fff0f2;
+    color: #d34f67;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-technologies span {
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: var(--surface-soft);
+    color: var(--brand);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 15px;
+    color: #7357d9;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: #543db4;
+}
+
+.projects-empty {
+    padding: 45px 20px;
+    text-align: center;
+    border: 1px dashed var(--border-strong);
+    border-radius: 14px;
+}
+
+.projects-empty i {
+    font-size: 34px;
+    color: var(--brand);
+}
+
+.projects-empty h3 {
+    margin: 12px 0 6px;
+    color: var(--text-primary);
+    font-size: 17px;
+}
+
+.projects-empty p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+    .projects-section {
+        padding: 20px;
+    }
+
+    .project-card {
+        padding: 16px;
+    }
+
+    .projects-add-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

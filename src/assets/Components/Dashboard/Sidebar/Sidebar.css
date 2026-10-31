@@ -1,0 +1,301 @@
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 228px;
+    min-width: 228px;
+    height: auto;
+    min-height: calc(100vh - 72px);
+    box-sizing: border-box;
+    padding: 22px 14px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 100;
+    transition:
+        width 0.3s ease,
+        min-width 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.sidebar nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+.upgrade-card {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    padding: 18px 16px 16px;
+    box-sizing: border-box;
+    border: 1px solid rgba(111, 91, 238, 0.14);
+    border-radius: 17px;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(128, 106, 255, 0.22),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            var(--brand-soft) 0%,
+            rgba(139, 92, 246, 0.12) 100%
+        );
+    box-shadow:
+        0 10px 28px rgba(81, 56, 238, 0.1);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.upgrade-card::before {
+    content: "✦";
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    color: #806df5;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.upgrade-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 35px rgba(81, 56, 238, 0.16);
+}
+
+.upgrade-card h3 {
+    margin: 0 0 7px;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.upgrade-card p {
+    margin: 0 0 15px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.upgrade-card button {
+    width: 100%;
+    height: 37px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(
+        135deg,
+        #5a43f0,
+        #4931dc
+    );
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow:
+        0 6px 16px rgba(81, 56, 238, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.upgrade-card button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow:
+        0 9px 22px rgba(81, 56, 238, 0.28);
+}
+.sidebar-item {
+    position: relative;
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    overflow: hidden;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+.sidebar-item i {
+    width: 20px;
+    min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 17px;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.sidebar-item span {
+    white-space: nowrap;
+}
+.sidebar-item:hover {
+    background: var(--brand-soft);
+    color: var(--brand);
+    transform: translateX(2px);
+}
+
+.sidebar-item:hover i {
+    color: var(--brand);
+    transform: scale(1.08);
+}
+.sidebar-item.active {
+    background: linear-gradient(
+        90deg,
+        var(--brand-soft) 0%,
+        rgba(139, 92, 246, 0.12) 100%
+    );
+    color: var(--brand);
+    font-weight: 650;
+    box-shadow: inset 0 0 0 1px rgba(81, 56, 238, 0.04);
+}
+
+.sidebar-item.active i {
+    color: var(--brand);
+}
+.sidebar-item.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 3px;
+    height: 26px;
+    border-radius: 0 4px 4px 0;
+    background: #5138ee;
+    opacity: 0;
+    transform: scaleY(0.5);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.sidebar-item.active:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+.sidebar-item span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+}
+@media (max-width: 1050px) {
+
+    .sidebar {
+        width: 72px;
+        min-width: 72px;
+
+        padding: 20px 8px;
+    }
+
+    .sidebar-item {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .sidebar-item span {
+        display: none;
+    }
+
+    .sidebar-item i {
+        margin: 0;
+    }
+}
+@media (max-width: 767px) {
+    .sidebar {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+        height: 68px;
+        min-height: 68px;
+        padding: 7px 10px;
+        border-right: none;
+        border-top: 1px solid #e8e7ef;
+        overflow: hidden;
+        z-index: 1000;
+    }
+    .sidebar nav {
+        height: 100%;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-around;
+
+        gap: 2px;
+    }
+
+    .sidebar-item {
+        width: auto;
+        min-width: 46px;
+
+        height: 50px;
+
+        padding: 0 8px;
+
+        justify-content: center;
+
+        border-radius: 12px;
+    }
+
+    .sidebar-item span {
+        display: none;
+    }
+
+    .sidebar-item i {
+        width: auto;
+        min-width: auto;
+
+        font-size: 18px;
+    }
+
+    .sidebar > .upgrade-card {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        height: 60px;
+
+        padding: 5px 4px;
+    }
+
+    .sidebar-item {
+        min-width: 40px;
+
+        padding: 0 6px;
+    }
+
+    .sidebar-item i {
+        font-size: 17px;
+    }
+}

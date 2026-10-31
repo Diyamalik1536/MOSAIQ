@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "badge": "Chitkara University Students Only",
+    "title": "Find People. Build Projects. Grow Together.",
+    "description": "Connect with students, discover skills, and build meaningful projects together.",
+    "getStarted": "Get Started",
+    "exploreProjects": "Explore Projects"
+  },
+  "capabilitySelector": {
+    "eyebrow": "ONE CAMPUS. MORE WAYS TO BUILD.",
+    "heading": "Find your next step on TalentForge.",
+    "description": "Discover the people, projects, and possibilities around you.",
+    "hint": "Select a capability to explore it",
+    "capabilities": {
+      "discoverTalent": {
+        "label": "Discover Talent",
+        "description": "Meet students with skills that complement your own."
+      },
+      "findCollaborators": {
+        "label": "Find Collaborators",
+        "description": "Connect with people ready to build alongside you."
+      },
+      "exploreProjects": {
+        "label": "Explore Projects",
+        "description": "Find ideas, teams, and projects taking shape."
+      },
+      "buildTogether": {
+        "label": "Build Together",
+        "description": "Turn a shared interest into something real."
+      }
+    }
+  },
+  "studentMatching": {
+    "eyebrow": "STUDENT MATCHING ENGINE",
+    "title": "Students are the stars. Skills form constellations.",
+    "description": "Discover project collaborators, complementary skill sets, and verified campus builders.",
+    "searchPlaceholder": "Search by name, skill, or university...",
+    "filterAll": "All Builders",
+    "filterReact": "React & Frontend",
+    "filterDesign": "UI/UX & Design",
+    "filterAI": "AI/ML & Data",
+    "filterBackend": "Cloud & Backend",
+    "filterMobile": "Mobile & Flutter",
+    "centralAnchor": "Active Anchor",
+    "matchAnalysis": "Match Analysis",
+    "complementaryFocus": "Complementary Focus",
+    "sharedSkills": "Shared Skills",
+    "connect": "Connect",
+    "connecting": "Requesting...",
+    "connected": "Connected ✓",
+    "viewProfile": "View Profile",
+    "networkActive": "Skill Constellation Active",
+    "clickToExplore": "Select card to focus constellation"
+  },
+  "talentStream": {
+    "eyebrow": "THE TALENT STREAM",
+    "title": "Meet the builders on TalentForge.",
+    "viewportLabel": "Continuous showcase of student builder cards",
+    "cardDescription": "{{name}}, {{major}} at {{college}}. {{action}}",
+    "cardFlipped": "Card shows details.",
+    "cardFlipHint": "Card front. Hover or press Enter to flip.",
+    "portfolio": "Portfolio",
+    "description": "Real students. Real skills. Real collaborations.",
+    "tagline": "Live 3D Builder Stream",
+    "flipToExplore": "Hover to flip",
+    "tapToFlip": "Tap to flip",
+    "flipBack": "Flip back",
+    "lookingFor": "Looking for",
+    "coreSkills": "Core Skills",
+    "interests": "Interests",
+    "projects": "Projects",
+    "links": "Links & Portfolio",
+    "viewProfile": "View Full Profile",
+    "connect": "Connect on TalentForge",
+    "status": {
+      "open": "Available to Build",
+      "open_to_collaborate": "Open to Collaborate",
+      "busy": "Currently Building"
+    },
+    "modal": {
+      "profile": "Builder Profile",
+      "institution": "Institution",
+      "majorAndYear": "Academic Focus",
+      "skills": "Core Skills",
+      "interests": "Interests",
+      "projects": "Projects & Stack",
+      "collabGoal": "Looking For",
+      "links": "Links & Portfolio",
+      "connect": "Connect on TalentForge",
+      "close": "Close profile modal"
+    }
+  },
+  "browseProjects": {
+    "eyebrow": "THE TALENTFORGE PROJECT DIRECTORY",
+    "title": "Ideas become real when people build together.",
+    "description": "Explore student-built projects, discover new approaches, and find collaborators who can help turn your next idea into something meaningful.",
+    "exploreProjects": "Explore Projects",
+    "findCollaborators": "Find Collaborators"
+  }
+}

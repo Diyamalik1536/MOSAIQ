@@ -1,0 +1,987 @@
+/* ==========================================================================
+   ProjectCaseStudy CSS — Long-Form Editorial Case Study (Obsidian Inspired)
+   ========================================================================== */
+
+.tf-casestudy-page {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  color: #10152f;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.tf-casestudy-container {
+  width: min(100% - 48px, 1180px);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   1. EDITORIAL HEADER & METADATA BAR
+   ========================================================================== */
+.tf-casestudy-header {
+  padding: 64px 0 40px;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(80, 53, 255, 0.05) 0%, transparent 65%),
+    linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tf-casestudy-breadcrumb-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tf-casestudy-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #5035ff;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.tf-casestudy-back-link:hover {
+  color: #3920e8;
+  transform: translateX(-3px);
+}
+
+.tf-casestudy-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tf-casestudy-cat-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.tf-casestudy-stage-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.tf-casestudy-recruiting-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.tf-casestudy-title {
+  font-size: clamp(34px, 4.6vw, 54px);
+  font-weight: 850;
+  letter-spacing: -0.035em;
+  color: #0b1021;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.tf-casestudy-tagline {
+  font-size: clamp(17px, 2vw, 21px);
+  color: #4b5563;
+  line-height: 1.55;
+  font-weight: 450;
+  max-width: 840px;
+  margin: 0 0 36px;
+}
+
+/* Obsidian-Style Metadata Grid */
+.tf-casestudy-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #e9eaf2;
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 16px rgba(16, 24, 40, 0.03);
+}
+
+@media (max-width: 900px) {
+  .tf-casestudy-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .tf-casestudy-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tf-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tf-meta-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.tf-meta-value {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tf-meta-sub {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.tf-meta-lead-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 10px;
+  transition: background 150ms ease;
+}
+
+.tf-meta-lead-card:hover {
+  background: #f5f3ff;
+}
+
+.tf-meta-lead-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5035ff;
+}
+
+.tf-meta-lead-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0b1021;
+  display: block;
+}
+
+.tf-meta-lead-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  display: block;
+}
+
+.tf-meta-contributors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tf-meta-contributor-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 3px 9px 3px 3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.tf-meta-contributor-pill:hover {
+  background: #ede9fe;
+  border-color: #c7d2fe;
+  color: #4338ca;
+}
+
+.tf-mini-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tf-meta-action-col {
+  justify-content: flex-end;
+}
+
+.tf-casestudy-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #5035ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(80, 53, 255, 0.28);
+  transition: all 180ms ease;
+}
+
+.tf-casestudy-cta-btn:hover {
+  background: #3920e8;
+  transform: translateY(-1px);
+}
+
+.tf-casestudy-cta-btn.is-requested {
+  background: #059669;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+  cursor: default;
+}
+
+/* ==========================================================================
+   2. EXPANSIVE VISUAL COVER CANVAS
+   ========================================================================== */
+.tf-casestudy-cover-section {
+  padding: 36px 0;
+}
+
+.tf-casestudy-cover-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 
+    0 24px 50px -12px rgba(16, 24, 40, 0.12),
+    0 0 0 1px rgba(80, 53, 255, 0.08);
+}
+
+/* ==========================================================================
+   3. EXECUTIVE SUMMARY & METRIC STATS
+   ========================================================================== */
+.tf-casestudy-executive-section {
+  padding: 24px 0 48px;
+}
+
+.tf-casestudy-exec-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  border: 1px solid #e9eaf2;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: 0 4px 20px rgba(16, 24, 40, 0.03);
+}
+
+.tf-casestudy-section-kicker {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5035ff;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.tf-casestudy-exec-lead {
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #0b1021;
+  margin: 0 0 32px;
+}
+
+.tf-casestudy-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #edf0f5;
+}
+
+.tf-casestudy-metric-box {
+  background: #f8fafc;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tf-metric-value {
+  font-size: 22px;
+  font-weight: 850;
+  color: #5035ff;
+  letter-spacing: -0.02em;
+}
+
+.tf-metric-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   4. NUMBERED EDITORIAL CHAPTERS (OBSIDIAN INSPIRATION)
+   ========================================================================== */
+.tf-casestudy-chapters-section {
+  padding: 24px 0 80px;
+}
+
+.tf-casestudy-chapter {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 48px;
+  padding: 40px 0;
+}
+
+.tf-chapter-reveal-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 560ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 560ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.tf-casestudy-chapter.is-reveal-ready:not(.is-revealed) .tf-chapter-reveal-item {
+  opacity: 0;
+  transform: translateY(14px) scale(0.99);
+  transition: none;
+}
+
+.tf-casestudy-chapter.is-reveal-ready:not(.is-revealed) .tf-chapter-reveal-number {
+  transform: translateY(12px) scale(0.94);
+}
+
+.tf-chapter-reveal-number {
+  transform-origin: left bottom;
+  transition-delay: 0ms;
+}
+
+.tf-chapter-reveal-label {
+  transition-delay: 90ms;
+}
+
+.tf-chapter-reveal-heading {
+  transition-delay: 150ms;
+}
+
+.tf-chapter-reveal-subtitle {
+  transition-delay: 220ms;
+}
+
+.tf-chapter-reveal-body {
+  transition-delay: 300ms;
+}
+
+.tf-chapter-reveal-takeaway {
+  transition-delay: 390ms;
+}
+
+@media (max-width: 768px) {
+  .tf-casestudy-chapter {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.tf-chapter-number-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.tf-chapter-number {
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #ddd6fe;
+  user-select: none;
+}
+
+.tf-chapter-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tf-chapter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tf-chapter-title {
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: #0b1021;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tf-chapter-subtitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #5035ff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tf-chapter-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+.tf-chapter-context {
+  display: grid;
+  gap: 12px;
+}
+
+.tf-chapter-divider {
+  width: 100%;
+  height: 1px;
+  background: #f1f5f9;
+}
+
+.tf-casestudy-detail-sections {
+  padding: 0 0 80px;
+}
+
+.tf-detail-section-header {
+  max-width: 820px;
+  margin: 0 0 24px;
+}
+
+.tf-detail-section-title {
+  margin: 0 0 12px;
+  color: #0b1021;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.tf-casestudy-detail-section {
+  margin-top: 72px;
+}
+
+/* Callout Quote Box */
+.tf-chapter-callout {
+  position: relative;
+  background: #faf5ff;
+  border-left: 4px solid #7c3aed;
+  border-radius: 0 14px 14px 0;
+  padding: 24px 28px;
+  margin-top: 12px;
+}
+
+.tf-callout-quote-mark {
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  font-size: 40px;
+  font-family: Georgia, serif;
+  color: #c084fc;
+  line-height: 1;
+}
+
+.tf-callout-quote {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #3b0764;
+  margin: 0 0 10px;
+}
+
+.tf-callout-author {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #7e22ce;
+}
+
+/* Architecture layers */
+.tf-architecture-layers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+@media (max-width: 680px) {
+  .tf-architecture-layers {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tf-arch-layer-card {
+  background: #fafbfc;
+  border: 1px solid #e9eaf2;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition:
+    opacity 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.tf-arch-layer-card:hover {
+  transform: translateY(-3px);
+  border-color: #c7d2fe;
+  box-shadow: 0 10px 24px rgba(80, 53, 255, 0.08);
+}
+
+.tf-arch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tf-arch-name {
+  font-size: 13.5px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.tf-arch-tech {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #5035ff;
+  background: #f5f3ff;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.tf-arch-detail {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+/* Complete Stack Box */
+.tf-casestudy-stack-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 10px;
+}
+
+.tf-stack-box-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.tf-casestudy-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tf-casestudy-tech-pill {
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 650;
+  color: #4338ca;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.tf-casestudy-tech-pill.tf-scroll-reveal {
+  transition:
+    opacity 520ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Highlights Grid */
+.tf-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.tf-highlight-card {
+  background: #fafbfc;
+  border: 1px solid #e9eaf2;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition:
+    opacity 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.tf-highlight-card:hover {
+  transform: translateY(-2px);
+  border-color: #c7d2fe;
+  box-shadow: 0 10px 24px rgba(80, 53, 255, 0.08);
+}
+
+.tf-highlight-card .tf-highlight-idx,
+.tf-highlight-card .tf-highlight-title,
+.tf-highlight-card .tf-highlight-body {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 460ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 460ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.tf-highlight-card.is-reveal-ready:not(.is-revealed) .tf-highlight-idx,
+.tf-highlight-card.is-reveal-ready:not(.is-revealed) .tf-highlight-title,
+.tf-highlight-card.is-reveal-ready:not(.is-revealed) .tf-highlight-body {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.tf-highlight-card .tf-highlight-idx {
+  transition-delay: 40ms;
+}
+
+.tf-highlight-card .tf-highlight-title {
+  transition-delay: 110ms;
+}
+
+.tf-highlight-card .tf-highlight-body {
+  transition-delay: 180ms;
+}
+
+.tf-highlight-idx {
+  font-size: 20px;
+  font-weight: 850;
+  color: #5035ff;
+}
+
+.tf-highlight-title {
+  font-size: 15px;
+  font-weight: 750;
+  color: #0b1021;
+  margin: 0;
+}
+
+.tf-highlight-body {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Open roles & team members */
+.tf-open-roles-container {
+  margin-top: 8px;
+}
+
+.tf-roles-header {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 12px;
+}
+
+.tf-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.tf-role-item-card {
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tf-role-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tf-role-title-text {
+  font-size: 14px;
+  font-weight: 750;
+  color: #581c87;
+}
+
+.tf-role-skill-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #ffffff;
+  border: 1px solid #d8b4fe;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+
+.tf-role-desc-text {
+  font-size: 13px;
+  color: #6b21a8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tf-role-apply-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 6px 12px;
+  background: #7c3aed;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.tf-role-apply-btn:hover {
+  background: #6b21a8;
+}
+
+/* Team Grid */
+.tf-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.tf-team-member-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.tf-team-member-card.tf-scroll-reveal {
+  transition:
+    opacity 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.tf-team-member-card:hover {
+  border-color: #5035ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(80, 53, 255, 0.08);
+}
+
+.tf-team-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5035ff;
+  flex-shrink: 0;
+}
+
+.tf-team-member-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tf-team-name {
+  font-size: 13.5px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.tf-team-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tf-team-major {
+  font-size: 10.5px;
+  color: #5035ff;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. NEXT PROJECT FOOTER NAVIGATION (STEFANO BG WORK INSPIRATION)
+   ========================================================================== */
+.tf-casestudy-footer-nav {
+  padding: 0 0 88px;
+}
+
+.tf-next-project-card {
+  background: 
+    radial-gradient(circle at 90% 50%, rgba(80, 53, 255, 0.1) 0%, transparent 60%),
+    linear-gradient(135deg, #0b1021 0%, #1e1b4b 100%);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: clamp(32px, 5vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  cursor: pointer;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
+  box-shadow: 0 16px 40px rgba(11, 16, 33, 0.2);
+}
+
+.tf-next-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(80, 53, 255, 0.25);
+}
+
+.tf-next-project-card:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 4px;
+}
+
+.tf-next-label-group {
+  max-width: 680px;
+}
+
+.tf-next-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tf-next-title {
+  font-size: clamp(24px, 3.4vw, 38px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.tf-next-tagline {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tf-next-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #5035ff;
+  color: #ffffff;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(80, 53, 255, 0.4);
+  transition: all 200ms ease;
+}
+
+.tf-next-project-card:hover .tf-next-arrow-btn {
+  background: #6366f1;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .tf-next-project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tf-next-arrow-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Not found */
+.tf-casestudy-not-found {
+  padding: 120px 0;
+  text-align: center;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tf-chapter-reveal-item,
+  .tf-arch-layer-card,
+  .tf-highlight-card,
+  .tf-highlight-card .tf-highlight-idx,
+  .tf-highlight-card .tf-highlight-title,
+  .tf-highlight-card .tf-highlight-body {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0ms !important;
+  }
+
+  .tf-casestudy-chapter.is-reveal-ready .tf-chapter-reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tf-casestudy-cta-btn,
+  .tf-next-project-card,
+  .tf-team-member-card,
+  .tf-highlight-card,
+  .tf-casestudy-back-link {
+    transition: none !important;
+    transform: none !important;
+  }
+}

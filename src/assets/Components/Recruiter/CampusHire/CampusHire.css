@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");.campushire-dashboard{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172744;background:#f4f7fb;font-synthesis:none;text-rendering:optimizeLegibility}.campushire-dashboard *{box-sizing:border-box}.campushire-dashboard{margin:0;min-width:320px}.campushire-dashboard button,.campushire-dashboard input,.campushire-dashboard select{font:inherit}.campushire-dashboard button{cursor:pointer}.campushire-dashboard .app-shell{min-height:100vh;display:flex}.campushire-dashboard .sidebar{width:226px;background:#101d34;color:#eaf0fb;display:flex;flex-direction:column;flex-shrink:0;padding:19px 12px 15px;min-height:100vh}.campushire-dashboard .brand{display:flex;align-items:center;gap:11px;padding:0 7px 31px}.campushire-dashboard .brand-icon{width:34px;height:34px;display:grid;place-items:center;color:#fff}.campushire-dashboard .brand strong{display:block;font-size:17px;letter-spacing:-.5px}.campushire-dashboard .brand span{display:block;color:#b7c4d9;font-size:11px;margin-top:3px}.campushire-dashboard .nav-list{display:grid;gap:6px}.campushire-dashboard .nav-item{height:42px;border:0;border-radius:7px;background:transparent;color:#d5deed;display:flex;align-items:center;gap:13px;padding:0 12px;text-align:left;font-size:13px}.campushire-dashboard .nav-item:hover{background:#1b2d4a}.campushire-dashboard .nav-item.active{background:#2859ac;color:white;box-shadow:0 5px 12px #07142a30}.campushire-dashboard .nav-count{margin-left:auto;border-radius:20px;background:#4380ee;padding:3px 7px;font-size:11px}.campushire-dashboard .sidebar-bottom{margin-top:auto;border-top:1px solid #2b3b53;padding:17px 8px 0;display:flex;align-items:center;gap:12px;font-size:11px}.campushire-dashboard .sidebar-bottom strong,.campushire-dashboard .sidebar-bottom span{display:block}.campushire-dashboard .sidebar-bottom span{color:#adbbd0;margin-top:3px}.campushire-dashboard .main-area{flex:1;min-width:0}.campushire-dashboard .topbar{height:61px;background:#fff;border-bottom:1px solid #e4eaf2;display:flex;align-items:center;gap:13px;padding:0 24px}.campushire-dashboard .search-box{height:38px;border:1px solid #dce4ee;border-radius:8px;display:flex;align-items:center;gap:10px;padding:0 12px;color:#687b95;width:min(490px,42vw);box-shadow:0 1px 2px #14284a05}.campushire-dashboard .search-box input{border:0;outline:0;width:100%;min-width:0;color:#172744;font-size:12px;background:transparent}.campushire-dashboard .search-box button,.campushire-dashboard .icon-button{border:0;background:transparent;color:#5b6c83;display:grid;place-items:center;padding:4px}.campushire-dashboard .college-select{height:38px;display:flex;align-items:center;gap:9px;border:1px solid #dce4ee;border-radius:8px;padding:0 10px;color:#243b5b;max-width:260px}.campushire-dashboard .college-select select{border:0;background:transparent;outline:0;color:#243b5b;font-size:11px;width:185px}.campushire-dashboard .topbar-spacer{flex:1}.campushire-dashboard .notification{position:relative}.campushire-dashboard .notification i{position:absolute;right:3px;top:2px;width:6px;height:6px;background:#e35d6a;border-radius:50%}.campushire-dashboard .recruiter-avatar{width:32px;height:32px;border-radius:50%;background:#233552;color:white;display:grid;place-items:center;font-weight:700}.campushire-dashboard .recruiter-name strong,.campushire-dashboard .recruiter-name span{display:block}.campushire-dashboard .recruiter-name strong{font-size:11px}.campushire-dashboard .recruiter-name span{font-size:10px;color:#7b899d;margin-top:3px}.campushire-dashboard .page-content{padding:22px 21px 14px;max-width:1900px;margin:auto}.campushire-dashboard .heading-row{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:17px}.campushire-dashboard .eyebrow{font-size:9px;letter-spacing:1px;font-weight:700;color:#7890b2}.campushire-dashboard h1{font-size:25px;letter-spacing:-.8px;margin:5px 0 5px;color:#142541}.campushire-dashboard .heading-row p{font-size:12px;color:#718098;margin:0}.campushire-dashboard .demo-badge{font-size:10px;color:#526b8f;border:1px solid #d5e0ef;background:#edf3fb;border-radius:7px;padding:7px 10px;white-space:nowrap}.campushire-dashboard .demo-badge i{display:inline-block;width:6px;height:6px;background:#4c83e8;border-radius:50%;margin-right:6px;vertical-align:1px}.campushire-dashboard .filters-card,.campushire-dashboard .card,.campushire-dashboard .page-card{background:#fff;border:1px solid #e1e8f1;border-radius:9px;box-shadow:0 2px 7px #203b6005;min-width:0}.campushire-dashboard .filters-card{padding:13px 14px 14px;margin-bottom:16px}.campushire-dashboard .filters-heading{display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:12px;color:#314661}.campushire-dashboard .filters-heading button{margin-left:auto;background:transparent;border:0;color:#3d70c8;font-size:11px}.campushire-dashboard .filter-grid{display:grid;grid-template-columns:repeat(8,minmax(100px,1fr));gap:9px}.campushire-dashboard .filter-grid label{display:flex;flex-direction:column;gap:7px;color:#65758e;font-size:10px;min-width:0}.campushire-dashboard .filter-grid select{height:34px;min-width:0;width:100%;padding:0 8px;border:1px solid #dce4ed;border-radius:6px;background:#fff;color:#263a57;font-size:10px;outline-color:#6a98ed}.campushire-dashboard .dashboard-grid{display:grid;grid-template-columns:minmax(240px,1.02fr) minmax(360px,1.9fr) minmax(255px,1fr);gap:13px;align-items:stretch}.campushire-dashboard .card{padding:13px}.campushire-dashboard .card-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.campushire-dashboard .card-title h3{font-size:13px;letter-spacing:-.2px;margin:0;color:#172b49}.campushire-dashboard .card-title p{font-size:10px;color:#8a97a9;margin:5px 0 0}.campushire-dashboard .candidate-card{grid-column:1;grid-row:1 / span 2;padding:13px 10px 9px}.campushire-dashboard .candidate-table-head{display:grid;grid-template-columns:22px 1fr 48px;gap:7px;padding:9px 7px;background:#f7f9fc;border:1px solid #e8edf4;border-radius:5px;color:#75839a;font-size:9px}.campushire-dashboard .candidate-row{width:100%;display:grid;grid-template-columns:22px minmax(0,1fr) 43px;gap:7px;align-items:center;padding:11px 7px;border:0;border-bottom:1px solid #edf0f5;background:#fff;text-align:left;color:#263a59}.campushire-dashboard .candidate-row:hover{background:#f5f8fe}.campushire-dashboard .candidate-row.selected{background:#eaf2ff;box-shadow:inset 3px 0 #326be0}.campushire-dashboard .rank{font-size:11px;color:#536681;font-weight:600}.campushire-dashboard .candidate-name{display:flex;align-items:center;gap:7px;min-width:0}.campushire-dashboard .candidate-name>span{min-width:0}.campushire-dashboard .candidate-name b{font-size:10px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.campushire-dashboard .candidate-name small{display:block;color:#8794a7;font-size:9px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.campushire-dashboard .mini-avatar{width:27px;height:27px;display:grid;place-items:center;border-radius:8px;flex-shrink:0;font-size:8px;font-style:normal;font-weight:700}.campushire-dashboard .avatar-1{background:#e5edff;color:#3765b9}.campushire-dashboard .avatar-2{background:#e2f6ed;color:#268463}.campushire-dashboard .avatar-3{background:#fff0e1;color:#b86b2a}.campushire-dashboard .avatar-0{background:#f0e8ff;color:#7852b7}.campushire-dashboard .match-number{font-size:12px;color:#1e4f9d;text-align:right}.campushire-dashboard .card-footer{border-top:1px solid #edf0f5;margin-top:10px;padding-top:9px;display:flex;align-items:center;gap:6px;color:#8190a5;font-size:9px}.campushire-dashboard .score-card{grid-column:2;grid-row:1;padding:14px 15px 10px}.campushire-dashboard .selected-header{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #edf1f6;padding-bottom:11px}.campushire-dashboard .selected-header h2{font-size:17px;margin:5px 0 0;letter-spacing:-.4px}.campushire-dashboard .score-pill{display:inline-flex;align-items:center;gap:6px;background:#edf3ff;color:#4069ae;border-radius:20px;padding:6px 9px;font-size:10px;white-space:nowrap}.campushire-dashboard .score-pill b{font-size:13px;color:#245ac0}.campushire-dashboard .score-main{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:13px;align-items:center;padding:12px 0 9px}.campushire-dashboard .contribution-list h3{font-size:11px;margin:0 0 15px;color:#273d5d}.campushire-dashboard .contribution-list h3 small{font-size:9px;color:#8a97a9;font-weight:400}.campushire-dashboard .contribution-row{display:grid;grid-template-columns:minmax(100px,1.15fr) minmax(60px,1.7fr) 47px;gap:8px;align-items:center;margin:12px 0}.campushire-dashboard .contribution-row>span{font-size:10px;color:#52637d}.campushire-dashboard .contribution-row>b{font-size:10px;text-align:right;color:#465a78}.campushire-dashboard .contribution-row b small{color:#9aa6b5;font-size:9px;font-weight:400}.campushire-dashboard .progress-track{height:7px;background:#edf1f6;border-radius:10px;overflow:hidden}.campushire-dashboard .progress-track i{height:100%;display:block;border-radius:10px}.campushire-dashboard .blue{background:#4b83ed}.campushire-dashboard .green{background:#4bbd96}.campushire-dashboard .orange{background:#f4a45f}.campushire-dashboard .purple{background:#9670e8}.campushire-dashboard .cyan{background:#39b6c6}.campushire-dashboard .ring-section{display:flex;flex-direction:column;align-items:center;gap:10px;border-left:1px solid #edf1f6;padding-left:12px}.campushire-dashboard .score-ring{width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#4b83ed var(--score),#e8eef7 0);position:relative}.campushire-dashboard .score-ring:before{content:"";position:absolute;width:88px;height:88px;background:#fff;border-radius:50%}.campushire-dashboard .score-ring>div{position:relative;display:flex;align-items:baseline;gap:2px}.campushire-dashboard .score-ring strong{font-size:25px;letter-spacing:-1px}.campushire-dashboard .score-ring span{font-size:10px;color:#8a97a9}.campushire-dashboard .ring-section>span{font-size:10px;color:#76869d}.campushire-dashboard .formula-note{display:flex;gap:7px;align-items:flex-start;border-top:1px solid #edf1f6;padding-top:9px;font-size:9px;color:#7a8ba4;line-height:1.6}.campushire-dashboard .profile-card{grid-column:3;grid-row:1 / span 2}.campushire-dashboard .profile-heading{display:flex;gap:10px;align-items:center;padding-bottom:14px;border-bottom:1px solid #edf1f6}.campushire-dashboard .profile-avatar{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0}.campushire-dashboard .profile-heading h2{font-size:14px;margin:0 0 7px}.campushire-dashboard .small-pill{padding:4px 7px;font-size:9px}.campushire-dashboard .profile-facts{padding:12px 0;display:grid;grid-template-columns:1fr;gap:10px}.campushire-dashboard .profile-facts>div{display:flex;justify-content:space-between;gap:10px;font-size:10px}.campushire-dashboard .profile-facts span{color:#8290a4}.campushire-dashboard .profile-facts b{font-size:10px;color:#304563;text-align:right}.campushire-dashboard .rating{display:flex;align-items:center;gap:4px;color:#ca9139!important}.campushire-dashboard .profile-section{border-top:1px solid #edf1f6;padding:11px 0}.campushire-dashboard .profile-section h4{font-size:10px;margin:0 0 9px}.campushire-dashboard .tags{display:flex;flex-wrap:wrap;gap:5px}.campushire-dashboard .tags span{font-size:9px;padding:5px 7px;border-radius:20px;background:#edf3ff;color:#4c668d}.campushire-dashboard .tags .strength-tag{background:#edf7f3;color:#3c7b68}.campushire-dashboard .profile-actions{display:flex;gap:7px;padding-top:10px;border-top:1px solid #edf1f6}.campushire-dashboard .primary-button,.campushire-dashboard .secondary-button{display:flex;justify-content:center;align-items:center;gap:6px;padding:9px 10px;border-radius:6px;font-size:10px;font-weight:600}.campushire-dashboard .primary-button{background:#3269db;color:#fff;border:1px solid #3269db;flex:1}.campushire-dashboard .primary-button.saved{background:#e8f6ef;color:#24845e;border-color:#d2efdf}.campushire-dashboard .secondary-button{background:white;color:#4c6484;border:1px solid #dce5f0}.campushire-dashboard .secondary-button.saved{background:#edf3ff;color:#3269db}.campushire-dashboard .chart-card{padding:13px;min-width:0}.campushire-dashboard .distribution-card{grid-column:1;grid-row:3}.campushire-dashboard .comparison-card{grid-column:2;grid-row:3}.campushire-dashboard .mentor-card{grid-column:3;grid-row:3}.campushire-dashboard .skills-card{grid-column:1;grid-row:4}.campushire-dashboard .strengths-card{grid-column:2;grid-row:4}.campushire-dashboard .scatter-card{grid-column:3;grid-row:4}.campushire-dashboard .contribution-card{grid-column:1 / span 3;grid-row:5}.campushire-dashboard .chart-area{width:100%;height:175px}.campushire-dashboard .chart-area.tall{height:180px}.campushire-dashboard .legend{display:flex;flex-wrap:wrap;gap:10px;margin:-2px 0 5px}.campushire-dashboard .legend span{font-size:9px;color:#7b899d;display:flex;align-items:center;gap:4px}.campushire-dashboard .legend i{display:inline-block;width:7px;height:7px;border-radius:2px}.campushire-dashboard .mentor-row{display:grid;grid-template-columns:minmax(110px,1fr) minmax(45px,1.1fr) 24px;gap:7px;align-items:center;margin:17px 0}.campushire-dashboard .mentor-row span{font-size:9px;color:#53637d}.campushire-dashboard .mentor-row b{font-size:10px;text-align:right;color:#465a78}.campushire-dashboard .pie-wrap{display:flex;align-items:center;justify-content:center;gap:2px}.campushire-dashboard .pie-legend{display:grid;gap:10px}.campushire-dashboard .pie-legend div{font-size:9px;color:#64748b;display:flex;align-items:center;gap:6px}.campushire-dashboard .pie-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}.campushire-dashboard .score-table{border-collapse:collapse;width:100%;font-size:10px}.campushire-dashboard .score-table th{text-align:left;background:#f7f9fc;color:#7b899e;font-size:9px;font-weight:500;padding:9px 8px}.campushire-dashboard .score-table td{padding:9px 8px;border-bottom:1px solid #edf1f6;color:#52637c}.campushire-dashboard .score-table th:not(:first-child),.campushire-dashboard .score-table td:not(:first-child){text-align:right}.campushire-dashboard .total-row td{background:#f4f8fd;font-weight:700;color:#203b65}.campushire-dashboard .app-footer{display:flex;justify-content:space-between;gap:15px;padding:18px 2px 3px;color:#8190a5;font-size:9px}.campushire-dashboard .app-footer span{text-align:right}.campushire-dashboard .page-card{padding:20px;min-height:300px}.campushire-dashboard .page-card .card-title h3{font-size:17px}.campushire-dashboard .simple-list{margin-top:15px}.campushire-dashboard .simple-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #edf1f6}.campushire-dashboard .simple-main{display:flex;flex-direction:column;gap:4px;flex:1}.campushire-dashboard .simple-main b{font-size:12px}.campushire-dashboard .simple-main span{font-size:10px;color:#8491a5}.campushire-dashboard .simple-row>strong{font-size:12px;color:#2e63bf}.campushire-dashboard .text-button{border:0;background:transparent;color:#c15a61;font-size:10px}.campushire-dashboard .empty-state{padding:25px 10px;color:#8290a4;font-size:12px;text-align:center;line-height:1.6}.campushire-dashboard .compare-selectors{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.campushire-dashboard .compare-selectors label{display:flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid #e0e7f0;border-radius:7px;font-size:11px;color:#4e6079}.campushire-dashboard .compare-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.campushire-dashboard .compare-person{border:1px solid #e4eaf2;border-radius:8px;padding:16px;text-align:center}.campushire-dashboard .compare-person .profile-avatar{margin:auto}.campushire-dashboard .compare-person h3{font-size:12px}.campushire-dashboard .big-match{font-size:26px;font-weight:800;color:#3269db;margin-top:15px}.campushire-dashboard .compare-person>span{font-size:10px;color:#8290a4}.campushire-dashboard .compare-person hr{border:0;border-top:1px solid #edf1f6;margin:14px 0}.campushire-dashboard .compare-person p{display:flex;justify-content:space-between;font-size:10px;color:#718098}.campushire-dashboard .compare-person p b{color:#2d4262}.campushire-dashboard .analytics-page{display:grid;gap:14px}.campushire-dashboard .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.campushire-dashboard .metric-card{background:#fff;border:1px solid #e1e8f1;border-radius:9px;padding:16px;display:grid;grid-template-columns:30px 1fr;align-items:center;gap:6px}.campushire-dashboard .metric-card svg{grid-row:span 2;color:#4b83ed}.campushire-dashboard .metric-card span{font-size:10px;color:#8190a5}.campushire-dashboard .metric-card strong{font-size:23px;color:#1b3152}.campushire-dashboard .analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.campushire-dashboard .settings-page{max-width:950px}.campushire-dashboard .settings-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:17px 0;border-bottom:1px solid #edf1f6}.campushire-dashboard .settings-row b{font-size:12px}.campushire-dashboard .settings-row p{font-size:11px;color:#7c8ba0;line-height:1.6;margin:6px 0 0}.campushire-dashboard .settings-status{font-size:10px;color:#278263;background:#e9f7f0;padding:6px 9px;border-radius:20px;white-space:nowrap}@media (min-width:1500px){.campushire-dashboard .page-content{padding:27px 27px 16px}.campushire-dashboard .dashboard-grid{gap:15px}.campushire-dashboard .card{padding:15px}.campushire-dashboard .candidate-card{padding:15px 12px}.campushire-dashboard .chart-area{height:195px}.campushire-dashboard .chart-area.tall{height:205px}}@media (max-width:1250px){.campushire-dashboard .sidebar{width:190px}.campushire-dashboard .filter-grid{grid-template-columns:repeat(4,minmax(120px,1fr))}.campushire-dashboard .dashboard-grid{grid-template-columns:minmax(230px,1fr) minmax(340px,1.5fr)}.campushire-dashboard .candidate-card{grid-column:1;grid-row:1 / span 2}.campushire-dashboard .score-card{grid-column:2;grid-row:1}.campushire-dashboard .profile-card{grid-column:2;grid-row:2}.campushire-dashboard .distribution-card{grid-column:1;grid-row:3}.campushire-dashboard .comparison-card{grid-column:2;grid-row:3}.campushire-dashboard .mentor-card{grid-column:1;grid-row:4}.campushire-dashboard .skills-card{grid-column:2;grid-row:4}.campushire-dashboard .strengths-card{grid-column:1;grid-row:5}.campushire-dashboard .scatter-card{grid-column:2;grid-row:5}.campushire-dashboard .contribution-card{grid-column:1 / span 2;grid-row:6}}@media (max-width:800px){.campushire-dashboard .sidebar{width:62px;padding:14px 7px}.campushire-dashboard .brand{padding:0 7px 25px}.campushire-dashboard .brand>div:last-child,.campushire-dashboard .nav-item span,.campushire-dashboard .nav-count,.campushire-dashboard .sidebar-bottom>div{display:none}.campushire-dashboard .nav-item{justify-content:center;padding:0}.campushire-dashboard .sidebar-bottom{justify-content:center;padding:15px 0 0}.campushire-dashboard .topbar{padding:0 12px;gap:8px}.campushire-dashboard .college-select{display:none}.campushire-dashboard .recruiter-name{display:none}.campushire-dashboard .page-content{padding:17px 12px}.campushire-dashboard .heading-row{align-items:flex-start;flex-direction:column}.campushire-dashboard .demo-badge{white-space:normal}.campushire-dashboard .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.campushire-dashboard .dashboard-grid{grid-template-columns:1fr}.campushire-dashboard .candidate-card,.campushire-dashboard .score-card,.campushire-dashboard .profile-card,.campushire-dashboard .distribution-card,.campushire-dashboard .comparison-card,.campushire-dashboard .mentor-card,.campushire-dashboard .skills-card,.campushire-dashboard .strengths-card,.campushire-dashboard .scatter-card,.campushire-dashboard .contribution-card{grid-column:1;grid-row:auto}.campushire-dashboard .candidate-card{grid-row:auto}.campushire-dashboard .profile-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.campushire-dashboard .score-main{grid-template-columns:minmax(0,1fr) 110px}.campushire-dashboard .score-ring{width:98px;height:98px}.campushire-dashboard .score-ring:before{width:74px;height:74px}.campushire-dashboard .contribution-row{grid-template-columns:minmax(90px,1fr) minmax(50px,1fr) 42px}.campushire-dashboard .metric-grid{grid-template-columns:repeat(2,1fr)}.campushire-dashboard .analytics-grid{grid-template-columns:1fr}.campushire-dashboard .compare-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.campushire-dashboard .app-footer{flex-direction:column}.campushire-dashboard .app-footer span{text-align:left}}@media (max-width:430px){.campushire-dashboard .search-box{width:auto;flex:1}.campushire-dashboard .topbar{gap:6px}.campushire-dashboard .score-main{grid-template-columns:1fr}.campushire-dashboard .ring-section{border-left:0;border-top:1px solid #edf1f6;padding:12px 0 0}.campushire-dashboard .compare-grid{grid-template-columns:1fr}.campushire-dashboard .filter-grid{gap:8px}.campushire-dashboard .score-table{font-size:8px}.campushire-dashboard .score-table th,.campushire-dashboard .score-table td{padding:8px 4px}}
+.campushire-dashboard .campushire-logout{border:1px solid #dce4ee;background:#fff;color:#52627a;border-radius:7px;padding:8px 10px;font-size:11px;font-weight:600;white-space:nowrap}.campushire-dashboard .campushire-logout:hover{background:#f4f7fb}
+
+
+/* CampusHire visual restoration: tighter three-column grid, stronger headings */
+.campushire-dashboard .page-content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 22px 22px 18px;
+  box-sizing: border-box;
+}
+.campushire-dashboard .heading-row h1 {
+  color: #142b4d;
+  font-weight: 800;
+  letter-spacing: -0.45px;
+}
+.campushire-dashboard .heading-row p {
+  color: #526b8d;
+}
+.campushire-dashboard .filters-heading strong,
+.campushire-dashboard .card-title h3,
+.campushire-dashboard .contribution-list h3,
+.campushire-dashboard .profile-section h4,
+.campushire-dashboard .selected-header h2,
+.campushire-dashboard .profile-heading h2 {
+  color: #16365f;
+  font-weight: 800;
+}
+.campushire-dashboard .dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+  justify-content: stretch;
+  width: 100%;
+}
+.campushire-dashboard .dashboard-grid > .candidate-card,
+.campushire-dashboard .dashboard-grid > .score-card,
+.campushire-dashboard .dashboard-grid > .profile-card,
+.campushire-dashboard .dashboard-grid > .chart-card {
+  grid-row: auto;
+  grid-column: auto;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  align-self: start;
+  box-sizing: border-box;
+}
+.campushire-dashboard .dashboard-grid > .candidate-card { grid-column: 1; grid-row: 1; }
+.campushire-dashboard .dashboard-grid > .score-card { grid-column: 2; grid-row: 1; }
+.campushire-dashboard .dashboard-grid > .profile-card { grid-column: 3; grid-row: 1; }
+.campushire-dashboard .dashboard-grid > .distribution-card { grid-column: 1; }
+.campushire-dashboard .dashboard-grid > .comparison-card { grid-column: 2; }
+.campushire-dashboard .dashboard-grid > .mentor-card { grid-column: 3; }
+.campushire-dashboard .dashboard-grid > .skills-card { grid-column: 1; }
+.campushire-dashboard .dashboard-grid > .strengths-card { grid-column: 2; }
+.campushire-dashboard .dashboard-grid > .scatter-card { grid-column: 3; }
+.campushire-dashboard .dashboard-grid > .contribution-card { grid-column: 1 / -1; }
+.campushire-dashboard .candidate-card,
+.campushire-dashboard .score-card,
+.campushire-dashboard .profile-card,
+.campushire-dashboard .chart-card {
+  margin: 0;
+}
+.campushire-dashboard .card-title h3 {
+  font-size: 14px;
+  letter-spacing: -0.15px;
+}
+.campushire-dashboard .selected-header h2,
+.campushire-dashboard .profile-heading h2 {
+  -webkit-text-fill-color: #16365f;
+}
+@media (max-width: 1150px) {
+  .campushire-dashboard .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .campushire-dashboard .dashboard-grid > .candidate-card { grid-column: 1; grid-row: auto; }
+  .campushire-dashboard .dashboard-grid > .score-card { grid-column: 2; grid-row: auto; }
+  .campushire-dashboard .dashboard-grid > .profile-card { grid-column: 1 / -1; grid-row: auto; }
+  .campushire-dashboard .dashboard-grid > .distribution-card,
+  .campushire-dashboard .dashboard-grid > .mentor-card,
+  .campushire-dashboard .dashboard-grid > .skills-card,
+  .campushire-dashboard .dashboard-grid > .scatter-card { grid-column: auto; }
+  .campushire-dashboard .dashboard-grid > .comparison-card,
+  .campushire-dashboard .dashboard-grid > .strengths-card { grid-column: auto; }
+}
+@media (max-width: 720px) {
+  .campushire-dashboard .page-content { padding: 14px 12px; }
+  .campushire-dashboard .dashboard-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .campushire-dashboard .dashboard-grid > .candidate-card,
+  .campushire-dashboard .dashboard-grid > .score-card,
+  .campushire-dashboard .dashboard-grid > .profile-card,
+  .campushire-dashboard .dashboard-grid > .chart-card { grid-column: 1; grid-row: auto; }
+}
+
+
+/* Sidebar stays in place and keeps navigation grouped at the top while the page scrolls */
+.campushire-dashboard .app-shell {
+  align-items: flex-start;
+}
+.campushire-dashboard .sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  flex: 0 0 226px;
+  align-self: flex-start;
+}
+.campushire-dashboard .nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+.campushire-dashboard .nav-item {
+  flex: 0 0 42px;
+  min-height: 42px;
+}
+.campushire-dashboard .sidebar-bottom {
+  margin-top: auto;
+}
+
+/* Keep the dashboard cards compact and reduce visual gaps */
+.campushire-dashboard .dashboard-grid {
+  column-gap: 12px;
+  row-gap: 12px;
+  align-items: start;
+}
+.campushire-dashboard .dashboard-grid > .card {
+  margin: 0;
+  padding: 13px;
+  min-height: 0;
+}
+.campushire-dashboard .candidate-card {
+  grid-row: 1;
+}
+.campushire-dashboard .score-card {
+  grid-row: 1;
+}
+.campushire-dashboard .profile-card {
+  grid-row: 1;
+}
+.campushire-dashboard .dashboard-grid > .distribution-card,
+.campushire-dashboard .dashboard-grid > .comparison-card,
+.campushire-dashboard .dashboard-grid > .mentor-card {
+  grid-row: 2;
+}
+.campushire-dashboard .dashboard-grid > .skills-card,
+.campushire-dashboard .dashboard-grid > .strengths-card,
+.campushire-dashboard .dashboard-grid > .scatter-card {
+  grid-row: 3;
+}
+.campushire-dashboard .dashboard-grid > .contribution-card {
+  grid-row: 4;
+}
+@media (max-width: 1150px) {
+  .campushire-dashboard .sidebar {
+    flex-basis: 190px;
+  }
+  .campushire-dashboard .dashboard-grid > .candidate-card,
+  .campushire-dashboard .dashboard-grid > .score-card {
+    grid-row: 1;
+  }
+  .campushire-dashboard .dashboard-grid > .profile-card {
+    grid-row: 2;
+  }
+  .campushire-dashboard .dashboard-grid > .distribution-card,
+  .campushire-dashboard .dashboard-grid > .comparison-card,
+  .campushire-dashboard .dashboard-grid > .mentor-card,
+  .campushire-dashboard .dashboard-grid > .skills-card,
+  .campushire-dashboard .dashboard-grid > .strengths-card,
+  .campushire-dashboard .dashboard-grid > .scatter-card {
+    grid-row: auto;
+  }
+}
+@media (max-width: 720px) {
+  .campushire-dashboard .sidebar {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    flex-basis: auto;
+  }
+}
+
+
+/* ANALYTICS-ONLY FIX — keep the rest of CampusHire styling unchanged */
+.campushire-dashboard .analytics-page {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  align-items: start;
+  gap: 14px;
+}
+.campushire-dashboard .analytics-page .metric-grid {
+  align-self: start;
+  min-width: 0;
+}
+.campushire-dashboard .analytics-page .analytics-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start !important;
+  align-content: start !important;
+  grid-auto-rows: auto;
+  gap: 14px;
+}
+.campushire-dashboard .analytics-page .analytics-grid > * {
+  align-self: start !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+.campushire-dashboard .analytics-page .analytics-grid .chart-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  padding: 16px;
+}
+.campushire-dashboard .analytics-page .analytics-grid .card-title {
+  flex: 0 0 auto;
+  margin: 0 0 12px !important;
+}
+.campushire-dashboard .analytics-page .analytics-grid .chart-area,
+.campushire-dashboard .analytics-page .analytics-grid .chart-area.tall {
+  flex: 0 0 230px;
+  height: 230px !important;
+  min-height: 230px !important;
+  max-height: 230px;
+  margin-top: 0 !important;
+  align-self: stretch;
+}
+.campushire-dashboard .analytics-page .analytics-grid .recharts-responsive-container {
+  width: 100% !important;
+  min-width: 0;
+  min-height: 0 !important;
+}
+.campushire-dashboard .analytics-page .analytics-grid .recharts-wrapper {
+  max-width: 100%;
+}
+@media (max-width: 800px) {
+  .campushire-dashboard .analytics-page .analytics-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

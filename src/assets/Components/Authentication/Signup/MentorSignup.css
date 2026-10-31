@@ -1,0 +1,191 @@
+
+.mentor-signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f1f5ff 0%, #e9edff 50%, #f8f9ff 100%);
+  font-family: inherit;
+}
+
+.mentor-signup-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 42px;
+  background: #ffffff;
+  border: 1px solid #e8eaf3;
+  border-radius: 20px;
+  box-shadow: 0 18px 55px rgba(38, 50, 90, 0.10);
+}
+
+.mentor-signup-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 32px;
+  color: #202b50;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.mentor-signup-logo {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #3547a5;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.mentor-signup-heading {
+  margin-bottom: 26px;
+}
+
+.mentor-signup-eyebrow {
+  margin: 0 0 10px;
+  color: #5265bd;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.mentor-signup-heading h1 {
+  margin: 0 0 11px;
+  color: #202b50;
+  font-size: 29px;
+  line-height: 1.25;
+  font-weight: 750;
+}
+
+.mentor-signup-heading > p:last-child {
+  margin: 0;
+  color: #747b91;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.mentor-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.mentor-signup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mentor-signup-field label {
+  color: #343d5b;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.mentor-signup-field input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 47px;
+  padding: 0 15px;
+  border: 1px solid #dfe3ee;
+  border-radius: 9px;
+  outline: none;
+  background: #fbfcff;
+  color: #252d49;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mentor-signup-field input:focus {
+  border-color: #5265bd;
+  box-shadow: 0 0 0 3px rgba(82, 101, 189, 0.12);
+}
+
+.mentor-signup-field input::placeholder {
+  color: #a2a8b8;
+}
+
+.mentor-signup-error {
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid #f2caca;
+  border-radius: 8px;
+  background: #fff3f3;
+  color: #bd3434;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.mentor-signup-button {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 9px;
+  background: #3547a5;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.mentor-signup-button:hover:not(:disabled) {
+  background: #293987;
+  transform: translateY(-1px);
+}
+
+.mentor-signup-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.mentor-signup-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 25px;
+  color: #7a8093;
+  font-size: 13px;
+}
+
+.mentor-signup-footer a {
+  color: #3547a5;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mentor-signup-footer a:hover {
+  text-decoration: underline;
+}
+
+.mentor-signup-bottom {
+  margin: 30px 0 0;
+  padding-top: 19px;
+  border-top: 1px solid #edf0f5;
+  color: #a0a5b4;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .mentor-signup-page {
+    padding: 20px 14px;
+  }
+
+  .mentor-signup-card {
+    padding: 30px 23px;
+  }
+
+  .mentor-signup-heading h1 {
+    font-size: 25px;
+  }
+}

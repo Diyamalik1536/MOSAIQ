@@ -1,0 +1,258 @@
+{
+  "hero": {
+    "badge": "Chitkara University Students Only",
+    "lineOne": "Find People.",
+    "lineTwo": "Build Projects.",
+    "description": "Connect with students, collaborate on projects, and grow your skills together on TalentForge.",
+    "headlinePhrases": ["Grow Together.", "Build Together.", "Learn Together.", "Create Together."],
+    "videoLabel": "TalentForge product demonstration"
+  },
+  "faq": {
+    "eyebrow": "GOOD TO KNOW",
+    "title": "Frequently asked questions",
+    "description": "A few helpful details about finding people and building together on TalentForge.",
+    "items": [
+      {
+        "id": "about",
+        "question": "What is TalentForge?",
+        "answer": "TalentForge helps students discover peers with complementary skills, explore student-built projects, and find opportunities to work together."
+      },
+      {
+        "id": "eligibility",
+        "question": "Who can use TalentForge?",
+        "answer": "The current experience is presented for Chitkara University students. The site displays student and project examples to help you explore the platform."
+      },
+      {
+        "id": "discover",
+        "question": "How can I discover other students?",
+        "answer": "Open Discover Talent, then search by a student's name, skill, or university. You can also narrow the visible matches with the skill filters and select a profile to see its matching details."
+      },
+      {
+        "id": "matching",
+        "question": "How does student matching work?",
+        "answer": "The matching view brings together student profiles and highlights relevant or complementary skills using the profiles shown in the experience. It is an exploratory guide, not a guarantee of compatibility or a scored ranking."
+      },
+      {
+        "id": "projects",
+        "question": "How do I explore or join a project?",
+        "answer": "Use the project search, category, and technology filters to find an idea. Open a project card to read its details and any listed collaboration roles. The request button currently shows an on-page confirmation."
+      },
+      {
+        "id": "profile",
+        "question": "Can I showcase my skills and projects?",
+        "answer": "Student cards can show a profile's skills, interests, projects, collaboration goals, and portfolio links. The current public experience is a showcase; account editing is not available here."
+      },
+      {
+        "id": "connect",
+        "question": "What happens when I select Connect?",
+        "answer": "The matching view updates the selected profile's connection status in this browser. It does not start a chat or send a message from this public demo."
+      },
+      {
+        "id": "mentors",
+        "question": "Are mentor and learning-resource features available?",
+        "answer": "Mentors and Resources appear in the navigation, but their dedicated experiences are not currently available on this site."
+      },
+      {
+        "id": "language",
+        "question": "How do I change the website language?",
+        "answer": "Open the language menu in the navigation and choose English, हिन्दी, or ਪੰਜਾਬੀ. Your choice is saved in this browser and restored on your next visit."
+      }
+    ]
+  },
+  "matching": {
+    "titleBefore": "Students are the stars. Skills form",
+    "titleHighlight": "constellations",
+    "searchRegion": "Filter matching builders",
+    "searchLabel": "Search builders",
+    "clearSearch": "Clear search",
+    "skillFilters": "Skill filters",
+    "constellation": "Student constellation visualizer",
+    "categoryLabels": {
+      "All": "All",
+      "Web": "Web",
+      "AI/ML": "AI/ML",
+      "Mobile": "Mobile",
+      "Cloud": "Cloud",
+      "Design": "Design"
+    },
+    "allTechnologies": "All Tech",
+    "centralAnchorLabel": "Central profile: {{name}}, {{major}}",
+    "candidateLabel": "Match candidate: {{name}}, {{major}} at {{college}}. Select to focus match details.",
+    "viewProfileLabel": "View full profile of {{name}}",
+    "connectLabel": "Connect with {{name}}. Current status: {{status}}",
+    "connectionStatus": {
+      "none": "not connected",
+      "pending": "requesting",
+      "connected": "connected"
+    },
+    "analysis": {
+      "stu_002": {
+        "synergyTitle": "Frontend Engineering ↔ UI/UX Design Systems",
+        "synergyType": "Complementary strengths",
+        "collaborationReason": "Aisha is seeking design-led full-stack partners; Misthi builds scalable React tools.",
+        "hubLabel": "UI/UX & Design Systems"
+      },
+      "stu_003": {
+        "synergyTitle": "Web Engineering ↔ Machine Learning & NLP",
+        "synergyType": "Complementary technologies",
+        "collaborationReason": "Rahul needs web developers to deploy and visualize ML models and resume screeners.",
+        "hubLabel": "AI/ML & Python Pipelines"
+      },
+      "stu_004": {
+        "synergyTitle": "Client Applications ↔ Cloud Microservices & AWS",
+        "synergyType": "Full-stack co-founders",
+        "collaborationReason": "Priya architects high-throughput backend services for student campus platforms.",
+        "hubLabel": "Cloud Backend & Spring Boot"
+      },
+      "stu_005": {
+        "synergyTitle": "Web Platform ↔ Mobile Apps & Flutter",
+        "synergyType": "Cross-platform collaboration",
+        "collaborationReason": "Karan builds mobile companion apps and seeks design and backend collaborators.",
+        "hubLabel": "Mobile Apps & REST APIs"
+      }
+    }
+  },
+  "projects": {
+    "pageIntroduction": "Project directory",
+    "directoryEyebrow": "THE TALENTFORGE PROJECT DIRECTORY",
+    "titleLineOne": "Ideas become real when",
+    "titleLineTwo": "people build together.",
+    "description": "Explore student-built projects, discover new approaches, and find collaborators who can help turn your next idea into something meaningful.",
+    "explore": "Explore Projects",
+    "findCollaborators": "Find Collaborators",
+    "searchPlaceholder": "Search projects by title, stack, or problem...",
+    "searchLabel": "Search projects by title or stack",
+    "clearSearch": "Clear search query",
+    "categories": "Filter by category",
+    "technologies": "Filter by technology",
+    "recruitingOnly": "Recruiting Only",
+    "studentProjects": "Student Projects",
+    "campusBuilders": "Campus Builders",
+    "openRoles": "Open Roles",
+    "categoryCount": "Categories",
+    "connectedIdeas": "CONNECTED IDEAS",
+    "studentBuiltProjects": "STUDENT-BUILT PROJECTS",
+    "openCaseStudy": "Open {{title}} case study",
+    "contributors": "{{count}} project contributors",
+    "quickPreview": "Quick preview",
+    "viewProject": "View project",
+    "showcaseIntroduction": "Project showcase",
+    "showcaseKicker": "THE WORK BEING BUILT",
+    "showcaseTitle": "Ideas in progress. Projects taking shape.",
+    "showcaseDescription": "Student projects across web systems, machine learning, mobile tools, and accessible design.",
+    "gallery": "Project discovery gallery",
+    "showing": "Showing {{count}} {{item}}",
+    "project": "project",
+    "projects": "projects",
+    "inCategory": "in {{category}}",
+    "withTechnology": "with {{technology}}",
+    "resetFilters": "Reset filters",
+    "emptyTitle": "No projects match your filters",
+    "emptyDescription": "Try another search term or clear the filters to see more projects.",
+    "resetAll": "Reset all filters",
+    "caseStudyLabel": "View case study for {{title}}",
+    "exploreCaseStudy": "Explore case study",
+    "seeking": "Seeking: {{role}}",
+    "collaborator": "Collaborator",
+    "contributorTitle": "{{name}} ({{college}})",
+    "preview": "Preview",
+    "previewTitle": "Quick preview without leaving the page",
+    "caseStudy": "Case study",
+    "bridge": "Student collaborators",
+    "bridgeSteps": [
+      "01 Discover Projects",
+      "02 Inspect Stack & Roles",
+      "03 Find Collaborators",
+      "04 Build Together"
+    ],
+    "community": "COMMUNITY & TALENT",
+    "bridgeTitle": "Find the people who can help you build it.",
+    "bridgeDescription": "Discover students with complementary skills, explore open collaborator roles, and bring campus project ideas to life together.",
+    "viewStudentProfile": "View profile for {{name}}",
+    "launchMatching": "Explore the student constellation"
+  },
+  "projectModal": {
+    "quickPreview": "QUICK PREVIEW",
+    "recruiting": "Recruiting Teammates",
+    "close": "Close project preview",
+    "overview": "Project overview",
+    "problemSolved": "Problem addressed",
+    "technicalHighlights": "Technical highlights",
+    "technologyStack": "Technology stack",
+    "collaborationNeeds": "Collaboration needs",
+    "contributors": "Project contributors",
+    "lead": "Lead",
+    "viewStudent": "View student profile",
+    "ledBy": "Project led by {{name}} ({{college}})",
+    "readCaseStudy": "Read full case study",
+    "requestSent": "Collaboration request noted",
+    "requestJoin": "Request to join team"
+  },
+  "caseStudy": {
+    "notFound": "Project not found",
+    "notFoundDescription": "The project \"{{id}}\" could not be found in the directory.",
+    "returnDirectory": "Return to project directory",
+    "backDirectory": "Back to project directory",
+    "recruiting": "Recruiting teammates",
+    "leadBuilder": "LEAD BUILDER",
+    "clickProfile": "Select to view student profile",
+    "contributors": "CONTRIBUTORS",
+    "viewProfile": "View profile for {{name}}",
+    "timelineContext": "TIMELINE & CONTEXT",
+    "activeAcademic": "Active academic project",
+    "campusBuild": "TalentForge campus build",
+    "projectStatus": "PROJECT STATUS",
+    "requestSent": "Interest noted",
+    "requestJoin": "Request to join team",
+    "executiveOverview": "EXECUTIVE OVERVIEW",
+    "chapter": "CHAPTER",
+    "keyTakeaway": "KEY TAKEAWAY",
+    "chapters": "Project chapters",
+    "details": "Project details",
+    "systemBlueprint": "SYSTEM BLUEPRINT",
+    "architectureStack": "System architecture & tech stack",
+    "completeStack": "COMPLETE TECHNOLOGY STACK",
+    "engineering": "ENGINEERING",
+    "engineeringHighlights": "Core engineering highlights",
+    "technicalDecisions": "Technical decisions that define the project.",
+    "highlightNote": "Details shown here are provided with this project.",
+    "collaborate": "COLLABORATE",
+    "teamRoles": "Team & open collaboration roles",
+    "recruitingPositions": "ACTIVELY RECRUITING POSITIONS",
+    "applyRole": "Apply for this role",
+    "currentContributors": "CURRENT PROJECT CONTRIBUTORS",
+    "exploreCaseStudy": "Explore case study",
+    "nextProject": "Next project",
+    "applyNoted": "Interest noted"
+  },
+  "footer": {
+    "logo": "TalentForge home",
+    "description": "Where student talent meets real collaboration. Discover collaborators, build projects, and grow your skills together.",
+    "highlights": ["Connect with students", "Build real projects", "Grow your skills"],
+    "groups": [
+      {
+        "title": "EXPLORE",
+        "links": ["Browse Students", "Discover Projects", "Find Collaborators", "Explore Skills", "Mentors"]
+      },
+      {
+        "title": "FOR STUDENTS",
+        "links": ["Create Your Profile", "Post a Project", "Find a Team", "Build Your Portfolio", "Get Mentor Feedback"]
+      },
+      {
+        "title": "PLATFORM",
+        "links": ["About TalentForge", "How It Works", "Features", "TalentForge Pro", "Community Guidelines", "Blog"]
+      },
+      {
+        "title": "SUPPORT & LEGAL",
+        "links": ["Help Center", "Contact Us", "FAQs", "Privacy Policy", "Terms of Service", "Report a Problem"]
+      }
+    ],
+    "new": "NEW",
+    "legalNavigation": "Legal navigation",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "community": "Community Guidelines",
+    "social": "Social media",
+    "copyright": "© {{year}} TalentForge. All rights reserved."
+  }
+}

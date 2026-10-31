@@ -1,0 +1,1066 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* ==========================================================================
+
+   Root Layout Container
+
+   ========================================================================== */
+
+.data {
+
+    min-height: 100vh;
+
+    min-height: 100dvh;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 40px;
+
+    background: var(--app-bg, #f7f7fb);
+
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    color: var(--text-primary, #15153d);
+
+}
+
+
+
+/* ==========================================================================
+
+   Desktop Left Promotional Brand Card
+
+   ========================================================================== */
+
+.card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    height: 650px;
+
+    border-radius: 24px;
+
+    background-color: #241e68;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 36px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow: 0 20px 50px rgba(36, 30, 104, 0.18);
+
+}
+
+
+
+.card img {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    top: 0;
+
+    left: 0;
+
+    opacity: 0.95;
+
+}
+
+
+
+.card-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+
+.card h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(28px, 3.2vw, 38px);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+
+.card-description {
+
+    margin-top: 14px;
+
+}
+
+
+
+.card-description p {
+
+    margin: 4px 0;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    line-height: 1.5;
+
+}
+
+
+
+.feature {
+
+    margin-top: 16px;
+
+}
+
+
+
+.feature-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+
+.feature-title i {
+
+    font-size: 18px;
+
+    color: #a78bfa;
+
+}
+
+
+
+.feature-title span {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+
+.feature p {
+
+    margin: 4px 0 0 28px;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    color: rgba(255, 255, 255, 0.75);
+
+}
+
+
+
+/* ==========================================================================
+
+   Login Box (Form Container)
+
+   ========================================================================== */
+
+.login-box {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    background: var(--surface, #ffffff);
+
+    border: 1px solid var(--border, #e5e7eb);
+
+    border-radius: 24px;
+
+    padding: 38px 40px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+/* Desktop language selector container */
+
+.desktop-lang-wrapper {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* Mobile brand header (Hidden on desktop) */
+
+.mobile-brand-header {
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.mobile-brand-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+
+.mobile-brand-logo img {
+
+    width: 32px;
+
+    height: 32px;
+
+    object-fit: contain;
+
+}
+
+
+
+.mobile-brand-logo span {
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+
+    color: var(--text-primary, #15153d);
+
+}
+
+
+
+/* Header typography */
+
+.head {
+
+    width: 100%;
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.head h1 {
+
+    margin: 0 0 6px;
+
+    color: var(--text-primary, #15153d);
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+
+    line-height: 1.2;
+
+}
+
+
+
+.head p {
+
+    margin: 0;
+
+    color: var(--text-muted, #66667d);
+
+    font-size: 14.5px;
+
+    font-weight: 500;
+
+}
+
+
+
+/* ==========================================================================
+
+   Form & Input Elements
+
+   ========================================================================== */
+
+.input {
+
+    width: 100%;
+
+}
+
+
+
+.form-sign {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+
+    width: 100%;
+
+}
+
+
+
+.form-group label {
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    color: var(--text-primary, #25254b);
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+
+.input-icon {
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--text-muted, #77778d);
+
+    font-size: 17px;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+}
+
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 46px 0 46px;
+
+    border: 1.5px solid var(--border, #dedee8);
+
+    border-radius: 12px;
+
+    background: var(--surface, #ffffff);
+
+    color: var(--text-primary, #1d1d3d);
+
+    font-size: 16px; /* Crucial: 16px prevents iOS Safari viewport auto-zoom */
+
+    outline: none;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+
+
+.input-wrapper input:focus {
+
+    border-color: var(--brand, #5b2be0);
+
+    box-shadow: 0 0 0 4px rgba(91, 43, 224, 0.12);
+
+}
+
+
+
+.input-wrapper input::placeholder {
+
+    color: var(--text-soft, #9a9aaa);
+
+    font-size: 14.5px;
+
+}
+
+
+
+/* Password reveal toggle button */
+
+.toggle-password-btn {
+
+    position: absolute;
+
+    right: 6px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-muted, #77778d);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    border-radius: 8px;
+
+    transition: color 0.15s ease, background-color 0.15s ease;
+
+    z-index: 2;
+
+}
+
+
+
+.toggle-password-btn:hover {
+
+    color: var(--brand, #5b2be0);
+
+    background-color: var(--brand-soft, rgba(91, 43, 224, 0.08));
+
+}
+
+
+
+/* ==========================================================================
+
+   Form Options Row (Remember Me & Forgot Password)
+
+   ========================================================================== */
+
+.form-options-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 2px;
+
+    margin-bottom: 22px;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+
+.remember-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 44px; /* WCAG touch target */
+
+    cursor: pointer;
+
+    font-size: 13.5px;
+
+    font-weight: 550;
+
+    color: var(--text-primary, #374151);
+
+    user-select: none;
+
+}
+
+
+
+.checkbox-input {
+
+    width: 18px;
+
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: var(--brand, #5b2be0);
+
+    cursor: pointer;
+
+}
+
+
+
+.forgot-password-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--brand, #5b2be0);
+
+    font-size: 13.5px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    padding: 8px 4px;
+
+    min-height: 44px; /* WCAG touch target */
+
+    display: inline-flex;
+
+    align-items: center;
+
+    border-radius: 6px;
+
+    transition: opacity 0.15s ease;
+
+}
+
+
+
+.forgot-password-btn:hover {
+
+    text-decoration: underline;
+
+    opacity: 0.9;
+
+}
+
+
+
+/* ==========================================================================
+
+   Action Buttons
+
+   ========================================================================== */
+
+.btn-submit {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, var(--brand, #5123d8), var(--brand-strong, #6a31e8));
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 18px rgba(91, 43, 224, 0.22);
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+}
+
+
+
+.btn-submit:hover:not(:disabled) {
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 9px 24px rgba(91, 43, 224, 0.28);
+
+}
+
+
+
+.btn-submit:active:not(:disabled) {
+
+    transform: scale(0.985);
+
+}
+
+
+
+.btn-submit:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+}
+
+
+
+/* ==========================================================================
+
+   Divider
+
+   ========================================================================== */
+
+.divider {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 22px 0 18px;
+
+}
+
+
+
+.divider::before,
+
+.divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: var(--border, #dedee8);
+
+}
+
+
+
+.divider span {
+
+    color: var(--text-muted, #7c7c94);
+
+    font-size: 12px;
+
+    font-weight: 550;
+
+    white-space: nowrap;
+
+    text-transform: lowercase;
+
+}
+
+
+
+/* ==========================================================================
+
+   Social Login & Signup Footer
+
+   ========================================================================== */
+
+.google {
+
+    width: 100%;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border: 1.5px solid var(--border, #dedee8);
+
+    border-radius: 12px;
+
+    background: var(--surface, #ffffff);
+
+    color: var(--text-primary, #282846);
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+
+}
+
+
+
+.google:hover:not(:disabled) {
+
+    border-color: var(--brand, #c8c5d9);
+
+    background: var(--surface-hover, #fafafd);
+
+    box-shadow: 0 4px 14px rgba(24, 24, 60, 0.05);
+
+}
+
+
+
+.google:active:not(:disabled) {
+
+    transform: scale(0.985);
+
+}
+
+
+
+.google:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+}
+
+
+
+.google i {
+
+    font-size: 18px;
+
+}
+
+
+
+.signup {
+
+    margin: 24px 0 0;
+
+    text-align: center;
+
+    color: var(--text-muted, #69697d);
+
+    font-size: 13.5px;
+
+}
+
+
+
+.signup button {
+
+    padding: 4px 6px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--brand, #5b2be0);
+
+    font-size: 13.5px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+
+    transition: text-decoration 0.15s ease;
+
+}
+
+
+
+.signup button:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* ==========================================================================
+
+   Responsive Viewports (Mobile-First Overhaul)
+
+   ========================================================================== */
+
+
+
+/* Tablet Breakpoint (<= 900px): Remove large billboard card */
+
+@media (max-width: 900px) {
+
+    .card {
+
+        display: none !important;
+
+    }
+
+
+
+    .data {
+
+        padding: 32px 24px;
+
+    }
+
+
+
+    .desktop-lang-wrapper {
+
+        display: none;
+
+    }
+
+
+
+    .mobile-brand-header {
+
+        display: flex;
+
+    }
+
+}
+
+
+
+/* Mobile Breakpoint (<= 768px): Seamless full-width natural container */
+
+@media (max-width: 768px) {
+
+    .data {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 24px 16px;
+
+        min-height: 100dvh;
+
+    }
+
+
+
+    .login-box {
+
+        max-width: 430px;
+
+        border: none;
+
+        background: transparent;
+
+        padding: 8px 4px;
+
+        box-shadow: none;
+
+    }
+
+
+
+    .head h1 {
+
+        font-size: 26px;
+
+        letter-spacing: -0.4px;
+
+    }
+
+
+
+    .head p {
+
+        font-size: 13.5px;
+
+    }
+
+
+
+    .form-group {
+
+        margin-bottom: 16px;
+
+    }
+
+
+
+    .input-wrapper input {
+
+        height: 50px;
+
+        font-size: 16px; /* Retains 16px strictly */
+
+    }
+
+
+
+    .btn-submit,
+
+    .google {
+
+        height: 50px;
+
+    }
+
+}
+
+
+
+/* Small Phones Breakpoint (<= 380px) */
+
+@media (max-width: 380px) {
+
+    .data {
+
+        padding: 20px 12px;
+
+    }
+
+
+
+    .head h1 {
+
+        font-size: 23px;
+
+    }
+
+
+
+    .form-options-row {
+
+        gap: 6px;
+
+    }
+
+
+
+    .remember-label,
+
+    .forgot-password-btn {
+
+        font-size: 12.5px;
+
+    }
+
+}
+
+
+

@@ -1,0 +1,168 @@
+/*MAIN BRAND PANEL*/
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/*IMAGE LAYER*/
+
+.bg_image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.back_image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/*LOGO LAYER*/
+
+.header_logo {
+    position: absolute;
+
+    top: 32px;
+    left: 36px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signup_logo {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+}
+
+.signup_brand_name {
+    color: white;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+/*TEXT ON TOP OF IMAGE*/
+
+.bg_text {
+    position: absolute;
+    z-index: 3;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+    color: white;
+}
+
+.bg_text h1 {
+    margin: 0 0 16px;
+
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    max-width: 600px;
+}
+
+.bg_text h3 {
+    margin: 0;
+
+    max-width: 500px;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: clamp(15px, 1.4vw, 19px);
+    line-height: 1.6;
+
+    font-weight: 400;
+}
+
+
+/*TABLET*/
+
+@media (max-width: 900px) {
+
+    .header_logo {
+        top: 26px;
+        left: 28px;
+    }
+
+    .bg_text {
+        left: 7%;
+        top: 50%;
+    }
+
+    .bg_text h1 {
+        font-size: 40px;
+    }
+
+    .bg_text h3 {
+        font-size: 16px;
+    }
+}
+
+
+/*MOBILE */
+
+@media (max-width: 600px) {
+
+    .main {
+        height: 45vh;
+        min-height: 400px;
+    }
+
+    .back_image {
+        object-position: center;
+    }
+
+    .header_logo {
+        top: 20px;
+        left: 20px;
+    }
+
+    .signup_logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .signup_brand_name {
+        font-size: 18px;
+    }
+
+    .bg_text {
+        left: 7%;
+        top: 50%;
+        width: 86%;
+    }
+
+    .bg_text h1 {
+        margin-bottom: 10px;
+
+        font-size: 29px;
+    }
+
+    .bg_text h3 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}

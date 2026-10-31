@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "badge": "ਸਿਰਫ਼ ਚਿਤਕਾਰਾ ਯੂਨੀਵਰਸਿਟੀ ਦੇ ਵਿਦਿਆਰਥੀਆਂ ਲਈ",
+    "title": "ਲੋਕਾਂ ਨਾਲ ਜੁੜੋ। ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ। ਇਕੱਠੇ ਅੱਗੇ ਵਧੋ।",
+    "description": "ਵਿਦਿਆਰਥੀਆਂ ਨਾਲ ਜੁੜੋ, ਹੁਨਰ ਲੱਭੋ ਅਤੇ ਮਿਲ ਕੇ ਲਾਭਦਾਇਕ ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ।",
+    "getStarted": "ਸ਼ੁਰੂ ਕਰੋ",
+    "exploreProjects": "ਪ੍ਰੋਜੈਕਟ ਵੇਖੋ"
+  },
+  "capabilitySelector": {
+    "eyebrow": "ਇੱਕ ਕੈਂਪਸ। ਬਣਾਉਣ ਦੇ ਕਈ ਰਾਹ।",
+    "heading": "TalentForge 'ਤੇ ਆਪਣਾ ਅਗਲਾ ਕਦਮ ਲੱਭੋ।",
+    "description": "ਆਪਣੇ ਆਲੇ-ਦੁਆਲੇ ਦੇ ਲੋਕਾਂ, ਪ੍ਰੋਜੈਕਟਾਂ ਅਤੇ ਮੌਕਿਆਂ ਨੂੰ ਲੱਭੋ।",
+    "hint": "ਖੋਜਣ ਲਈ ਇੱਕ ਯੋਗਤਾ ਚੁਣੋ",
+    "capabilities": {
+      "discoverTalent": {
+        "label": "ਪ੍ਰਤਿਭਾ ਲੱਭੋ",
+        "description": "ਉਹਨਾਂ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮਿਲੋ ਜਿਨ੍ਹਾਂ ਦੇ ਹੁਨਰ ਤੁਹਾਡੇ ਹੁਨਰਾਂ ਦੇ ਪੂਰਕ ਹਨ।"
+      },
+      "findCollaborators": {
+        "label": "ਸਹਿਯੋਗੀ ਲੱਭੋ",
+        "description": "ਉਹਨਾਂ ਲੋਕਾਂ ਨਾਲ ਜੁੜੋ ਜੋ ਤੁਹਾਡੇ ਨਾਲ ਮਿਲ ਕੇ ਬਣਾਉਣ ਲਈ ਤਿਆਰ ਹਨ।"
+      },
+      "exploreProjects": {
+        "label": "ਪ੍ਰੋਜੈਕਟ ਵੇਖੋ",
+        "description": "ਨਵੇਂ ਵਿਚਾਰਾਂ, ਟੀਮਾਂ ਅਤੇ ਬਣ ਰਹੇ ਪ੍ਰੋਜੈਕਟਾਂ ਨੂੰ ਲੱਭੋ।"
+      },
+      "buildTogether": {
+        "label": "ਮਿਲ ਕੇ ਬਣਾਓ",
+        "description": "ਸਾਂਝੀ ਦਿਲਚਸਪੀ ਨੂੰ ਹਕੀਕਤ ਵਿੱਚ ਬਦਲੋ।"
+      }
+    }
+  },
+  "studentMatching": {
+    "eyebrow": "ਵਿਦਿਆਰਥੀ ਮੇਲ ਇੰਜਨ",
+    "title": "ਵਿਦਿਆਰਥੀ ਤਾਰੇ ਹਨ। ਹੁਨਰ ਨਕਸ਼ਤਰ ਬਣਾਉਂਦੇ ਹਨ।",
+    "description": "ਪ੍ਰੋਜੈਕਟ ਸਹਿਯੋਗੀ, ਪੂਰਕ ਹੁਨਰ ਅਤੇ ਤਸਦੀਕਸ਼ੁਦਾ ਕੈਂਪਸ ਨਿਰਮਾਤਾਵਾਂ ਦੀ ਖੋਜ ਕਰੋ।",
+    "searchPlaceholder": "ਨਾਮ, ਹੁਨਰ ਜਾਂ ਯੂਨੀਵਰਸਿਟੀ ਰਾਹੀਂ ਖੋਜੋ...",
+    "filterAll": "ਸਾਰੇ ਨਿਰਮਾਤਾ",
+    "filterReact": "ਰਿਐਕਟ ਅਤੇ ਫਰੰਟਐਂਡ",
+    "filterDesign": "ਯੂਆਈ/ਯੂਐਕਸ ਅਤੇ ਡਿਜ਼ਾਈਨ",
+    "filterAI": "ਏਆਈ/ਐਮਐਲ ਅਤੇ ਡੇਟਾ",
+    "filterBackend": "ਕਲਾਊਡ ਅਤੇ ਬੈਕਐਂਡ",
+    "filterMobile": "ਮੋਬਾਈਲ ਅਤੇ ਫਲੱਟਰ",
+    "centralAnchor": "ਸਰਗਰਮ ਐਂਕਰ",
+    "matchAnalysis": "ਮੇਲ ਵਿਸ਼ਲੇਸ਼ਣ",
+    "complementaryFocus": "ਪੂਰਕ ਫੋਕਸ",
+    "sharedSkills": "ਸਾਂਝੇ ਹੁਨਰ",
+    "connect": "ਜੁੜੋ",
+    "connecting": "ਬੇਨਤੀ ਜਾਰੀ...",
+    "connected": "ਜੁੜ ਗਏ ✓",
+    "viewProfile": "ਪ੍ਰੋਫ਼ਾਈਲ ਵੇਖੋ",
+    "networkActive": "ਹੁਨਰ ਨਕਸ਼ਤਰ ਸਰਗਰਮ",
+    "clickToExplore": "ਨਕਸ਼ਤਰ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਨ ਲਈ ਕਾਰਡ ਚੁਣੋ"
+  },
+  "talentStream": {
+    "eyebrow": "ਟੈਲੈਂਟ ਸਟ੍ਰੀਮ",
+    "title": "TalentForge ਦੇ ਨਿਰਮਾਤਾਵਾਂ ਨੂੰ ਮਿਲੋ।",
+    "viewportLabel": "ਵਿਦਿਆਰਥੀ ਨਿਰਮਾਤਾ ਕਾਰਡਾਂ ਦੀ ਲਗਾਤਾਰ ਝਲਕ",
+    "cardDescription": "{{name}}, {{college}} ਵਿੱਚ {{major}}। {{action}}",
+    "cardFlipped": "ਕਾਰਡ ਉੱਤੇ ਵੇਰਵੇ ਹਨ।",
+    "cardFlipHint": "ਕਾਰਡ ਦਾ ਅਗਲਾ ਪਾਸਾ। ਪਲਟਣ ਲਈ ਹੋਵਰ ਕਰੋ ਜਾਂ Enter ਦਬਾਓ।",
+    "portfolio": "ਪੋਰਟਫੋਲੀਓ",
+    "description": "ਅਸਲੀ ਵਿਦਿਆਰਥੀ। ਅਸਲੀ ਹੁਨਰ। ਅਸਲੀ ਸਹਿਯੋਗ।",
+    "tagline": "ਲਾਈਵ 3D ਨਿਰਮਾਤਾ ਸਟ੍ਰੀਮ",
+    "flipToExplore": "ਪਲਟਣ ਲਈ ਕਰਸਰ ਲਿਆਓ",
+    "tapToFlip": "ਪਲਟਣ ਲਈ ਟੈਪ ਕਰੋ",
+    "flipBack": "ਵਾਪਸ ਪਲਟੋ",
+    "lookingFor": "ਲੋੜ ਹੈ",
+    "coreSkills": "ਮੁੱਖ ਹੁਨਰ",
+    "interests": "ਦਿਲਚਸਪੀਆਂ",
+    "projects": "ਪ੍ਰੋਜੈਕਟ",
+    "links": "ਲਿੰਕ ਅਤੇ ਪੋਰਟਫੋਲੀਓ",
+    "viewProfile": "ਪੂਰੀ ਪ੍ਰੋਫ਼ਾਈਲ ਵੇਖੋ",
+    "connect": "TalentForge 'ਤੇ ਜੁੜੋ",
+    "status": {
+      "open": "ਉਪਲਬਧ",
+      "open_to_collaborate": "ਸਹਿਯੋਗ ਲਈ ਤਿਆਰ",
+      "busy": "ਇਸ ਵੇਲੇ ਰੁਝੇਵੇਂ ਵਿੱਚ"
+    },
+    "modal": {
+      "profile": "ਨਿਰਮਾਤਾ ਪ੍ਰੋਫ਼ਾਈਲ",
+      "institution": "ਸੰਸਥਾ",
+      "majorAndYear": "ਅਕਾਦਮਿਕ ਵੇਰਵਾ",
+      "skills": "ਮੁੱਖ ਹੁਨਰ",
+      "interests": "ਦਿਲਚਸਪੀਆਂ",
+      "projects": "ਪ੍ਰੋਜੈਕਟ ਅਤੇ ਤਕਨੀਕ",
+      "collabGoal": "ਲੋੜ ਹੈ",
+      "links": "ਲਿੰਕ ਅਤੇ ਪੋਰਟਫੋਲੀਓ",
+      "connect": "TalentForge 'ਤੇ ਜੁੜੋ",
+      "close": "ਬੰਦ ਕਰੋ"
+    }
+  },
+  "browseProjects": {
+    "eyebrow": "ਟੈਲੈਂਟਫੋਰਜ ਪ੍ਰੋਜੈਕਟ ਡਾਇਰੈਕਟਰੀ",
+    "title": "ਜਦੋਂ ਲੋਕ ਇਕੱਠੇ ਬਣਾਉਂਦੇ ਹਨ, ਤਾਂ ਵਿਚਾਰ ਅਸਲ ਬਣਦੇ ਹਨ।",
+    "description": "ਵਿਦਿਆਰਥੀਆਂ ਦੁਆਰਾ ਬਣਾਏ ਪ੍ਰੋਜੈਕਟ ਦੇਖੋ, ਨਵੇਂ ਤਰੀਕੇ ਲੱਭੋ ਅਤੇ ਸਹਿਯੋਗੀਆਂ ਨੂੰ ਮਿਲੋ ਜੋ ਤੁਹਾਡੇ ਵਿਚਾਰ ਨੂੰ ਅੱਗੇ ਵਧਾ ਸਕਣ।",
+    "exploreProjects": "ਪ੍ਰੋਜੈਕਟ ਐਕਸਪਲੋਰ ਕਰੋ",
+    "findCollaborators": "ਸਹਿਯੋਗੀ ਲੱਭੋ"
+  }
+}

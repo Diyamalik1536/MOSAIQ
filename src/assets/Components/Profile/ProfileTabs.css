@@ -1,0 +1,98 @@
+.profile-tabs {
+    width: 100%;
+    margin-top: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px var(--shadow);
+}
+
+.profile-tabs-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 0 12px;
+}
+
+.profile-tabs-container::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-tab {
+    position: relative;
+    min-height: 58px;
+    padding: 0 18px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.profile-tab i {
+    font-size: 14px;
+}
+
+.profile-tab:hover {
+    color: var(--brand);
+}
+
+.profile-tab.active {
+    color: var(--brand);
+    font-weight: 600;
+}
+
+.profile-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--brand);
+}
+
+@media (max-width: 700px) {
+    .profile-tabs-container {
+        padding: 0 5px;
+    }
+
+    .profile-tab {
+        min-height: 54px;
+        padding: 0 13px;
+        font-size: 12px;
+    }
+
+    .profile-tab.active::after {
+        left: 11px;
+        right: 11px;
+    }
+}
+.profile-tabs {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.profile-tab:hover {
+    color: var(--brand);
+}
+
+.profile-tab.active {
+    color: var(--brand);
+    font-weight: 600;
+}
+
+.profile-tab.active::after {
+    background: var(--brand);
+}

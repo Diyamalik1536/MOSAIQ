@@ -1,0 +1,661 @@
+/* ==========================================================================
+   PAYMENT UPGRADE MODAL & SUCCESS SCREEN CSS
+   ========================================================================== */
+
+.payment-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(24, 28, 39, 0.58);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: modalFadeIn 0.18s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.payment-modal-container {
+    position: relative;
+    width: 100%;
+    max-width: 840px;
+    max-height: 90vh;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(16, 24, 40, 0.22);
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation: modalSlideUp 0.2s ease-out;
+}
+
+.payment-modal-container.success-mode {
+    max-width: 660px;
+    background: #ffffff;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(240, 238, 250, 0.85);
+    color: #4b4865;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: #e2dff5;
+    color: #1e1456;
+    transform: rotate(90deg);
+}
+
+/* 2-Column Checkout Layout */
+.payment-modal-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 0;
+}
+
+.payment-modal-left {
+    background: #f6f5f2;
+    color: #252532;
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #252532;
+}
+
+.brand-logo i {
+    color: #6256c7;
+    font-size: 20px;
+}
+
+.left-hero h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #252532;
+    margin: 0 0 8px;
+}
+
+.left-hero p {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #666575;
+    margin: 0;
+}
+
+.feature-trigger-notice {
+    margin-top: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e4e1ec;
+    font-size: 11.5px;
+    color: #4a455f;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.feature-trigger-notice i {
+    color: #6256c7;
+}
+
+.pro-benefits-list {
+    margin: 30px 0 0;
+}
+
+.benefits-title {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4e4b5b;
+    margin-bottom: 16px;
+}
+
+.pro-benefits-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.pro-benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #343240;
+}
+
+.benefit-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #e9e6f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6256c7;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* Right Column (Checkout Form) */
+.payment-modal-right {
+    padding: 34px 36px 28px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stepper */
+.checkout-stepper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #878795;
+}
+
+.step-item.completed {
+    color: #34865f;
+}
+
+.step-item.active {
+    color: #6256c7;
+    font-weight: 700;
+}
+
+.step-number {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10.5px;
+}
+
+.step-item.completed .step-number {
+    background: #e7f4ed;
+    color: #276749;
+}
+
+.step-item.active .step-number {
+    background: #6256c7;
+    color: #ffffff;
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: #e5e7eb;
+}
+
+.step-line.active {
+    background: #34865f;
+}
+
+.checkout-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252532;
+    margin: 0 0 16px;
+}
+
+/* Plan Card in Modal */
+.checkout-plan-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #faf9fc;
+    border: 1px solid #e6e3ed;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.plan-badge-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #e9e6f4;
+    color: #6256c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.plan-summary-info {
+    flex: 1;
+}
+
+.plan-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan-name-row h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #252532;
+}
+
+.plan-cost {
+    font-size: 14px;
+    font-weight: 700;
+    color: #5146af;
+}
+
+.plan-billing-note {
+    margin: 3px 0 0;
+    font-size: 11.5px;
+    color: #6b7280;
+}
+
+/* Payment Method Tabs */
+.input-group-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.payment-method-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.method-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 8px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.method-tab:hover {
+    border-color: #cbd5e1;
+    background: #f1f5f9;
+}
+
+.method-tab.active {
+    border-color: #6256c7;
+    background: #f3f1fa;
+    color: #5146af;
+}
+
+/* Form Groups */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 11.5px;
+    font-weight: 650;
+    color: #4b5563;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 13px;
+    border-radius: 8px;
+    border: 1px solid #d9d9e1;
+    font-family: inherit;
+    font-size: 13px;
+    color: #1f2937;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #6256c7;
+    box-shadow: 0 0 0 3px rgba(98, 86, 199, 0.12);
+}
+
+.card-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.upi-quick-pills {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.upi-quick-pills button {
+    font-size: 11px;
+    color: #5146af;
+    background: #f3f1fa;
+    padding: 3px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 0;
+    font-family: inherit;
+}
+
+.upi-quick-pills button:hover {
+    background: #e9e6f4;
+}
+
+/* Checkbox */
+.terms-checkbox-row {
+    margin: 4px 0 6px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 11.5px;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    margin-top: 2px;
+    accent-color: #6256c7;
+}
+
+.checkbox-label a {
+    color: #5146af;
+    text-decoration: underline;
+}
+
+/* Pay Button */
+.pay-submit-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    background: #5146af;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pay-submit-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: none;
+}
+
+.pay-submit-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.spinner-border {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spinnerRotate 0.6s linear infinite;
+}
+
+@keyframes spinnerRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.demo-notice-text {
+    text-align: center;
+    font-size: 11px;
+    color: #9ca3af;
+    margin: 4px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.payment-error {
+    margin: 0;
+    color: #b42318;
+    font-size: 12px;
+}
+
+/* ==========================================================================
+   SUCCESS VIEW (PANEL 3)
+   ========================================================================== */
+
+.upgrade-success-view {
+    position: relative;
+    padding: 44px 36px 36px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.success-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.success-check-circle {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: #34865f;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+.success-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #252532;
+    margin: 0 0 8px;
+}
+
+.success-subtitle {
+    font-size: 13.5px;
+    color: #6b7280;
+    max-width: 440px;
+    line-height: 1.55;
+    margin: 0 0 22px;
+}
+
+.explore-pro-btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    background: #5146af;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.explore-pro-btn:hover {
+    background: #40368f;
+}
+
+/* Quick Start Guide */
+.quick-start-guide {
+    text-align: left;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #f1f0f7;
+}
+
+.quick-start-guide h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #252532;
+    margin: 0 0 14px;
+}
+
+.guide-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guide-step-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #faf9fc;
+    border: 1px solid #e6e3ed;
+}
+
+.step-badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #6256c7;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-content strong {
+    display: block;
+    font-size: 13px;
+    color: #343240;
+    margin-bottom: 2px;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 11.5px;
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .payment-modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-modal-left {
+        padding: 24px 20px;
+    }
+
+    .payment-modal-right {
+        padding: 24px 20px;
+    }
+
+    .upgrade-success-view {
+        padding: 32px 20px;
+    }
+}

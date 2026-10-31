@@ -1,0 +1,25 @@
+.profile-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 42px 50px;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+            circle at 88% 4%,
+            rgba(139, 92, 246, 0.14),
+            transparent 27%
+        ),
+        var(--app-bg);
+}
+
+@media (max-width: 1100px) {
+    .profile-page {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-page {
+        padding: 16px 16px 88px 16px;
+    }
+}

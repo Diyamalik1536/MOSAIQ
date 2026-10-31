@@ -1,0 +1,126 @@
+.profile-stats {
+    width: 100%;
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+
+.profile-stat {
+    min-height: 88px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.profile-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(74, 58, 120, 0.10);
+}
+
+
+.profile-stat-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--brand-soft);
+    color: var(--brand);
+
+    font-size: 19px;
+}
+
+.profile-stat-icon i {
+    line-height: 1;
+}
+
+
+.profile-stat-content h3 {
+    margin: 0 0 3px;
+
+    color: var(--text-primary);
+
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.profile-stat-content p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+@media (max-width: 800px) {
+
+    .profile-stats {
+        gap: 12px;
+    }
+
+    .profile-stat {
+        padding: 15px;
+        gap: 11px;
+    }
+
+    .profile-stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .profile-stat-content h3 {
+        font-size: 19px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-stat {
+        min-height: 70px;
+    }
+
+}
+.profile-stat {
+    border: 1px solid rgba(115, 87, 217, 0.11);
+    box-shadow:
+        0 1px 2px rgba(30, 20, 60, 0.03),
+        0 8px 24px rgba(80, 60, 140, 0.05);
+    transition: all 0.2s ease;
+}
+
+.profile-stat:hover {
+    border-color: rgba(115, 87, 217, 0.25);
+    box-shadow:
+        0 4px 8px rgba(30, 20, 60, 0.04),
+        0 12px 28px rgba(80, 60, 140, 0.08);
+    transform: translateY(-2px);
+}

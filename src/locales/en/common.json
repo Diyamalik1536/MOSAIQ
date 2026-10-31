@@ -1,0 +1,143 @@
+
+{
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "hindi": "Hindi",
+    "punjabi": "Punjabi"
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "home": "TalentForge home",
+    "openMenu": "Open {{name}} menu",
+    "closeMenu": "Close {{name}} menu",
+    "openNavigation": "Open navigation",
+    "closeNavigation": "Close navigation",
+    "explore": "Explore",
+    "projects": "Projects",
+    "mentors": "Mentors",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "support": "Support",
+    "login": "Log in",
+    "getStarted": "Get Started"
+  },
+  "actions": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "search": "Search",
+    "close": "Close"
+  },
+  "megaMenu": {
+    "Explore": {
+      "eyebrow": "EXPLORE TALENTFORGE",
+      "columns": [
+        {
+          "title": "DISCOVER",
+          "items": [
+            ["Browse Students", "Discover students and their skills."],
+            ["Explore Skills", "Find people with complementary strengths."],
+            ["Student Network", "Meet people across your campus."]
+          ]
+        },
+        {
+          "title": "CONNECT",
+          "items": [
+            ["Find Collaborators", "Build your next idea with others."],
+            ["Discover Interests", "Find people who share your interests."]
+          ]
+        },
+        {
+          "title": "GET STARTED",
+          "items": [
+            ["Create Your Profile", "Introduce yourself to the community."],
+            ["Join TalentForge", "Start discovering your campus network."]
+          ]
+        }
+      ]
+    },
+    "Projects": {
+      "eyebrow": "BUILD SOMETHING TOGETHER",
+      "columns": [
+        {
+          "title": "PROJECTS",
+          "items": [
+            ["Explore Projects", "Discover projects and new ideas."],
+            ["Create a Project", "Share an idea with potential teammates."],
+            ["My Listings", "Keep track of your project listings."]
+          ]
+        },
+        {
+          "title": "COLLABORATE",
+          "items": [
+            ["Find Teammates", "Meet students with useful skills."],
+            ["Skill Collaboration", "Bring different strengths together."]
+          ]
+        },
+        {
+          "title": "YOUR WORKSPACE",
+          "items": [
+            ["My Projects", "Keep your work organized."],
+            ["Project Community", "Connect around shared ideas."]
+          ]
+        }
+      ]
+    },
+    "Mentors": {
+      "eyebrow": "LEARN AND GROW",
+      "columns": [
+        {
+          "title": "GUIDANCE",
+          "items": [
+            ["Mentor Feedback", "Learn from constructive feedback."],
+            ["Project Reviews", "Improve your work through review."]
+          ]
+        },
+        {
+          "title": "DEVELOPMENT",
+          "items": [
+            ["Skill Development", "Identify areas to improve."],
+            ["Learning Journey", "Keep building your experience."]
+          ]
+        },
+        {
+          "title": "MENTORING",
+          "items": [
+            ["Mentor Community", "Explore mentorship opportunities."],
+            ["Getting Started", "Learn about TalentForge mentoring."]
+          ]
+        }
+      ]
+    },
+    "Resources": {
+      "eyebrow": "YOUR TALENTFORGE GUIDE",
+      "columns": [
+        {
+          "title": "GET STARTED",
+          "items": [
+            ["Platform Guide", "Understand the main features."],
+            ["Student Guide", "Make the most of your profile."]
+          ]
+        },
+        {
+          "title": "COLLABORATION",
+          "items": [
+            ["Project Guide", "Learn how to approach projects."],
+            ["Community Tips", "Make collaboration more effective."]
+          ]
+        },
+        {
+          "title": "HELP",
+          "items": [
+            ["Frequently Asked Questions", "Find answers to common questions."],
+            ["Support", "Get help using the platform."]
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Find your people. Build together.",
+      "help": "Need help?"
+    }
+  }
+}

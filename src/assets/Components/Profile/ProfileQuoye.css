@@ -1,0 +1,44 @@
+.profile-quote {
+    width: 100%;
+    margin-top: 18px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px var(--shadow);
+}
+
+.profile-quote-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 19px;
+}
+
+.profile-quote p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .profile-quote {
+        padding: 18px;
+        align-items: flex-start;
+    }
+
+    .profile-quote p {
+        font-size: 13px;
+    }
+}

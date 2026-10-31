@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "badge": "केवल चितकारा विश्वविद्यालय के छात्रों के लिए",
+    "title": "लोगों से जुड़ें। प्रोजेक्ट बनाएँ। साथ बढ़ें।",
+    "description": "छात्रों से जुड़ें, कौशल खोजें और मिलकर उपयोगी प्रोजेक्ट बनाएँ।",
+    "getStarted": "शुरू करें",
+    "exploreProjects": "प्रोजेक्ट देखें"
+  },
+  "capabilitySelector": {
+    "eyebrow": "एक कैंपस। निर्माण के कई रास्ते।",
+    "heading": "TalentForge पर अपना अगला कदम खोजें।",
+    "description": "अपने आसपास के लोगों, प्रोजेक्ट और अवसरों को खोजें।",
+    "hint": "देखने के लिए कोई क्षमता चुनें",
+    "capabilities": {
+      "discoverTalent": {
+        "label": "प्रतिभा खोजें",
+        "description": "ऐसे छात्रों से मिलें जिनके कौशल आपके कौशलों के पूरक हों।"
+      },
+      "findCollaborators": {
+        "label": "सहयोगी खोजें",
+        "description": "उन लोगों से जुड़ें जो आपके साथ मिलकर कुछ बनाना चाहते हैं।"
+      },
+      "exploreProjects": {
+        "label": "प्रोजेक्ट देखें",
+        "description": "नए विचारों, टीमों और बनते हुए प्रोजेक्ट खोजें।"
+      },
+      "buildTogether": {
+        "label": "मिलकर बनाएँ",
+        "description": "साझा रुचि को कुछ वास्तविक बनाने में बदलें।"
+      }
+    }
+  },
+  "studentMatching": {
+    "eyebrow": "छात्र मिलान इंजन",
+    "title": "छात्र तारे हैं। कौशल नक्षत्र बनाते हैं।",
+    "description": "प्रोजेक्ट सहयोगी, पूरक कौशल और सत्यापित कैंपस निर्माताओं की खोज करें।",
+    "searchPlaceholder": "नाम, कौशल या विश्वविद्यालय से खोजें...",
+    "filterAll": "सभी निर्माता",
+    "filterReact": "रिएक्ट और फ्रंटएंड",
+    "filterDesign": "यूआई/यूएक्स और डिज़ाइन",
+    "filterAI": "एआई/एमएल और डेटा",
+    "filterBackend": "क्लाउड और बैकएंड",
+    "filterMobile": "मोबाइल और फ्लटर",
+    "centralAnchor": "सक्रिय एंकर",
+    "matchAnalysis": "मिलान विश्लेषण",
+    "complementaryFocus": "पूरक फोकस",
+    "sharedSkills": "साझा कौशल",
+    "connect": "जुड़ें",
+    "connecting": "अनुरोध जारी...",
+    "connected": "जुड़े हुए ✓",
+    "viewProfile": "प्रोफ़ाइल देखें",
+    "networkActive": "कौशल नक्षत्र सक्रिय",
+    "clickToExplore": "नक्षत्र पर ध्यान केंद्रित करने के लिए कार्ड चुनें"
+  },
+  "talentStream": {
+    "eyebrow": "टैलेंट स्ट्रीम",
+    "title": "TalentForge के निर्माताओं से मिलें।",
+    "viewportLabel": "छात्र निर्माताओं के कार्डों की लगातार झलक",
+    "cardDescription": "{{name}}, {{college}} में {{major}}। {{action}}",
+    "cardFlipped": "कार्ड पर विवरण दिख रहे हैं।",
+    "cardFlipHint": "कार्ड का अगला भाग। पलटने के लिए होवर करें या Enter दबाएँ।",
+    "portfolio": "पोर्टफ़ोलियो",
+    "description": "असली छात्र। असली कौशल। असली सहयोग।",
+    "tagline": "लाइव 3D निर्माता स्ट्रीम",
+    "flipToExplore": "पलटने के लिए कर्सर लाएँ",
+    "tapToFlip": "पलटने के लिए टैप करें",
+    "flipBack": "वापस पलटें",
+    "lookingFor": "तलाश है",
+    "coreSkills": "मुख्य कौशल",
+    "interests": "रुचियाँ",
+    "projects": "प्रोजेक्ट",
+    "links": "लिंक्स और पोर्टफ़ोलियो",
+    "viewProfile": "पूरी प्रोफ़ाइल देखें",
+    "connect": "TalentForge पर जुड़ें",
+    "status": {
+      "open": "उपलब्ध",
+      "open_to_collaborate": "सहयोग के लिए तैयार",
+      "busy": "वर्तमान में व्यस्त"
+    },
+    "modal": {
+      "profile": "निर्माता प्रोफ़ाइल",
+      "institution": "संस्थान",
+      "majorAndYear": "अकादमिक विवरण",
+      "skills": "मुख्य कौशल",
+      "interests": "रुचियाँ",
+      "projects": "प्रोजेक्ट और तकनीक",
+      "collabGoal": "तलाश है",
+      "links": "लिंक्स और पोर्टफ़ोलियो",
+      "connect": "TalentForge पर जुड़ें",
+      "close": "बंद करें"
+    }
+  },
+  "browseProjects": {
+    "eyebrow": "टैलेंटफोर्ज प्रोजेक्ट डायरेक्टरी",
+    "title": "जब लोग मिलकर निर्माण करते हैं, तो विचार सच होते हैं।",
+    "description": "छात्रों द्वारा बनाए गए प्रोजेक्ट देखें, नए दृष्टिकोण खोजें और ऐसे सहयोगियों को ढूंढें जो आपके विचार को साकार कर सकें।",
+    "exploreProjects": "प्रोजेक्ट एक्सप्लोर करें",
+    "findCollaborators": "सहयोगी खोजें"
+  }
+}

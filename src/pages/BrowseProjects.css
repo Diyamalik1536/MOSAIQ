@@ -1,0 +1,1937 @@
+/* ==========================================================================
+   TalentForge — Cinematic Browse Projects Experience
+   Editorial & Portfolio Inspired Discovery (Stefano BG & Awake Agency Direction)
+   ========================================================================== */
+
+.tf-browse-page {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  color: #10152f;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.tf-browse-container {
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   1. EDITORIAL PAGE OPENING (COMPACT & ART-DIRECTED)
+   ========================================================================== */
+.tf-editorial-intro {
+  position: relative;
+  width: 100%;
+  padding: 80px 0 60px;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(80, 53, 255, 0.06) 0%, transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tf-editorial-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.tf-editorial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 22px;
+  animation: tf-intro-reveal 450ms ease-out;
+}
+
+.tf-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5035ff;
+  box-shadow: 0 0 8px rgba(80, 53, 255, 0.8);
+}
+
+.tf-editorial-title {
+  font-size: clamp(34px, 4.8vw, 56px);
+  font-weight: 850;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+  color: #0b1021;
+  margin: 0 0 18px;
+  animation: tf-intro-reveal 520ms ease-out 60ms backwards;
+}
+
+.tf-title-break {
+  display: inline;
+}
+
+@media (max-width: 640px) {
+  .tf-title-break {
+    display: none;
+  }
+}
+
+.tf-editorial-gradient {
+  color: #5035ff;
+  background: linear-gradient(135deg, #5035ff 0%, #7c3aed 50%, #4338ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.tf-editorial-lead {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #4b5563;
+  line-height: 1.6;
+  font-weight: 450;
+  max-width: 680px;
+  margin: 0 auto 32px;
+  animation: tf-intro-reveal 580ms ease-out 120ms backwards;
+}
+
+.tf-editorial-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+  animation: tf-intro-reveal 640ms ease-out 180ms backwards;
+}
+
+.tf-editorial-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: #5035ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 8px 24px -4px rgba(80, 53, 255, 0.35);
+  transition: all 220ms ease;
+}
+
+.tf-editorial-primary-btn:hover {
+  background: #3920e8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(80, 53, 255, 0.45);
+}
+
+.tf-editorial-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: #ffffff;
+  color: #5035ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(80, 53, 255, 0.06);
+  transition: all 220ms ease;
+}
+
+.tf-editorial-secondary-btn:hover {
+  background: #f5f3ff;
+  border-color: #c7d2fe;
+  transform: translateY(-2px);
+}
+
+.tf-editorial-primary-btn:focus-visible,
+.tf-editorial-secondary-btn:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 3px;
+}
+
+/* Quick Metrics Strip */
+.tf-editorial-stats {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e9eaf2;
+  border-radius: 16px;
+  padding: 14px 28px;
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.04);
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: tf-intro-reveal 700ms ease-out 220ms backwards;
+}
+
+.tf-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tf-stat-value {
+  font-size: 20px;
+  font-weight: 850;
+  color: #0b1021;
+  line-height: 1;
+}
+
+.tf-stat-label {
+  font-size: 12px;
+  font-weight: 550;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+.tf-stat-divider {
+  width: 1px;
+  height: 28px;
+  background: #e2e8f0;
+}
+
+@keyframes tf-intro-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   2. EDITORIAL SHOWCASE HEADER (PART 5 TRANSITION)
+   ========================================================================== */
+.tf-showcase-transition-section {
+  padding: 44px 0 16px;
+}
+
+.tf-showcase-header-content {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.tf-showcase-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5035ff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.tf-showcase-headline {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 850;
+  color: #0b1021;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+
+.tf-showcase-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. FEATURED PROJECT SPOTLIGHT (STEFANO BG & OBSIDIAN INSPIRATION)
+   ========================================================================== */
+.tf-featured-spotlight-section {
+  padding: 32px 0 24px;
+}
+
+.tf-section-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tf-section-sub-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.tf-spotlight-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #5035ff;
+  background: #f5f3ff;
+  border: 1px solid #e0e7ff;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.tf-featured-hero-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 
+    0 16px 36px -8px rgba(16, 24, 40, 0.07),
+    0 0 0 1px rgba(80, 53, 255, 0.05);
+  cursor: pointer;
+  transition: 
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+}
+
+.tf-featured-hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 24px 48px -12px rgba(80, 53, 255, 0.18),
+    0 0 0 1px rgba(80, 53, 255, 0.25);
+  border-color: #c7d2fe;
+}
+
+.tf-featured-hero-card:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 4px;
+}
+
+.tf-featured-visual-wrapper {
+  background: #0f172a;
+  min-height: 320px;
+  display: flex;
+  overflow: hidden;
+}
+
+.tf-featured-body {
+  padding: clamp(24px, 3.5vw, 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+}
+
+.tf-featured-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tf-featured-category-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.tf-featured-status-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.tf-featured-title {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: #0b1021;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tf-featured-tagline {
+  font-size: 15.5px;
+  color: #4b5563;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tf-featured-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tf-featured-stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tf-stack-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4338ca;
+  background: #f5f3ff;
+  border: 1px solid #ede9fe;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.tf-featured-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.tf-featured-lead-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tf-lead-mini-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5035ff;
+}
+
+.tf-lead-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-lead-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tf-lead-college {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.tf-featured-action-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-featured-quick-btn {
+  padding: 7px 14px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 650;
+  color: #475569;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.tf-featured-quick-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.tf-featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #5035ff;
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 200ms ease;
+}
+
+.tf-featured-hero-card:hover .tf-featured-cta {
+  transform: translateX(4px);
+}
+
+@media (max-width: 960px) {
+  .tf-featured-hero-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   4. DISCOVERY & FILTER TOOLBAR (AWAKE AGENCY INTERACTION)
+   ========================================================================== */
+.tf-discovery-section {
+  padding: 32px 0 80px;
+}
+
+.tf-discovery-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+  background: #fafbfc;
+  border: 1px solid #edf0f5;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(16, 24, 40, 0.03);
+}
+
+/* Search input */
+.tf-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.tf-search-icon {
+  position: absolute;
+  left: 16px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.tf-search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 48px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0f172a;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.tf-search-input:focus {
+  outline: none;
+  border-color: #5035ff;
+  box-shadow: 0 0 0 3px rgba(80, 53, 255, 0.15);
+}
+
+.tf-search-clear {
+  position: absolute;
+  right: 14px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.tf-search-clear:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Awake Agency-style Category Strip */
+.tf-category-strip-wrapper {
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tf-category-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.tf-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tf-category-pill:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.tf-category-pill.is-active {
+  background: #5035ff;
+  border-color: #5035ff;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(80, 53, 255, 0.28);
+}
+
+.tf-category-active-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px #ffffff;
+}
+
+.tf-category-pill:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 2px;
+}
+
+/* Secondary filters */
+.tf-secondary-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.tf-tech-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tf-tech-chip {
+  padding: 5px 11px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.tf-tech-chip:hover {
+  border-color: #c7d2fe;
+  color: #5035ff;
+  background: #f5f3ff;
+}
+
+.tf-tech-chip.is-active {
+  background: #ede9fe;
+  border-color: #a78bfa;
+  color: #4338ca;
+  font-weight: 700;
+}
+
+.tf-recruiting-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tf-recruiting-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: #5035ff;
+  cursor: pointer;
+}
+
+/* Results status */
+.tf-results-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.tf-results-count strong {
+  color: #0f172a;
+}
+
+.tf-reset-filters-btn {
+  background: none;
+  border: none;
+  color: #5035ff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 150ms ease;
+}
+
+.tf-reset-filters-btn:hover {
+  color: #3920e8;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. EDITORIAL GALLERY GRID (RHYTHMIC ASYMMETRIC LAYOUT)
+   ========================================================================== */
+.tf-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .tf-editorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .tf-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tf-project-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e9eaf2;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(16, 24, 40, 0.04);
+  cursor: pointer;
+  transition: 
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+  animation: tf-card-fade-in 420ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@keyframes tf-card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tf-project-card:hover {
+  transform: translateY(-6px) scale(1.008);
+  box-shadow: 
+    0 18px 38px -8px rgba(80, 53, 255, 0.16),
+    0 0 0 1px rgba(80, 53, 255, 0.2);
+  border-color: #c7d2fe;
+}
+
+.tf-project-card:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 3px;
+}
+
+/* Visual Wrapper */
+.tf-card-visual {
+  position: relative;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.tf-card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 240ms ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.tf-project-card:hover .tf-card-hover-overlay {
+  opacity: 1;
+}
+
+.tf-hover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #0b1021;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(6px);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tf-project-card:hover .tf-hover-badge {
+  transform: translateY(0);
+}
+
+/* Card Body */
+.tf-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+}
+
+.tf-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tf-card-category-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5035ff;
+  background: #f5f3ff;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.tf-card-stage-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.tf-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0b1021;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.tf-card-tagline {
+  font-size: 13.5px;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Stack mini pills */
+.tf-card-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+
+.tf-stack-mini-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4338ca;
+  background: #f5f3ff;
+  border: 1px solid #ede9fe;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.tf-stack-more {
+  background: #ede9fe;
+  color: #5035ff;
+}
+
+/* Role snippet */
+.tf-card-role-snippet {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+.tf-role-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7c3aed;
+  box-shadow: 0 0 6px rgba(124, 58, 237, 0.6);
+  flex-shrink: 0;
+}
+
+.tf-role-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #6b21a8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer */
+.tf-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  gap: 8px;
+}
+
+.tf-card-avatars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tf-card-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #5035ff;
+}
+
+.tf-card-lead-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  margin-left: 2px;
+}
+
+.tf-card-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tf-card-preview-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 650;
+  color: #475569;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.tf-card-preview-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.tf-card-action-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #5035ff;
+  transition: transform 150ms ease;
+}
+
+.tf-project-card:hover .tf-card-action-link {
+  transform: translateX(3px);
+}
+
+/* Empty State */
+.tf-empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  background: #fafbfc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 20px;
+}
+
+.tf-empty-icon {
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.tf-empty-title {
+  font-size: 20px;
+  font-weight: 750;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.tf-empty-desc {
+  font-size: 14.5px;
+  color: #64748b;
+  max-width: 440px;
+  margin: 0 auto 20px;
+}
+
+.tf-empty-reset-btn {
+  padding: 10px 20px;
+  background: #5035ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.tf-empty-reset-btn:hover {
+  background: #3920e8;
+}
+
+/* ==========================================================================
+   6. CONNECTED COLLABORATORS BRIDGE (PART 13)
+   ========================================================================== */
+.tf-collab-bridge-section {
+  padding: 0 0 88px;
+}
+
+.tf-collab-bridge-card {
+  background: 
+    radial-gradient(circle at 85% 20%, rgba(80, 53, 255, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #fbfaff 0%, #f5f3ff 100%);
+  border: 1px solid #ddd6fe;
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 56px);
+  box-shadow: 0 8px 32px rgba(80, 53, 255, 0.06);
+}
+
+.tf-bridge-steps-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tf-bridge-step {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.tf-bridge-step.is-active {
+  color: #5035ff;
+  background: #ede9fe;
+  border-color: #c7d2fe;
+}
+
+.tf-bridge-arrow {
+  color: #a5b4fc;
+  font-size: 12px;
+}
+
+.tf-bridge-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.tf-bridge-eyebrow {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5035ff;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tf-bridge-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 850;
+  color: #0b1021;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+}
+
+.tf-bridge-description {
+  font-size: clamp(14.5px, 1.6vw, 16.5px);
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Builders Row */
+.tf-bridge-builders-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.tf-bridge-builder-card {
+  background: #ffffff;
+  border: 1px solid #e9eaf2;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 220ms ease;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.03);
+}
+
+.tf-bridge-builder-card:hover {
+  transform: translateY(-4px);
+  border-color: #a78bfa;
+  box-shadow: 0 8px 24px rgba(80, 53, 255, 0.12);
+}
+
+.tf-bridge-builder-card:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 3px;
+}
+
+.tf-bridge-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5035ff;
+  margin-bottom: 10px;
+}
+
+.tf-bridge-name {
+  font-size: 14px;
+  font-weight: 750;
+  color: #0b1021;
+}
+
+.tf-bridge-college {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.tf-bridge-skill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5035ff;
+  background: #f5f3ff;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  margin-top: 8px;
+}
+
+.tf-bridge-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.tf-bridge-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  background: #5035ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px -4px rgba(80, 53, 255, 0.35);
+  transition: all 220ms ease;
+}
+
+.tf-bridge-cta-btn:hover {
+  background: #3920e8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(80, 53, 255, 0.45);
+}
+
+.tf-bridge-cta-btn:focus-visible {
+  outline: 2px solid #5035ff;
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   PROJECT CONSTELLATION HERO
+   ========================================================================== */
+.tf-editorial-intro {
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(48px, 6vw, 82px) 0 42px;
+  background:
+    radial-gradient(ellipse at 50% 36%, rgba(221, 214, 254, 0.56), transparent 55%),
+    radial-gradient(ellipse at 12% 5%, rgba(196, 181, 253, 0.24), transparent 34%),
+    linear-gradient(180deg, #fbfaff 0%, #ffffff 96%);
+}
+
+.tf-constellation-canvas {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.tf-constellation-canvas canvas,
+.tf-constellation-fallback {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+.tf-constellation-fallback {
+  position: absolute;
+  inset: 0;
+}
+
+.tf-constellation-fallback path {
+  fill: none;
+  stroke: #8b7bff;
+  stroke-width: 1.4;
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: tf-orbit-draw 2s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.tf-constellation-fallback path:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.tf-constellation-fallback path:nth-child(3) {
+  animation-delay: 300ms;
+  stroke-dasharray: 4 8;
+}
+
+.tf-constellation-fallback circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  fill: #5035ff;
+  opacity: 0;
+  animation: tf-node-appear 520ms ease-out 800ms forwards;
+}
+
+.tf-editorial-inner,
+.tf-project-constellation-stage {
+  position: relative;
+  z-index: 1;
+}
+
+.tf-editorial-inner {
+  max-width: 1080px;
+}
+
+.tf-editorial-badge {
+  animation: tf-editorial-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.tf-editorial-title {
+  animation: none;
+  margin-bottom: 16px;
+  font-size: clamp(38px, 5.2vw, 68px);
+  line-height: 1.08;
+}
+
+.tf-editorial-title-line {
+  display: block;
+  animation: tf-title-line-enter 740ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.tf-editorial-title-line + .tf-editorial-title-line {
+  animation-delay: 120ms;
+}
+
+.tf-editorial-lead {
+  animation: tf-editorial-enter 600ms cubic-bezier(0.2, 0.7, 0.2, 1) 240ms both;
+  margin-bottom: 24px;
+}
+
+.tf-editorial-actions {
+  animation: tf-editorial-enter 600ms cubic-bezier(0.2, 0.7, 0.2, 1) 330ms both;
+  margin-bottom: 26px;
+}
+
+.tf-hero-discovery-controls {
+  width: min(100%, 880px);
+  margin: 0 auto 20px;
+  padding: 16px 18px 12px;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(221, 214, 254, 0.88);
+  box-shadow:
+    0 14px 42px rgba(63, 49, 130, 0.08),
+    0 2px 8px rgba(63, 49, 130, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: tf-editorial-enter 660ms cubic-bezier(0.2, 0.7, 0.2, 1) 420ms both;
+}
+
+.tf-hero-discovery-controls .tf-search-input {
+  border-color: #e3def8;
+}
+
+.tf-hero-discovery-controls .tf-category-pills {
+  justify-content: center;
+}
+
+.tf-hero-discovery-controls .tf-secondary-filters {
+  justify-content: center;
+  gap: 12px 22px;
+}
+
+.tf-hero-discovery-controls .tf-tech-scroll {
+  justify-content: center;
+}
+
+.tf-editorial-stats {
+  animation: tf-editorial-enter 620ms cubic-bezier(0.2, 0.7, 0.2, 1) 520ms both;
+}
+
+.tf-project-constellation-stage {
+  margin-top: clamp(32px, 5vw, 68px);
+}
+
+.tf-constellation-avatar-nodes {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tf-constellation-avatar-node {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(255, 255, 255, 0.96);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 5px 18px rgba(57, 43, 136, 0.2),
+    0 0 0 1px rgba(139, 123, 255, 0.35);
+  animation: tf-node-appear 520ms ease-out 920ms both;
+}
+
+.tf-constellation-avatar-node--1 {
+  top: 26%;
+  left: -12px;
+}
+
+.tf-constellation-avatar-node--2 {
+  right: 2%;
+  top: -14px;
+  animation-delay: 1s;
+}
+
+.tf-constellation-avatar-node--3 {
+  bottom: 4%;
+  left: 34%;
+  animation-delay: 1.08s;
+}
+
+.tf-constellation-avatar-node--4 {
+  right: -12px;
+  bottom: 20%;
+  animation-delay: 1.16s;
+}
+
+.tf-constellation-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px 14px;
+  color: #8a86a3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.tf-constellation-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 34px);
+  perspective: 1400px;
+}
+
+.tf-constellation-project {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 222, 244, 0.94);
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 22px 56px rgba(55, 45, 110, 0.12),
+    0 3px 10px rgba(55, 45, 110, 0.06);
+  animation: tf-constellation-card-enter 760ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    translate 340ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 340ms ease,
+    border-color 340ms ease;
+  --card-tilt-x: 0deg;
+  --card-tilt-y: 0deg;
+  --pointer-light-x: 50%;
+  --pointer-light-y: 20%;
+}
+
+.tf-constellation-project::before,
+.tf-constellation-project::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.tf-constellation-project::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.42),
+    transparent 24%,
+    transparent 72%,
+    rgba(139, 123, 255, 0.16)
+  );
+  opacity: 0.36;
+}
+
+.tf-constellation-project::after {
+  background: radial-gradient(
+    circle at var(--pointer-light-x) var(--pointer-light-y),
+    rgba(255, 255, 255, 0.38),
+    rgba(139, 123, 255, 0.06) 28%,
+    transparent 58%
+  );
+}
+
+.tf-constellation-project:hover::after,
+.tf-constellation-project:focus-within::after {
+  opacity: 0.9;
+}
+
+.tf-constellation-project:first-child:not(:last-child) {
+  transform:
+    perspective(1100px)
+    rotateX(var(--card-tilt-x))
+    rotateY(calc(11deg + var(--card-tilt-y)))
+    rotateZ(-1.2deg)
+    translateZ(-20px)
+    scale(0.96);
+  animation-delay: 620ms;
+}
+
+.tf-constellation-project:last-child:not(:first-child) {
+  transform:
+    perspective(1100px)
+    rotateX(var(--card-tilt-x))
+    rotateY(calc(-11deg + var(--card-tilt-y)))
+    rotateZ(1.2deg)
+    translateZ(-20px)
+    scale(0.96);
+  animation-delay: 760ms;
+}
+
+.tf-constellation-project.is-primary {
+  z-index: 1;
+  transform:
+    perspective(1100px)
+    rotateX(var(--card-tilt-x))
+    rotateY(var(--card-tilt-y))
+    translateZ(42px)
+    scale(1.04);
+  border-color: #d5cef9;
+  box-shadow:
+    0 30px 70px rgba(67, 51, 150, 0.18),
+    0 5px 16px rgba(55, 45, 110, 0.08);
+  animation-delay: 480ms;
+}
+
+.tf-constellation-project:hover,
+.tf-constellation-project:focus-within {
+  border-color: #a99bfa;
+  box-shadow:
+    0 30px 72px rgba(80, 53, 255, 0.2),
+    0 5px 18px rgba(55, 45, 110, 0.08);
+}
+
+.tf-constellation-project:first-child:not(:last-child):hover,
+.tf-constellation-project:first-child:not(:last-child):focus-within {
+  transform:
+    perspective(1100px)
+    rotateX(var(--card-tilt-x))
+    rotateY(calc(11deg + var(--card-tilt-y)))
+    rotateZ(-1.2deg)
+    translateZ(26px)
+    scale(0.99);
+}
+
+.tf-constellation-project:last-child:not(:first-child):hover,
+.tf-constellation-project:last-child:not(:first-child):focus-within {
+  transform:
+    perspective(1100px)
+    rotateX(var(--card-tilt-x))
+    rotateY(calc(-11deg + var(--card-tilt-y)))
+    rotateZ(1.2deg)
+    translateZ(26px)
+    scale(0.99);
+}
+
+.tf-constellation-project.is-primary:hover,
+.tf-constellation-project.is-primary:focus-within {
+  transform:
+    perspective(1100px)
+    rotateX(var(--card-tilt-x))
+    rotateY(var(--card-tilt-y))
+    translateZ(72px)
+    scale(1.055);
+}
+
+.tf-constellation-artwork {
+  position: relative;
+  z-index: 0;
+  background: #312e81;
+}
+
+.tf-constellation-artwork .tf-project-graphic {
+  aspect-ratio: 1.75 / 1;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.tf-constellation-status {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #4338ca;
+  font-size: 10px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tf-constellation-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px 17px 4px;
+}
+
+.tf-constellation-card-main {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tf-constellation-card-main:focus-visible {
+  outline: 3px solid rgba(80, 53, 255, 0.55);
+  outline-offset: -4px;
+}
+
+.tf-constellation-card-content h2 {
+  margin: 0 0 7px;
+  color: #10152f;
+  font-size: clamp(15px, 1.45vw, 18px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.tf-constellation-card-content p {
+  display: -webkit-box;
+  min-height: 38px;
+  margin: 0;
+  overflow: hidden;
+  color: #647087;
+  font-size: 12px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tf-constellation-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 0;
+  padding: 10px 17px 14px;
+  border-top: 1px solid #f0eef8;
+}
+
+.tf-constellation-contributors {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  padding-left: 2px;
+}
+
+.tf-constellation-contributors img {
+  width: 27px;
+  height: 27px;
+  margin-left: -3px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tf-constellation-preview {
+  padding: 6px 8px;
+  border: 1px solid #e6e2f3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #5141b4;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.tf-constellation-preview:hover {
+  border-color: #b8adf5;
+  background: #f5f3ff;
+}
+
+.tf-constellation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #5035ff;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.tf-showcase-transition-section {
+  padding-top: 50px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+}
+
+@keyframes tf-orbit-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tf-node-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+}
+
+@keyframes tf-editorial-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tf-title-line-enter {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes tf-constellation-card-enter {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .tf-constellation-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .tf-constellation-project:first-child:not(:last-child),
+  .tf-constellation-project:last-child:not(:first-child) {
+    transform: none;
+  }
+
+  .tf-constellation-project.is-primary {
+    transform: none;
+  }
+
+  .tf-constellation-project:hover,
+  .tf-constellation-project:focus-within,
+  .tf-constellation-project:first-child:not(:last-child):hover,
+  .tf-constellation-project:first-child:not(:last-child):focus-within,
+  .tf-constellation-project:last-child:not(:first-child):hover,
+  .tf-constellation-project:last-child:not(:first-child):focus-within,
+  .tf-constellation-project.is-primary:hover,
+  .tf-constellation-project.is-primary:focus-within {
+    transform: none;
+  }
+
+  .tf-constellation-project:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: min(100%, 460px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .tf-editorial-intro {
+    padding-top: 42px;
+    padding-bottom: 32px;
+  }
+
+  .tf-editorial-inner {
+    width: min(100% - 32px, 1280px);
+    padding-inline: 0;
+  }
+
+  .tf-editorial-title {
+    font-size: clamp(36px, 9vw, 52px);
+  }
+
+  .tf-editorial-lead {
+    max-width: 520px;
+    font-size: 15px;
+  }
+
+  .tf-editorial-actions {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tf-editorial-primary-btn,
+  .tf-editorial-secondary-btn {
+    justify-content: center;
+    padding: 11px 15px;
+    font-size: 13px;
+  }
+
+  .tf-hero-discovery-controls {
+    padding: 12px;
+  }
+
+  .tf-hero-discovery-controls .tf-category-pills {
+    justify-content: flex-start;
+  }
+
+  .tf-hero-discovery-controls .tf-secondary-filters,
+  .tf-hero-discovery-controls .tf-tech-scroll {
+    justify-content: flex-start;
+  }
+
+  .tf-editorial-stats {
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .tf-stat-value {
+    font-size: 17px;
+  }
+
+  .tf-stat-label {
+    font-size: 10px;
+  }
+
+  .tf-stat-divider {
+    height: 22px;
+  }
+
+  .tf-project-constellation-stage {
+    margin-top: 30px;
+  }
+
+  .tf-constellation-avatar-node--2,
+  .tf-constellation-avatar-node--3 {
+    display: none;
+  }
+
+  .tf-constellation-avatar-node--1 {
+    top: 12%;
+    left: 3px;
+  }
+
+  .tf-constellation-avatar-node--4 {
+    right: 3px;
+    bottom: 16%;
+  }
+
+  .tf-constellation-labels {
+    margin-inline: 2px;
+    font-size: 8px;
+  }
+
+  .tf-constellation-projects {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    margin-inline: -24px;
+    padding: 8px 24px 24px;
+    scroll-padding-inline: 24px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tf-constellation-project,
+  .tf-constellation-project.is-primary,
+  .tf-constellation-project:first-child:not(:last-child),
+  .tf-constellation-project:last-child:not(:first-child) {
+    flex: 0 0 min(82vw, 340px);
+    transform: none;
+    scroll-snap-align: center;
+  }
+
+  .tf-constellation-project:hover,
+  .tf-constellation-project:focus-within {
+    transform: none;
+  }
+
+  .tf-constellation-card-content h2 {
+    font-size: 17px;
+  }
+
+  .tf-constellation-card-content p {
+    font-size: 12.5px;
+  }
+
+  .tf-constellation-canvas {
+    opacity: 0.45;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .tf-editorial-badge,
+  .tf-editorial-title,
+  .tf-editorial-lead,
+  .tf-editorial-actions,
+  .tf-editorial-stats,
+  .tf-project-card,
+  .tf-featured-hero-card,
+  .tf-bridge-builder-card,
+  .tf-editorial-primary-btn,
+  .tf-editorial-secondary-btn,
+  .tf-bridge-cta-btn,
+  .tf-category-pill {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .tf-editorial-title-line,
+  .tf-constellation-fallback path,
+  .tf-constellation-fallback circle,
+  .tf-constellation-avatar-node,
+  .tf-constellation-project {
+    animation: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+    translate: none !important;
+  }
+
+  .tf-constellation-project,
+  .tf-constellation-project.is-primary,
+  .tf-constellation-project:first-child:not(:last-child),
+  .tf-constellation-project:last-child:not(:first-child) {
+    transform: none !important;
+  }
+
+  .tf-constellation-project:hover,
+  .tf-constellation-project:focus-within {
+    translate: none !important;
+    transition: none !important;
+  }
+
+  .tf-constellation-project {
+    transition: none !important;
+  }
+
+  .tf-constellation-project::before,
+  .tf-constellation-project::after {
+    transition: none !important;
+  }
+}

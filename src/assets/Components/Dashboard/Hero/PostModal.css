@@ -1,0 +1,409 @@
+.post-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 24px 24px;
+    background: rgba(0, 0, 0, 0.48);
+    box-sizing: border-box;
+    animation: postOverlayIn 0.2s ease-out;
+}
+
+.post-modal {
+    position: relative;
+    width: min(880px, 100%);
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e7e5ef;
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.20), 0 8px 24px rgba(15, 23, 42, 0.10);
+    box-sizing: border-box;
+    animation: postModalIn 0.25s ease-out;
+}
+
+.post-modal-header {
+    position: relative;
+    flex-shrink: 0;
+    padding: 28px 76px 22px 32px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeef3;
+    box-sizing: border-box;
+}
+
+.post-modal .Heading,
+.post-modal .Heading h1,
+.post-modal .Heading p {
+    margin: 0;
+}
+
+.post-modal .Heading h1 {
+    color: #1f2937;
+    font-family: "Fogie", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: normal;
+}
+
+.post-modal .Heading p {
+    margin-top: 7px;
+    color: #6b7280;
+    font-family: "Fogie", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: normal;
+}
+
+.post-modal-header > .post-modal-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 22px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    color: #374151 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.post-modal-header > .post-modal-close:hover {
+    background: #f3f0ff !important;
+    border-color: #7565e8 !important;
+    color: #5b4bd5 !important;
+    transform: rotate(90deg) !important;
+}
+
+.post-modal-header > .post-modal-close:active {
+    transform: rotate(90deg) scale(0.94) !important;
+}
+
+.post-modal-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.post-modal .tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding: 20px 28px;
+    background: #fafaff;
+    border-bottom: 1px solid #eeeef3;
+    box-sizing: border-box;
+}
+
+.post-modal .tabs > div {
+    position: relative;
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e3ec;
+    border-radius: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.post-modal .tabs > div:hover {
+    transform: translateY(-2px);
+    border-color: #c9c2f5;
+    box-shadow: 0 7px 18px rgba(79, 70, 229, 0.08);
+}
+
+.post-modal .tabs > div > i {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 9px;
+    border-radius: 11px;
+    background: #f0edff;
+    color: #6251d6;
+    font-size: 18px;
+}
+
+.post-modal .tabs > div h1 {
+    margin: 0;
+    color: #374151;
+    font-family: "Fogie", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: normal;
+    white-space: nowrap;
+}
+
+.post-modal .tabs > div p {
+    margin: 5px 0 0;
+    color: #8b8f98;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.post-modal .tabs > div.active {
+    background: #f7f5ff;
+    border-color: #7565e8;
+    box-shadow: 0 0 0 1px rgba(117, 101, 232, 0.06), 0 8px 20px rgba(79, 70, 229, 0.08);
+}
+
+.post-modal .tabs > div.active > i {
+    background: #7565e8;
+    color: #ffffff;
+}
+
+.post-modal .tabs > div.active h1 {
+    color: #4f46b5;
+}
+
+.post-modal .tabs > div.active::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: -1px;
+    height: 3px;
+    border-radius: 10px 10px 0 0;
+    background: #7565e8;
+}
+
+.post-form,
+.collaborator-form,
+.available-help-form,
+.need-help-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 28px 28px 32px;
+    box-sizing: border-box;
+}
+
+.post-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.post-form label,
+.collaborator-form label,
+.available-help-form label,
+.need-help-form label {
+    margin-top: 8px;
+    color: #4b5563;
+    font-family: "Fogie", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.post-form textarea,
+.collaborator-form input,
+.collaborator-form textarea,
+.collaborator-form select,
+.available-help-form input,
+.available-help-form textarea,
+.available-help-form select,
+.need-help-form input,
+.need-help-form textarea,
+.need-help-form select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dddbe7;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.post-form textarea {
+    padding: 13px 15px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.post-form .titles {
+    min-height: 76px;
+    max-height: 150px;
+}
+
+.post-form .desc {
+    min-height: 150px;
+    max-height: 300px;
+}
+
+.post-form textarea:focus,
+.collaborator-form input:focus,
+.collaborator-form textarea:focus,
+.collaborator-form select:focus,
+.available-help-form input:focus,
+.available-help-form textarea:focus,
+.available-help-form select:focus,
+.need-help-form input:focus,
+.need-help-form textarea:focus,
+.need-help-form select:focus {
+    border-color: #7565e8;
+    background: #fdfcff;
+    box-shadow: 0 0 0 3px rgba(117, 101, 232, 0.10);
+}
+
+.post-form textarea::placeholder,
+.collaborator-form input::placeholder,
+.collaborator-form textarea::placeholder,
+.available-help-form input::placeholder,
+.available-help-form textarea::placeholder,
+.need-help-form input::placeholder,
+.need-help-form textarea::placeholder {
+    color: #a1a1aa;
+}
+
+.post-form textarea + div {
+    min-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8b8f98;
+    font-size: 11px;
+}
+
+.post-form textarea + div span[style] {
+    font-weight: 600;
+}
+
+.collaborator-form h2,
+.available-help-form h2,
+.need-help-form h2 {
+    margin: 0 0 2px;
+    color: #1f2937;
+    font-family: "Fogie", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+.collaborator-form > p,
+.available-help-form > p,
+.need-help-form > p {
+    margin: 0 0 14px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.collaborator-form input,
+.available-help-form input,
+.available-help-form select,
+.need-help-form input,
+.need-help-form select {
+    height: 46px;
+    padding: 0 14px;
+}
+
+.collaborator-form textarea,
+.available-help-form textarea,
+.need-help-form textarea {
+    min-height: 145px;
+    padding: 13px 15px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.post-form button[type="submit"],
+.collaborator-form button[type="submit"],
+.available-help-form button[type="submit"],
+.need-help-form button[type="submit"] {
+    align-self: flex-end;
+    min-width: 145px;
+    margin-top: 14px;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #6251d6;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(98, 81, 214, 0.20);
+}
+
+.post-form button[type="submit"]:disabled {
+    background: #d8d5e6;
+    color: #9491a3;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.post-form button[type="submit"]:hover:not(:disabled),
+.collaborator-form button[type="submit"]:hover,
+.available-help-form button[type="submit"]:hover,
+.need-help-form button[type="submit"]:hover {
+    background: #5142c3;
+    transform: translateY(-1px);
+}
+
+@keyframes postOverlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes postModalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 800px) {
+    .post-modal-overlay { padding: 16px; }
+    .post-modal { width: 100%; max-height: 92vh; border-radius: 18px; }
+    .post-modal-header { padding: 24px 65px 20px 22px; }
+    .post-modal .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 18px 22px; }
+    .post-form, .collaborator-form, .available-help-form, .need-help-form { padding: 22px; }
+}
+
+@media (max-width: 500px) {
+    .post-modal-overlay { align-items: center; padding: 10px; }
+    .post-modal { max-height: calc(100vh - 20px); border-radius: 16px; }
+    .post-modal-header { padding: 20px 58px 17px 18px; }
+    .post-modal .Heading h1 { font-size: 23px; }
+    .post-modal .Heading p { font-size: 12px; }
+    .post-modal-header > .post-modal-close { top: 17px !important; right: 17px !important; width: 36px !important; height: 36px !important; font-size: 22px !important; }
+    .post-modal .tabs { gap: 8px; padding: 14px 18px; }
+    .post-modal .tabs > div { min-height: 105px; padding: 12px 8px; }
+    .post-modal .tabs > div > i { width: 34px; height: 34px; font-size: 16px; }
+    .post-modal .tabs > div h1 { font-size: 12px; }
+    .post-modal .tabs > div p { font-size: 10px; }
+    .post-form, .collaborator-form, .available-help-form, .need-help-form { padding: 18px; }
+    .post-form button[type="submit"], .collaborator-form button[type="submit"], .available-help-form button[type="submit"], .need-help-form button[type="submit"] { width: 100%; }
+}
