@@ -13,8 +13,7 @@ import {
     cancelOutgoingRequest,
     removeConnection,
     exportConnectionsToCSV,
-    exportConnectionsToJSON,
-    getWeekStart
+    exportConnectionsToJSON
 } from "../../../../services/connectionsService";
 import ConnectionCard from "./ConnectionCard";
 import ContactModal from "./ContactModal";
@@ -22,7 +21,7 @@ import "./ConnectionsPage.css";
 
 function ConnectionsPage() {
     const navigate = useNavigate();
-    const { currentUser, isPro, openUpgradeModal } = useUser();
+    const { currentUser } = useUser();
     const userKey = getUserKey(currentUser);
     const [activeConnections, setActiveConnections] = useState(() => getActiveConnections(userKey));
     const [connectionRequests, setConnectionRequests] = useState(() => getConnectionRequests(userKey));
@@ -63,13 +62,6 @@ function ConnectionsPage() {
         };
     }, [refreshAllState]);
 
-    // Quota statistics
-    const currentWeek = getWeekStart();
-    const weeklyCount = connectionRequests.weekStart === currentWeek
-        ? (connectionRequests.weeklyIds?.length || 0)
-        : 0;
-    const freeQuotaRemaining = Math.max(0, 5 - weeklyCount);
-
     // Contact handlers: navigate directly to Messages tab with recipient preselected
     const handleOpenContact = useCallback((connection) => {
         if (connection?.id) {
@@ -106,17 +98,11 @@ function ConnectionsPage() {
     const handleConnectStudent = useCallback((student) => {
         setConnectingStudentId(student.id);
 
-        const result = sendOutgoingRequest(userKey, student, isPro);
+        const result = sendOutgoingRequest(userKey, student);
         setConnectingStudentId(null);
 
         if (!result.success) {
-            if (result.reason === "QUOTA_EXCEEDED") {
-                if (typeof openUpgradeModal === "function") {
-                    openUpgradeModal("Unlimited Connect Requests (Weekly Free limit of 5 reached)");
-                } else {
-                    alert("You have reached your weekly limit of 5 connection requests. Upgrade to Pro for unlimited requests!");
-                }
-            } else if (result.reason === "ALREADY_CONNECTED") {
+            if (result.reason === "ALREADY_CONNECTED") {
                 alert(`You are already connected with ${student.name}.`);
             } else if (result.reason === "ALREADY_REQUESTED") {
                 alert(`You have already sent a connection request to ${student.name}.`);
@@ -125,7 +111,7 @@ function ConnectionsPage() {
         }
 
         refreshAllState();
-    }, [userKey, isPro, openUpgradeModal, refreshAllState]);
+    }, [userKey, refreshAllState]);
 
     // Export actions
     const handleExportCSV = () => {
@@ -134,7 +120,7 @@ function ConnectionsPage() {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.setAttribute("href", url);
-        link.setAttribute("download", `talentforge_connections_${Date.now()}.csv`);
+        link.setAttribute("download", `mosaiq_connections_${Date.now()}.csv`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -147,7 +133,7 @@ function ConnectionsPage() {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.setAttribute("href", url);
-        link.setAttribute("download", `talentforge_connections_${Date.now()}.json`);
+        link.setAttribute("download", `mosaiq_connections_${Date.now()}.json`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -255,36 +241,6 @@ function ConnectionsPage() {
                     </button>
                 </div>
             </header>
-
-            {/* Quota Banner */}
-            <section className="connections-quota-banner" aria-label="Networking Plan Status">
-                <div className="connections-quota-info">
-                    <div className="connections-quota-icon">
-                        <i className={isPro ? "bi bi-patch-check-fill" : "bi bi-lightning-charge-fill"}></i>
-                    </div>
-                    <div className="connections-quota-text">
-                        <strong>
-                            {isPro ? "Pro Membership Active" : `${freeQuotaRemaining} of 5 Weekly Free Requests Remaining`}
-                        </strong>
-                        <span>
-                            {isPro
-                                ? "You enjoy unlimited connection requests and direct peer networking."
-                                : "Free users can send up to 5 connection requests per calendar week."}
-                        </span>
-                    </div>
-                </div>
-
-                {!isPro && (
-                    <button
-                        type="button"
-                        className="connections-upgrade-link"
-                        onClick={() => openUpgradeModal && openUpgradeModal("Unlimited Connections (Pro Member)")}
-                    >
-                        <i className="bi bi-stars"></i>
-                        <span>Upgrade to Pro</span>
-                    </button>
-                )}
-            </section>
 
             {/* Navigation Tabs */}
             <nav className="connections-tabs" aria-label="Connection Tabs">

@@ -372,3 +372,89 @@
     min-width: 0;
   }
 }
+
+.campushire-dashboard .brand {
+  color: inherit;
+  text-decoration: none;
+}
+
+html[data-theme="dark"] .campushire-dashboard {
+  color: #e5e7eb;
+  background: #0f172a;
+}
+
+html[data-theme="dark"] .campushire-dashboard .topbar,
+html[data-theme="dark"] .campushire-dashboard .filters-card,
+html[data-theme="dark"] .campushire-dashboard .card,
+html[data-theme="dark"] .campushire-dashboard .page-card,
+html[data-theme="dark"] .campushire-dashboard .comparison-card,
+html[data-theme="dark"] .campushire-dashboard .analytics-card,
+html[data-theme="dark"] .campushire-dashboard .candidate-detail,
+html[data-theme="dark"] .campushire-dashboard .modal-content {
+  background: #111827;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .campushire-dashboard .topbar {
+  border-bottom-color: #334155;
+}
+
+html[data-theme="dark"] .campushire-dashboard h1,
+html[data-theme="dark"] .campushire-dashboard h2,
+html[data-theme="dark"] .campushire-dashboard h3,
+html[data-theme="dark"] .campushire-dashboard .card-title,
+html[data-theme="dark"] .campushire-dashboard .card-title h3,
+html[data-theme="dark"] .campushire-dashboard .selected-header h2,
+html[data-theme="dark"] .campushire-dashboard .recruiter-name strong {
+  color: #f3f4f6;
+}
+
+html[data-theme="dark"] .campushire-dashboard p,
+html[data-theme="dark"] .campushire-dashboard small,
+html[data-theme="dark"] .campushire-dashboard .eyebrow,
+html[data-theme="dark"] .campushire-dashboard .heading-row p,
+html[data-theme="dark"] .campushire-dashboard .recruiter-name span {
+  color: #a5b4c6;
+}
+
+html[data-theme="dark"] .campushire-dashboard input,
+html[data-theme="dark"] .campushire-dashboard select,
+html[data-theme="dark"] .campushire-dashboard textarea,
+html[data-theme="dark"] .campushire-dashboard .search-box,
+html[data-theme="dark"] .campushire-dashboard .college-select {
+  background: #182235;
+  border-color: #475569;
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .campushire-dashboard .search-box input,
+html[data-theme="dark"] .campushire-dashboard .college-select select {
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .campushire-dashboard .candidate-table-head,
+html[data-theme="dark"] .campushire-dashboard .candidate-row,
+html[data-theme="dark"] .campushire-dashboard .chart-legend,
+html[data-theme="dark"] .campushire-dashboard .candidate-row:hover {
+  background: #182235;
+  border-color: #334155;
+  color: #dbe4f0;
+}
+
+html[data-theme="dark"] .campushire-dashboard .candidate-row.selected {
+  background: #1e3150;
+}
+
+html[data-theme="dark"] .campushire-dashboard .recharts-cartesian-axis-tick-value,
+html[data-theme="dark"] .campushire-dashboard .recharts-legend-item-text,
+html[data-theme="dark"] .campushire-dashboard .recharts-label {
+  fill: #cbd5e1;
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .campushire-dashboard .recharts-default-tooltip {
+  background: #111827 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}

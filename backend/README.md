@@ -1,4 +1,4 @@
-# TalentForge Google Careers Analytics API
+# MOSAIQ Google Careers Analytics API
 
 This is a separate Node.js/Express service used by the existing React + Vite app. It discovers Software Engineer listings only from Google's official Careers search page. Students choose a result in Analytics; they do not paste job URLs.
 
@@ -46,7 +46,7 @@ The root `.env.example` documents the optional `VITE_ANALYTICS_API_URL`. The def
 
 Never put the service-account JSON in the repository or a `VITE_` variable. Firebase Admin must verify tokens from the same Firebase project as the frontend.
 
-The existing editable TalentForge profile, projects, education, and experience are stored in per-UID `localStorage`, not Firestore. The profile editor currently has no explicit verified-skill or certification workflow; Analytics passes certification values only if present in that user's stored profile and does not invent them. Profile snapshots remain separate from the saved Google requirements.
+The existing editable MOSAIQ profile, projects, education, and experience are stored in per-UID `localStorage`, not Firestore. The profile editor currently has no explicit verified-skill or certification workflow; Analytics passes certification values only if present in that user's stored profile and does not invent them. Profile snapshots remain separate from the saved Google requirements.
 
 ## API
 

@@ -1,6 +1,4 @@
 
-import ManagePlan from './assets/Components/Dashboard/Subscription/ManagePlan';
-import PaymentUpgradeModal from './assets/Components/Dashboard/Subscription/PaymentUpgradeModal';
 import Profile from './assets/Components/Profile/Profile';
 import Dashboard from './assets/Components/Dashboard/Dashboard';
 import './App.css';
@@ -160,8 +158,6 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <ApplicationProvider>
-        <PaymentUpgradeModal />
-
         <Routes>
           {/* Landing Page */}
           <Route
@@ -237,18 +233,6 @@ function AppRoutes() {
               <ProtectedRoute requiredRole="student">
                 <DashboardLayout>
                   <MeetingsPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Manage Plan */}
-          <Route
-            path="/manage-plan"
-            element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <ManagePlan />
                 </DashboardLayout>
               </ProtectedRoute>
             }

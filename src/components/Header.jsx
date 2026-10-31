@@ -145,7 +145,7 @@ const categoryIconMap = {
 
 function Logo({ onLogoClick, ariaLabel }) {
   return (
-    <a className="tf-brand" href="/" onClick={onLogoClick} aria-label={ariaLabel}>
+    <a className="tf-brand" href="/roles" onClick={onLogoClick} aria-label={ariaLabel}>
       <svg className="tf-logo" viewBox="0 0 48 48" aria-hidden="true">
         <path d="M24 3 2 15l22 12 22-12L24 3Z" fill="#5035ff" />
         <path d="M9 20v12l15 9 15-9V20L24 29 9 20Z" fill="#3920e8" />
@@ -155,7 +155,7 @@ function Logo({ onLogoClick, ariaLabel }) {
         />
       </svg>
       <span className="tf-brand-word">
-        Talent<span>Forge</span>
+        MOSAIQ
       </span>
     </a>
   );
@@ -493,7 +493,7 @@ export default function Header() {
   const handleLogoClick = useCallback((e) => {
     e.preventDefault();
     closeMenus();
-    navigate("/");
+    navigate("/roles");
     const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
       ? "instant"
       : "smooth";
@@ -682,19 +682,6 @@ export default function Header() {
               );
             })}
 
-            <div className="tf-nav-item">
-              <a
-                className="tf-nav-link tf-pricing-link"
-                href="#pricing"
-                onMouseEnter={() => {
-                  clearCloseTimer();
-                  setActiveMenu(null);
-                }}
-                onClick={closeMenus}
-              >
-                <span>{t("navigation.pricing", "Pricing")}</span>
-              </a>
-            </div>
           </div>
 
           <div

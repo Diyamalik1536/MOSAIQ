@@ -34,8 +34,7 @@
         padding: 0;
     }
 
-    .sidebar.closed .sidebar-item span,
-    .sidebar.closed > .upgrade-card {
+    .sidebar.closed .sidebar-item span {
         display: none;
     }
 }
@@ -46,93 +45,6 @@
     flex-direction: column;
     gap: 5px;
     flex: 1;
-}
-.upgrade-card {
-    position: relative;
-    width: 100%;
-    margin-top: auto;
-    padding: 18px 16px 16px;
-    box-sizing: border-box;
-    border: 1px solid rgba(111, 91, 238, 0.14);
-    border-radius: 17px;
-    background:
-        radial-gradient(
-            circle at 100% 0%,
-            rgba(128, 106, 255, 0.22),
-            transparent 45%
-        ),
-        linear-gradient(
-            145deg,
-            var(--brand-soft) 0%,
-            rgba(139, 92, 246, 0.12) 100%
-        );
-    box-shadow:
-        0 10px 28px rgba(81, 56, 238, 0.1);
-    overflow: hidden;
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.upgrade-card::before {
-    content: "✦";
-    position: absolute;
-    top: 10px;
-    right: 13px;
-    color: #806df5;
-    font-size: 15px;
-    opacity: 0.8;
-}
-
-.upgrade-card:hover {
-    transform: translateY(-3px);
-    box-shadow:
-        0 15px 35px rgba(81, 56, 238, 0.16);
-}
-
-.upgrade-card h3 {
-    margin: 0 0 7px;
-    color: var(--text-primary);
-    font-size: 16px;
-    font-weight: 750;
-    line-height: 1.3;
-}
-
-.upgrade-card p {
-    margin: 0 0 15px;
-    color: var(--text-muted);
-    font-size: 12px;
-    line-height: 1.55;
-}
-
-.upgrade-card button {
-    width: 100%;
-    height: 37px;
-    padding: 0 12px;
-    border: none;
-    border-radius: 9px;
-    background: linear-gradient(
-        135deg,
-        #5a43f0,
-        #4931dc
-    );
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow:
-        0 6px 16px rgba(81, 56, 238, 0.2);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
-}
-
-.upgrade-card button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.04);
-    box-shadow:
-        0 9px 22px rgba(81, 56, 238, 0.28);
 }
 .sidebar-item {
     position: relative;
@@ -244,9 +156,6 @@
         margin: 0;
     }
 
-    .sidebar > .upgrade-card {
-        display: none;
-    }
 }
 @media (max-width: 767px) {
     .sidebar {
@@ -305,9 +214,6 @@
         font-size: 18px;
     }
 
-    .sidebar > .upgrade-card {
-        display: none;
-    }
 }
 
 @media (max-width: 480px) {

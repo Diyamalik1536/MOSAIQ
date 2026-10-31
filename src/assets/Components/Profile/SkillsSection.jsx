@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useUser } from "../../../context/UserContext";
 import { useTranslation } from "react-i18next";
 import "./SkillsSection.css";
 
 function SkillsSection({ skills, onAddSkill, onRemoveSkill }) {
     const { t } = useTranslation();
-    const { isPro } = useUser();
     const [skillInput, setSkillInput] = useState("");
 
     function handleSubmit(e) {
@@ -26,18 +24,9 @@ function SkillsSection({ skills, onAddSkill, onRemoveSkill }) {
             <div className="skills-section-header">
                 <div>
                     <h2>
-                        {t("profile.skillsSection.title", "Skills")}{" "}
-                        {isPro && (
-                            <span className="pro-skills-badge">
-                                <i className="bi bi-patch-check-fill"></i> {t("profile.skillsSection.verifiedShowcase", "Verified Showcase")}
-                            </span>
-                        )}
+                        {t("profile.skillsSection.title", "Skills")}
                     </h2>
-                    <p>
-                        {isPro
-                            ? t("profile.skillsSection.proSubtitle", "Skills validated by mentor reviews & project evaluations")
-                            : t("profile.skillsSection.subtitle", "Showcase what you can do")}
-                    </p>
+                    <p>{t("profile.skillsSection.subtitle", "Showcase what you can do")}</p>
                 </div>
                 <div className="skills-section-icon">
                     <i className="bi bi-lightning-charge-fill"></i>
@@ -60,14 +49,8 @@ function SkillsSection({ skills, onAddSkill, onRemoveSkill }) {
             <div className="skills-list">
                 {skills.length > 0 ? (
                     skills.map((skill, index) => (
-                        <div className={`skill-item ${isPro ? "verified-pro-skill" : ""}`} key={`${skill}-${index}`}>
-                            {isPro && (
-                                <span className="skill-verified-icon" title="Verified Skill (Pro Member)">
-                                    <i className="bi bi-patch-check-fill"></i>
-                                </span>
-                            )}
+                        <div className="skill-item" key={`${skill}-${index}`}>
                             <span>{skill}</span>
-                            {isPro && <span className="verified-mentor-tag">{t("profile.skillsSection.verified", "Verified")}</span>}
                             <button
                                 type="button"
                                 onClick={() => onRemoveSkill(skill)}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../../../context/UserContext';
@@ -105,22 +105,11 @@ function readStoredJson(key, fallback) {
 function ResumeBuilder() {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const { currentUser, isPro, openUpgradeModal, loading } = useUser();
+    const { currentUser } = useUser();
     const [selectedTemplateId, setSelectedTemplateId] = useState('classic');
     const [showDetail, setShowDetail] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
     const [downloadMessage, setDownloadMessage] = useState('');
-
-    useEffect(() => {
-        if (loading) {
-            return;
-        }
-
-        if (!isPro) {
-            openUpgradeModal('Resume Builder');
-            navigate('/profile', { replace: true });
-        }
-    }, [loading, isPro, navigate, openUpgradeModal]);
 
     const userKey = currentUser?.uid || currentUser?.id || currentUser?.email || 'guest';
     const storedProfile = readStoredJson(`talentforge_profile_${userKey}`, {});
@@ -305,29 +294,6 @@ function ResumeBuilder() {
         );
     };
 
-    if (loading) {
-        return (
-            <div className="resume-builder-page">
-                <div className="resume-builder-loading">{t("resume.checkingAccess", "Checking access...")}</div>
-            </div>
-        );
-    }
-
-    if (!isPro) {
-        return (
-            <div className="resume-builder-page">
-                <div className="resume-builder-pro-gate">
-                    <i className="bi bi-shield-lock-fill" aria-hidden="true"></i>
-                    <h1>Resume Builder</h1>
-                    <p>Resume Builder is a Pro feature. Upgrade to access the templates and export tools.</p>
-                    <button type="button" className="detail-button primary" onClick={() => openUpgradeModal('Resume Builder')}>
-                        Upgrade to Pro
-                    </button>
-                </div>
-            </div>
-        );
-    }
-
     return (
         <div className="resume-builder-page">
             <header className="resume-builder-header">
@@ -337,7 +303,6 @@ function ResumeBuilder() {
                     <p className="resume-builder-subtitle">Choose a design. Your saved profile becomes a polished, editable Word resume.</p>
                     <p className="resume-data-note"><i className="bi bi-arrow-repeat" aria-hidden="true" /> {t("resume.dataNote", "Your profile, education, experience, and projects are used automatically.")}</p>
                 </div>
-                <span className="resume-builder-badge"><i className="bi bi-stars" aria-hidden="true" /> PRO WORKSPACE</span>
             </header>
 
             {!showDetail ? (

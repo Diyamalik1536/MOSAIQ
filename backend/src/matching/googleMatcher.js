@@ -24,7 +24,7 @@ export function matchGoogleRequirements(requirements, studentProfile) {
   ]));
   const classify = (skill) => {
     const direct = directSkills.get(skill.id); const project = projectSkills.get(skill.id); const experience = experienceSkills.get(skill.id);
-    if (direct) return { ...skill, status: "matched", matched: true, evidenceType: "self-reported profile skill", proficiency: direct.proficiency ?? "unassessed", reason: "Explicitly listed in the TalentForge profile. Proficiency is not independently verified." };
+    if (direct) return { ...skill, status: "matched", matched: true, evidenceType: "self-reported profile skill", proficiency: direct.proficiency ?? "unassessed", reason: "Explicitly listed in the MOSAIQ profile. Proficiency is not independently verified." };
     if (project || experience) return { ...skill, status: "insufficient-evidence", matched: false, evidenceType: project && experience ? "project and experience mention" : project ? "project technology mention" : "experience mention", proficiency: "unassessed", reason: "Mentioned in project or experience data, but not listed as a profile skill." };
     return { ...skill, status: "missing", matched: false, evidenceType: null, proficiency: "unassessed", reason: "Not found in profile skills, project technologies, or experience." };
   };

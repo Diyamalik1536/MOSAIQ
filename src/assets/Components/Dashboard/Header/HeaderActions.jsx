@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 function HeaderActions() {
     const { t } = useTranslation();
-    const { currentUser: user, setCurrentUser, isPro } = useUser();
+    const { currentUser: user, setCurrentUser } = useUser();
     const { theme, toggleTheme } = useTheme();
     const [profileOpen, setProfileOpen] = useState(false);
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ function HeaderActions() {
     }
 
     const { unreadCount } = useNotifications();
-    const { unreadCount: unreadMessageCount, markAllAsRead } = useMessages();
+    const { unreadCount: unreadMessageCount } = useMessages();
     const [dropdownOpen, setDropdownOpen] = useState(false);
  
     function toggleDropdown() {
@@ -107,11 +107,6 @@ function HeaderActions() {
                         <i className="bi bi-person-circle"></i>
                     )}
                     <span className="user_name">{user?.name || "User"}</span>
-                    {isPro && (
-                        <span className="header-pro-watermark" title="MOSAIQ Pro Member">
-                            <i className="bi bi-crown-fill"></i> {t("nav.proMember", "Pro Member")}
-                        </span>
-                    )}
                     <i className="bi bi-chevron-compact-down"></i>
                 </button>
 
@@ -121,9 +116,8 @@ function HeaderActions() {
                             {user?.avatar ? <img src={user.avatar} alt="Profile"/> : <i className="bi bi-person-circle"></i>}
                             <h1>
                                 {user?.name || "User"}
-                                {isPro && <span className="dropdown-pro-badge"><i className="bi bi-crown-fill"></i> PRO</span>}
                             </h1>
-                            <p>{isPro ? t("nav.userMenu.proMemberEmail", { email: user?.email, defaultValue: `👑 Pro Member • ${user?.email}` }) : user?.email}</p>
+                            <p>{user?.email}</p>
                         </div>
                         <div className="buttons_profile">
                             <button onClick={() => navigate("/profile")}><i className="bi bi-person"></i>{t("nav.userMenu.viewProfile", "View Profile")}</button>

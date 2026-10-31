@@ -1,6 +1,5 @@
 import "./ProfileHeader.css";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../../../context/UserContext";
 import { useTranslation } from "react-i18next";
 
 function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatarChange }) {
@@ -125,7 +124,6 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
         e.target.value = "";
     }
 
-    const { isPro, openUpgradeModal } = useUser();
     const currentCover = profile?.coverImage || user?.coverImage;
     const currentAvatar = profile?.avatar || user?.avatar || profile?.profileImage || user?.profileImage;
 
@@ -136,12 +134,6 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                     <img src={currentCover} alt="Profile cover" />
                 ) : (
                     <div className="profile-cover-placeholder"></div>
-                )}
-
-                {isPro && (
-                    <div className="cover-pro-watermark" title="MOSAIQ Pro Member">
-                        <i className="bi bi-crown-fill"></i> {t("dashboard.proMember", "Pro Member")}
-                    </div>
                 )}
 
                 <label className="profile-cover-edit">
@@ -180,15 +172,9 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                     <div className="profile-name">
                         <h1>{user?.name || "Your Name"}</h1>
 
-                        {(profile.isVerified || isPro) && (
+                        {profile.isVerified && (
                             <span className="verified-badge" title={t("profile.verifiedMember", "Verified MOSAIQ Member")}>
                                 <i className="bi bi-patch-check-fill"></i>
-                            </span>
-                        )}
-
-                        {isPro && (
-                            <span className="profile-pro-watermark" title={t("profile.proMember", "MOSAIQ Pro Member")}>
-                                <i className="bi bi-crown-fill"></i> {t("dashboard.proMember", "Pro Member")}
                             </span>
                         )}
                     </div>
@@ -219,11 +205,6 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                             </span>
                         )}
 
-                        {isPro && (
-                            <span className="pro-meta-tag">
-                                <i className="bi bi-stars"></i> {t("dashboard.proMember", "Pro Member")}
-                            </span>
-                        )}
                     </div>
 
                     {profile.headline && (
@@ -260,23 +241,12 @@ function ProfileHeader({ user, profile, edit, isEditing, onCoverChange, onAvatar
                         <>
                             <button
                                 type="button"
-                                className="profile-action-button secondary pro-feature-button"
-                                onClick={() => {
-                                    if (!isPro) {
-                                        openUpgradeModal("Resume Builder");
-                                    } else {
-                                        navigate("/resume-builder");
-                                    }
-                                }}
-                                title={isPro ? "Open Resume Builder" : "Pro Feature: Resume Builder"}
+                                className="profile-action-button secondary"
+                                onClick={() => navigate("/resume-builder")}
+                                title="Open Resume Builder"
                             >
                                 <i className="bi bi-file-earmark-richtext"></i>
                                 {t("profile.resumeBuilder", "Resume Builder")}
-                                {!isPro && (
-                                    <span className="pro-lock-badge">
-                                        <i className="bi bi-lock-fill"></i> PRO
-                                    </span>
-                                )}
                             </button>
 
                             <button className="profile-action-button secondary">

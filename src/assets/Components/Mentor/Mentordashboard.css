@@ -2919,3 +2919,77 @@
     background: #ffffff !important;
     border-color: #dcd9ff !important;
 }
+
+html[data-theme="dark"] .mentor-app {
+    --ink: #e5e7eb;
+    --muted: #a5b4c6;
+    --line: #334155;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .mentor-app .sidebar,
+html[data-theme="dark"] .mentor-app .topbar,
+html[data-theme="dark"] .mentor-app .popover,
+html[data-theme="dark"] .mentor-app .metric-card,
+html[data-theme="dark"] .mentor-app .panel,
+html[data-theme="dark"] .mentor-app .card,
+html[data-theme="dark"] .mentor-app .rubric-card,
+html[data-theme="dark"] .mentor-app .project-card,
+html[data-theme="dark"] .mentor-app .app-content > section,
+html[data-theme="dark"] .mentor-app .app-content article {
+    background: #111827 !important;
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .mentor-app .brand,
+html[data-theme="dark"] .mentor-app h1,
+html[data-theme="dark"] .mentor-app h2,
+html[data-theme="dark"] .mentor-app h3,
+html[data-theme="dark"] .mentor-app h4,
+html[data-theme="dark"] .mentor-app strong,
+html[data-theme="dark"] .mentor-app label {
+    color: #f3f4f6;
+}
+
+html[data-theme="dark"] .mentor-app p,
+html[data-theme="dark"] .mentor-app small,
+html[data-theme="dark"] .mentor-app .nav-section__label,
+html[data-theme="dark"] .mentor-app .project-card__info p,
+html[data-theme="dark"] .mentor-app .project-card__meta {
+    color: #a5b4c6;
+}
+
+html[data-theme="dark"] .mentor-app input,
+html[data-theme="dark"] .mentor-app select,
+html[data-theme="dark"] .mentor-app textarea,
+html[data-theme="dark"] .mentor-app .global-search,
+html[data-theme="dark"] .mentor-app .queue-search,
+html[data-theme="dark"] .mentor-app kbd {
+    background: #182235;
+    border-color: #475569;
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .mentor-app .nav-link {
+    color: #cbd5e1;
+}
+
+html[data-theme="dark"] .mentor-app .nav-link:hover,
+html[data-theme="dark"] .mentor-app .global-search:focus-within,
+html[data-theme="dark"] .mentor-app .queue-search:focus-within {
+    background: #1e293b;
+}
+
+html[data-theme="dark"] .mentor-app .project-card,
+html[data-theme="dark"] .mentor-app .project-card:hover {
+    background: #111827 !important;
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .mentor-app .project-card__info h3 {
+    color: #f3f4f6 !important;
+    -webkit-text-fill-color: #f3f4f6 !important;
+}

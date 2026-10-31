@@ -15,30 +15,21 @@ function getConnectionStorageKey(user) {
     return userKey ? `talentforge_connection_requests_${encodeURIComponent(userKey)}` : null;
 }
 
-function getWeekStart() {
-    const date = new Date();
-    const daysSinceMonday = (date.getUTCDay() + 6) % 7;
-    date.setUTCDate(date.getUTCDate() - daysSinceMonday);
-    return date.toISOString().slice(0, 10);
-}
-
 function readConnections(storageKey) {
-    if (!storageKey) return { connectedIds: [], weekStart: "", weeklyIds: [] };
+    if (!storageKey) return { connectedIds: [] };
     try {
         const stored = JSON.parse(localStorage.getItem(storageKey) || "{}");
         return {
-            connectedIds: Array.isArray(stored.connectedIds) ? stored.connectedIds : [],
-            weekStart: typeof stored.weekStart === "string" ? stored.weekStart : "",
-            weeklyIds: Array.isArray(stored.weeklyIds) ? stored.weeklyIds : []
+            connectedIds: Array.isArray(stored.connectedIds) ? stored.connectedIds : []
         };
     } catch {
-        return { connectedIds: [], weekStart: "", weeklyIds: [] };
+        return { connectedIds: [] };
     }
 }
 
 function StudentCard({ student, matchScore }) {
     const { t } = useTranslation();
-    const { currentUser, isPro, openUpgradeModal } = useUser();
+    const { currentUser } = useUser();
     const connectionStorageKey = getConnectionStorageKey(currentUser);
     const formattedScore = typeof matchScore === "number" ? t("students.profileMatch", { score: matchScore, defaultValue: `${matchScore}% Profile Match` }) : null;
     const matchColor = typeof matchScore === "number" ? getMatchColor(matchScore) : null;
@@ -56,19 +47,9 @@ function StudentCard({ student, matchScore }) {
             return;
         }
 
-        const weekStart = getWeekStart();
-        const weeklyIds = connections.weekStart === weekStart ? connections.weeklyIds : [];
-
-        // Restriction: Free users have a 5 connections limit per week
-        if (!isPro && weeklyIds.length >= 5) {
-            openUpgradeModal("Unlimited Connect Requests (Weekly Free limit of 5 reached)");
-            return;
-        }
-
         const updated = {
-            connectedIds: [...connections.connectedIds, student.id],
-            weekStart,
-            weeklyIds: [...weeklyIds, student.id]
+            ...connections,
+            connectedIds: [...connections.connectedIds, student.id]
         };
         try {
             localStorage.setItem(connectionStorageKey, JSON.stringify(updated));
@@ -82,12 +63,7 @@ function StudentCard({ student, matchScore }) {
         }
         setIsConnected(true);
 
-        const freeRemaining = 5 - updated.weeklyIds.length;
-        if (!isPro) {
-            window.alert(`Connection request sent to ${student.name}! (${freeRemaining >= 0 ? freeRemaining : 0} free requests remaining this week)`);
-        } else {
-            window.alert(`Connection request sent to ${student.name}! (Unlimited Pro Member)`);
-        }
+        window.alert(`Connection request sent to ${student.name}!`);
     };
 
     const availabilityText = student.availability
@@ -159,7 +135,7 @@ function StudentCard({ student, matchScore }) {
                 <button
                     className={`btn-icon ${isConnected ? "connected" : ""}`}
                     aria-label={isConnected ? t("students.connected", "Connected") : t("students.connect", "Connect")}
-                    title={isConnected ? t("students.connectionSent", "Connection Request Sent") : isPro ? `${t("students.connect", "Connect")} (Unlimited Pro)` : `${t("students.connect", "Connect")} (Free: 5/week)`}
+                    title={isConnected ? t("students.connectionSent", "Connection Request Sent") : t("students.connect", "Connect")}
                     onClick={handleConnect}
                 >
                     <i className={isConnected ? "bi bi-check-lg" : "bi bi-person-plus"}></i>

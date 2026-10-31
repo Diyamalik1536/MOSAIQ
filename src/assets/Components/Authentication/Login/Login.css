@@ -275,13 +275,12 @@
 
 
 .mobile-brand-logo {
-
     display: flex;
-
     align-items: center;
 
     gap: 10px;
-
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 
@@ -1079,4 +1078,3 @@
     }
 
 }
-

@@ -1,5 +1,9 @@
 
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../config/firebase";
+import { useUser } from "../../../context/UserContext";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import CoursesPage from "./pages/CoursesPage";
 import EvaluationWorkspace from "./pages/EvaluationWorkspace";
@@ -19,6 +23,8 @@ import { defaultRatings, initialProjects } from "./data/dashboardData";
 import "./Mentordashboard.css";
 
 function MentorDashboard() {
+    const { setCurrentUser } = useUser();
+    const navigate = useNavigate();
     const [today] = useState(() => new Date());
     const [projects, setProjects] = useState(initialProjects);
     const [activePage, setActivePage] = useState("Overview");
@@ -38,6 +44,7 @@ function MentorDashboard() {
         weeklySummary: true,
         showcaseUpdates: false
     });
+    const [loggingOut, setLoggingOut] = useState(false);
 
     const selectedProject =
         projects.find((project) => project.id === selectedProjectId) ?? projects[0];
@@ -66,6 +73,21 @@ function MentorDashboard() {
     const showToast = (message) => {
         setToast(message);
         window.setTimeout(() => setToast(""), 3000);
+    };
+
+    const handleLogout = async () => {
+        setLoggingOut(true);
+
+        try {
+            await signOut(auth);
+            setCurrentUser(null);
+            navigate("/mentor/login", { replace: true });
+        } catch (error) {
+            console.error("Mentor logout failed:", error);
+            showToast("Unable to log out. Please try again.");
+        } finally {
+            setLoggingOut(false);
+        }
     };
 
     const changePage = (page) => {
@@ -270,6 +292,8 @@ function MentorDashboard() {
                         showToast("Profile settings opened.");
                     }}
                     onOpenMobileNav={() => setMobileNavOpen(true)}
+                    onLogout={handleLogout}
+                    loggingOut={loggingOut}
                 />
 
                 <main

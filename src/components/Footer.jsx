@@ -34,7 +34,6 @@ const footerGroups = [
       { label: "About MOSAIQ", href: "/about" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Features", href: "/features" },
-      { label: "MOSAIQ Pro", href: "/pro", badge: "NEW" },
       { label: "Community Guidelines", href: "/community-guidelines" },
       { label: "Blog", href: "/blog" },
     ],
@@ -96,8 +95,7 @@ export default function Footer() {
     ...group,
     links: group.links.map((label, linkIndex) => ({
       label,
-      href: footerGroups[groupIndex].links[linkIndex].href,
-      badge: groupIndex === 2 && linkIndex === 3 ? t("footer.new") : undefined
+      href: footerGroups[groupIndex].links[linkIndex].href
     }))
   }));
   const highlights = t("footer.highlights", { returnObjects: true });
@@ -108,12 +106,12 @@ export default function Footer() {
         <div className="tf-footer__main">
           {/* Brand and summary */}
           <div className="tf-footer__brand">
-            <Link className="tf-footer__logo" to="/" aria-label={t("footer.logo")}>
+            <Link className="tf-footer__logo" to="/roles" aria-label={t("footer.logo")}>
               <span className="tf-footer__logo-mark">
                 <UsersRound size={25} strokeWidth={2.4} />
               </span>
               <span className="tf-footer__logo-text">
-                Talent<span>Forge</span>
+                MOSAIQ
               </span>
             </Link>
 

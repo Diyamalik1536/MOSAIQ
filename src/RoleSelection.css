@@ -197,3 +197,28 @@
     transition: none;
   }
 }
+
+html[data-theme="dark"] .role-selection-page {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(111, 91, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 85%, rgba(80, 53, 255, 0.14), transparent 28%),
+    #0f172a;
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .role-selection-container h1,
+html[data-theme="dark"] .role-selection-card h2 {
+  color: #f3f4f6;
+}
+
+html[data-theme="dark"] .role-selection-container > p,
+html[data-theme="dark"] .role-selection-card p,
+html[data-theme="dark"] .role-selection-back {
+  color: #a5b4c6;
+}
+
+html[data-theme="dark"] .role-selection-card {
+  background: rgba(17, 24, 39, 0.94);
+  border-color: #334155;
+  box-shadow: 0 12px 35px rgba(2, 6, 23, 0.28);
+}

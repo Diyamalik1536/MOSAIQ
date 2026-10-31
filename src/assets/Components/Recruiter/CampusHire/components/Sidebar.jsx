@@ -1,4 +1,5 @@
 import { Compass, Bookmark, GitCompareArrows, ChartNoAxesColumn, Settings, Landmark } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { id: "Discovery", label: "Discovery", Icon: Compass },
@@ -11,10 +12,10 @@ const navItems = [
 export default function Sidebar({ page, setPage, shortlistCount }) {
   return (
     <aside className="sidebar">
-      <div className="brand">
+      <Link className="brand" to="/roles" aria-label="MOSAIQ roles portal">
         <div className="brand-icon"><Landmark size={25} /></div>
-        <div><strong>CampusHire</strong><span>Recruiter Portal</span></div>
-      </div>
+        <div><strong>MOSAIQ</strong><span>Recruiter Portal</span></div>
+      </Link>
       <nav className="nav-list">
         {navItems.map(({ id, label, Icon }) => (
           <button key={id} className={`nav-item ${page === id ? "active" : ""}`} onClick={() => setPage(id)}>

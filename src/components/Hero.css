@@ -24,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   width: min(calc(100% - 48px), 1320px);
+  min-width: 0;
   margin-inline: auto;
   text-align: center;
 }
@@ -59,6 +60,7 @@
 .tf-hero-title {
   width: 100%;
   max-width: 1320px;
+  min-width: 0;
   margin: 0 auto;
 
   color: var(--tf-ink);
@@ -77,9 +79,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0.18em;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 /* Fixed-width animated word slot */
@@ -90,6 +92,7 @@
   width: 5.8em;
   height: 1.08em;
   min-width: 0;
+  max-width: 100%;
   vertical-align: middle;
 
   border-radius: 999px;

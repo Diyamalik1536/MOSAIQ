@@ -14,7 +14,7 @@ function Hero() {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [postModalOpen, setPostModalOpen] = useState(false);
-    const { currentUser, isPro } = useUser();
+    const { currentUser } = useUser();
     const { theme } = useTheme();
     const heroImage = theme === "dark" ? heroImageDark : heroImageLight;
     const { unreadCount: newMessages } = useMessages();
@@ -86,11 +86,6 @@ function Hero() {
             <div className="hero_text">
                 <h1 className="greetings">
                     {greeting}{userName && <>, <span className="greeting-name">{userName}</span></>}!
-                    {isPro && (
-                        <span className="hero-pro-watermark-pill" title="MOSAIQ Pro Member">
-                            <i className="bi bi-crown-fill"></i> {t("dashboard.proMember", "Pro Member")}
-                        </span>
-                    )}
                 </h1>
                 <p>{t("dashboard.heroSubtitle", "Find the right people, Build amazing things together")}</p>
                 <div className="hero_stats">

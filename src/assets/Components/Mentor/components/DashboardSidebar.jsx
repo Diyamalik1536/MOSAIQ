@@ -1,13 +1,16 @@
 import { navigation } from "../data/dashboardData";
+import { useNavigate } from "react-router-dom";
 
 const navigationSections = ["Workspace", "Manage", "Insights", "More"];
 
 function DashboardSidebar({ activePage, pendingCount, mobileNavOpen, onChangePage, onClose }) {
+    const navigate = useNavigate();
+
     return (
         <>
             {mobileNavOpen && <button className="mobile-scrim" aria-label="Close navigation" onClick={onClose} />}
             <aside className={`sidebar${mobileNavOpen ? " sidebar--open" : ""}`}>
-                <button className="brand" onClick={() => onChangePage("Overview")} aria-label="MOSAIQ home"><span className="brand__mark">✦</span><span>Talent<span>Forge</span></span></button>
+                <button className="brand" onClick={() => navigate("/roles")} aria-label="MOSAIQ roles portal"><span className="brand__mark">✦</span><span>MOSAIQ</span></button>
                 <div className="sidebar__nav">
                     {navigationSections.map((section) => (
                         <div className="nav-section" key={section}>

@@ -760,11 +760,6 @@ html[data-theme="dark"] .hero_part .post_project:hover {
     color: #C4B5FD;
 }
 
-/* PRO label: keep it legible */
-html[data-theme="dark"] .hero_part .hero-pro-watermark-pill {
-    color: #FDE68A;
-}
-
 /* Respect smaller screens */
 @media (max-width: 700px) {
     html[data-theme="dark"] .hero_part {

@@ -126,6 +126,23 @@ body {
     flex-shrink: 0;
 }
 
+.branch-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+}
+
+.branch-brand:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 .branch button {
     padding: 0;
 
@@ -586,7 +603,6 @@ html[data-theme="dark"] .theme-toggle:active .theme-toggle-thumb {
     }
 
     .Headeractions .user_name,
-    .Headeractions .header-pro-watermark,
     .Headeractions .profile-trigger > .bi-chevron-compact-down {
         display: none;
     }
@@ -1240,76 +1256,4 @@ html[data-theme="dark"] .theme-toggle:active .theme-toggle-thumb {
 }
 .Headeractions > button {
     flex-shrink: 0;
-}
-
-/* PRO WATERMARK & BADGE STYLES */
-.header-pro-watermark {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 2px 8px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #fef3c7, #fde68a);
-    color: #92400e;
-    border: 1px solid #facc15;
-    font-size: 11px;
-    font-weight: 750;
-    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
-    margin-left: 6px;
-    white-space: nowrap;
-}
-
-.header-pro-watermark i {
-    color: #d97706;
-    font-size: 11.5px;
-}
-
-.dropdown-pro-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 1px 6px;
-    border-radius: 4px;
-    background: #5b43ed;
-    color: #ffffff;
-    margin-left: 6px;
-    vertical-align: middle;
-}
-
-.dropdown-pro-badge i {
-    color: #facc15;
-    font-size: 10px;
-}
-
-.hero-pro-watermark-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    background: rgba(245, 158, 11, 0.15);
-    color: #b45309;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    font-size: 13px;
-    font-weight: 750;
-    box-shadow: 0 2px 8px var(--shadow);
-    margin-left: 10px;
-    vertical-align: middle;
-}
-
-.hero-pro-watermark-pill i {
-    color: #d97706;
-    font-size: 13px;
-}
-
-html[data-theme="dark"] .hero-pro-watermark-pill {
-    background: rgba(245, 158, 11, 0.2);
-    color: #fbbf24;
-    border-color: rgba(245, 158, 11, 0.4);
-}
-
-html[data-theme="dark"] .hero-pro-watermark-pill i {
-    color: #facc15;
 }

@@ -111,7 +111,7 @@ export default function ProjectGraphic({ project, variant = "card" }) {
             <text x="70" y="105" fill="#a7f3d0" fontSize="10" fontFamily="monospace">✓ Provisioning AWS ECS Cluster [OK]</text>
             <text x="70" y="125" fill="#a7f3d0" fontSize="10" fontFamily="monospace">✓ Ephemeral Postgres provisioned [OK]</text>
             <text x="70" y="145" fill="#a7f3d0" fontSize="10" fontFamily="monospace">✓ SSL Cert generated via Let's Encrypt</text>
-            <text x="70" y="175" fill="#fef08a" fontSize="10" fontWeight="bold" fontFamily="monospace">🚀 Live at: https://pr-42.talentforge.dev</text>
+            <text x="70" y="175" fill="#fef08a" fontSize="10" fontWeight="bold" fontFamily="monospace">🚀 MOSAIQ project preview</text>
           </svg>
         )}
 

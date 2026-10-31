@@ -13,7 +13,7 @@ export async function fetchGooglePage(inputUrl, fetchImpl = fetch) {
   for (let redirects = 0; redirects <= MAX_REDIRECTS; redirects += 1) {
     const response = await fetchImpl(url, {
       redirect: "manual", signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
-      headers: { "User-Agent": "TalentForgeCareerAnalytics/1.0 (+job-description extraction)", Accept: "text/html,application/xhtml+xml" },
+      headers: { "User-Agent": "MOSAIQCareerAnalytics/1.0 (+job-description extraction)", Accept: "text/html,application/xhtml+xml" },
     });
     if ([301, 302, 303, 307, 308].includes(response.status)) {
       if (redirects === MAX_REDIRECTS) throw new Error("Google Careers redirected too many times.");

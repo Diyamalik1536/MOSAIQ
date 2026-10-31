@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../../config/firebase";
 import { useUser } from "../../../../context/UserContext";
+import { useTheme } from "../../../../context/useTheme";
 import {
   Search,
   Bell,
@@ -17,7 +18,6 @@ import {
   Check,
   SlidersHorizontal,
   CircleHelp,
-  ArrowUpRight,
   GitCompareArrows
 } from "lucide-react";
 import { studentData } from "../../Dashboard/BrowseStudents/studentData.js";
@@ -80,6 +80,7 @@ function formatValue(value, suffix = "") {
 
 function App() {
   const { currentUser, setCurrentUser } = useUser();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
   const [page, setPage] = useState("Discovery");
@@ -286,6 +287,16 @@ function App() {
             </div>
 
             <div className="topbar-spacer" />
+
+            <button
+              className="icon-button theme-toggle"
+              type="button"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              aria-pressed={theme === "dark"}
+              onClick={toggleTheme}
+            >
+              {theme === "dark" ? "☀" : "☾"}
+            </button>
 
             <button
               className="icon-button notification"

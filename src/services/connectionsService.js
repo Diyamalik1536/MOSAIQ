@@ -263,9 +263,8 @@ export function declineIncomingRequest(userKey, requestId) {
 
 /**
  * Sends an outgoing connection request to a student.
- * Enforces a maximum of 5 requests per calendar week on the free tier.
  */
-export function sendOutgoingRequest(userKey, student, isPro = false) {
+export function sendOutgoingRequest(userKey, student) {
     if (!student || !student.id) return { success: false, reason: "INVALID_STUDENT" };
 
     const active = getActiveConnections(userKey);
@@ -281,16 +280,6 @@ export function sendOutgoingRequest(userKey, student, isPro = false) {
         return { success: false, reason: "ALREADY_REQUESTED" };
     }
 
-    // Weekly limit: 5 requests for non-Pro users
-    if (!isPro && weeklyIds.length >= 5) {
-        return {
-            success: false,
-            reason: "QUOTA_EXCEEDED",
-            remaining: 0,
-            limit: 5
-        };
-    }
-
     const updated = {
         connectedIds: [...reqs.connectedIds, student.id],
         weekStart: currentWeek,
@@ -298,10 +287,7 @@ export function sendOutgoingRequest(userKey, student, isPro = false) {
     };
 
     saveConnectionRequests(userKey, updated);
-    return {
-        success: true,
-        remaining: isPro ? Infinity : Math.max(0, 5 - updated.weeklyIds.length)
-    };
+    return { success: true };
 }
 
 /**

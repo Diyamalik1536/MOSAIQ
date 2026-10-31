@@ -68,10 +68,10 @@ function LoginPresentation({
 
             <div className="login-box">
                 <div className="mobile-brand-header">
-                    <div className="mobile-brand-logo">
+                    <Link to="/roles" className="mobile-brand-logo" aria-label="MOSAIQ roles portal">
                         <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="MOSAIQ logo" />
                         <span>MOSAIQ</span>
-                    </div>
+                    </Link>
                     <LanguageSelector />
                 </div>
 
