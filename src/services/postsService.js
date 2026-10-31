@@ -14,16 +14,13 @@ import {
 
 
 import { db, auth } from "../config/firebase";
-// Ensure the user is authenticated and verified
-function requireChitkaraUser() {
+// Community posts are shared across the Firebase project, so any signed-in
+// collaborator can create and read them.
+function requireAuthenticatedUser() {
   const user = auth.currentUser;
 
   if (!user) {
-    throw new Error("Please log in to continue.");
-  }
-
-  if (!user.email?.toLowerCase().endsWith("@chitkara.edu.in")) {
-    throw new Error("Only Chitkara University email addresses can access community posts.");
+    throw new Error("Please sign in with your MOSAIQ account to access community posts.");
   }
 
   return user;
@@ -36,7 +33,7 @@ const postsCollection = collection(db, "posts");
 // Add a new community post
 
 export async function createPost(postData) {
-  const user = requireChitkaraUser();
+  const user = requireAuthenticatedUser();
 
   return await addDoc(postsCollection, {
     ...postData,
@@ -54,7 +51,7 @@ export async function createPost(postData) {
 
 // Listen for community posts in real time
 export function subscribeToPosts(onPosts, onError) {
-  requireChitkaraUser();
+  requireAuthenticatedUser();
 
   const postsQuery = query(
     postsCollection,
@@ -78,13 +75,13 @@ export function subscribeToPosts(onPosts, onError) {
 
 // Delete a post
 export async function removePost(postId) {
-  requireChitkaraUser();
+  requireAuthenticatedUser();
 
   await deleteDoc(doc(db, "posts", postId));
 }
 
 export async function togglePostVote(postId) {
-  const user = requireChitkaraUser();
+  const user = requireAuthenticatedUser();
   const postRef = doc(db, "posts", postId);
   const voteRef = doc(db, "posts", postId, "votes", user.uid);
 
@@ -123,7 +120,7 @@ export async function togglePostVote(postId) {
 }
 
 export async function getUserVotes(postIds) {
-  const user = requireChitkaraUser();
+  const user = requireAuthenticatedUser();
   const votes = new Set();
 
   await Promise.all(
