@@ -9,6 +9,8 @@
     --purple: #5d55e7;
     --purple-dark: #4e45d1;
     display: flex;
+    width: 100%;
+    min-width: 0;
     min-height: 100vh;
     background: #f7f8fc;
     color: var(--ink);
@@ -17,11 +19,18 @@
 
 .mentor-app .sidebar {
     position: fixed;
+    top: 0;
+    bottom: auto;
+    left: 0;
     z-index: 10;
     display: flex;
     width: 232px;
+    min-width: 0;
     height: 100vh;
+    height: 100dvh;
+    min-height: 0;
     flex-direction: column;
+    overflow: hidden;
     padding: 22px 14px 14px;
     border-right: 1px solid #e9ebf2;
     background: #fff;
@@ -29,6 +38,8 @@
 
 .mentor-app .brand {
     display: flex;
+    flex: 0 0 auto;
+    min-width: 0;
     align-items: center;
     gap: 9px;
     margin: 0 0 27px 7px;
@@ -58,8 +69,13 @@
 }
 
 .mentor-app .sidebar__nav {
-    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-behavior: smooth;
     scrollbar-width: thin;
 }
 
@@ -81,6 +97,7 @@
     display: flex;
     width: 100%;
     min-height: 35px;
+    flex: 0 0 auto;
     align-items: center;
     gap: 10px;
     padding: 0 10px;
@@ -91,6 +108,7 @@
     font-size: 11px;
     font-weight: 500;
     text-align: left;
+    cursor: pointer;
     transition: background 140ms ease, color 140ms ease;
 }
 
@@ -103,6 +121,17 @@
     background: #f0efff;
     color: #5148d7;
     font-weight: 700;
+}
+
+.mentor-app .nav-link--active:hover,
+.mentor-app .nav-link--active:focus-visible {
+    background: #e9e7ff;
+    color: #4338ca;
+}
+
+.mentor-app .nav-link:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: 2px;
 }
 
 .mentor-app .nav-link__icon {
@@ -125,6 +154,7 @@
 
 .mentor-app .sidebar__footer {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     gap: 9px;
     padding: 12px 7px 2px;
@@ -165,7 +195,9 @@
 
 .app-content {
     display: flex;
-    width: calc(100% - 232px);
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
     min-height: 100vh;
     flex-direction: column;
     margin-left: 232px;
@@ -182,6 +214,7 @@
     justify-content: space-between;
     gap: 18px;
     padding: 0 31px;
+    min-width: 0;
     border-bottom: 1px solid #e9ebf2;
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
@@ -202,6 +235,8 @@
 
 .mentor-app .global-search {
     width: min(100%, 350px);
+    min-width: 0;
+    flex: 1 1 350px;
 }
 
 .mentor-app .global-search > span,
@@ -239,6 +274,7 @@
 
 .mentor-app .topbar__actions {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     gap: 15px;
 }
@@ -376,11 +412,13 @@
 
 .mentor-app .main-content {
     flex: 1;
+    min-width: 0;
     padding: 34px 31px 42px;
 }
 
 .content-inner {
     width: 100%;
+    min-width: 0;
     max-width: 1370px;
     margin: 0 auto;
     animation: page-enter 180ms ease-out;
@@ -453,6 +491,7 @@
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
     gap: 13px;
     margin-bottom: 17px;
 }
@@ -470,6 +509,7 @@
     position: relative;
     display: flex;
     min-height: 103px;
+    height: 100%;
     align-items: flex-start;
     gap: 12px;
     padding: 17px 15px;
@@ -535,6 +575,7 @@
 .home-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.45fr) minmax(275px, 0.8fr);
+    align-items: stretch;
     gap: 15px;
 }
 
@@ -2393,7 +2434,6 @@
     }
 
     .mentor-app .app-content {
-        width: calc(100% - 205px);
         margin-left: 205px;
     }
 
@@ -2407,8 +2447,8 @@
         padding-left: 22px;
     }
 
-    .mentor-app .home-grid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
+    .mentor-app .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .mentor-app .evaluation-layout {
@@ -2419,6 +2459,7 @@
 @media (max-width: 850px) {
     .mentor-app .sidebar {
         width: 70px;
+        min-width: 70px;
         align-items: center;
         padding: 18px 9px 12px;
     }
@@ -2455,8 +2496,16 @@
     }
 
     .mentor-app .app-content {
-        width: calc(100% - 70px);
         margin-left: 70px;
+    }
+
+    .mentor-app .main-content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .mentor-app .home-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .mentor-app .evaluation-layout {
@@ -2484,9 +2533,12 @@
     .mentor-app .sidebar {
         z-index: 25;
         top: 0;
+        bottom: auto;
         left: 0;
         width: min(275px, 82vw);
+        min-width: 0;
         align-items: stretch;
+        overflow: hidden;
         padding: 20px 14px 14px;
         box-shadow: 12px 0 35px rgba(31, 37, 59, 0.14);
         transform: translateX(-105%);
@@ -2537,6 +2589,7 @@
 
     .mentor-app .topbar {
         height: 58px;
+        flex-basis: 58px;
         padding: 0 14px;
         gap: 9px;
     }
@@ -2932,6 +2985,7 @@ html[data-theme="dark"] .mentor-app .sidebar,
 html[data-theme="dark"] .mentor-app .topbar,
 html[data-theme="dark"] .mentor-app .popover,
 html[data-theme="dark"] .mentor-app .metric-card,
+html[data-theme="dark"] .mentor-app .surface-card,
 html[data-theme="dark"] .mentor-app .panel,
 html[data-theme="dark"] .mentor-app .card,
 html[data-theme="dark"] .mentor-app .rubric-card,
@@ -2966,6 +3020,8 @@ html[data-theme="dark"] .mentor-app select,
 html[data-theme="dark"] .mentor-app textarea,
 html[data-theme="dark"] .mentor-app .global-search,
 html[data-theme="dark"] .mentor-app .queue-search,
+html[data-theme="dark"] .mentor-app .today-chip,
+html[data-theme="dark"] .mentor-app .select-button,
 html[data-theme="dark"] .mentor-app kbd {
     background: #182235;
     border-color: #475569;
@@ -2976,10 +3032,31 @@ html[data-theme="dark"] .mentor-app .nav-link {
     color: #cbd5e1;
 }
 
+html[data-theme="dark"] .mentor-app .nav-link--active {
+    background: #282554;
+    color: #c4bfff;
+}
+
+html[data-theme="dark"] .mentor-app .nav-link--active:hover,
+html[data-theme="dark"] .mentor-app .nav-link--active:focus-visible {
+    background: #332f68;
+    color: #e0ddff;
+}
+
 html[data-theme="dark"] .mentor-app .nav-link:hover,
 html[data-theme="dark"] .mentor-app .global-search:focus-within,
 html[data-theme="dark"] .mentor-app .queue-search:focus-within {
     background: #1e293b;
+}
+
+html[data-theme="dark"] .mentor-app .focus-banner {
+    background: linear-gradient(100deg, #1d1b3d, #111827 80%);
+    border-color: #373466;
+}
+
+html[data-theme="dark"] .mentor-app .focus-banner__icon {
+    background: #282554;
+    color: #c4bfff;
 }
 
 html[data-theme="dark"] .mentor-app .project-card,
