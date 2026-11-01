@@ -5,6 +5,7 @@ import {
     useContext,
     useEffect,
     useMemo,
+    useRef,
     useState
 } from "react";
 import { onAuthStateChanged } from "firebase/auth";
@@ -62,8 +63,12 @@ export function normalizeUser(user) {
 export function UserProvider({ children }) {
     const [currentUser, setCurrentUserState] = useState(null);
     const [loading, setLoading] = useState(true);
+    const authStateRevision = useRef(0);
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+            const revision = ++authStateRevision.current;
+
             if (firebaseUser) {
                 const authenticatedUser = normalizeUser(firebaseUser);
                 const storedProfile = readStoredProfile(authenticatedUser);
@@ -98,6 +103,7 @@ export function UserProvider({ children }) {
                     photoURL: firebaseUser.photoURL
                 });
 
+                if (revision !== authStateRevision.current) return;
                 setCurrentUserState(canonicalUser);
             } else {
                 try {
@@ -128,6 +134,9 @@ export function UserProvider({ children }) {
     }, []);
 
     const setCurrentUser = (user) => {
+        authStateRevision.current += 1;
+        setLoading(false);
+
         if (!user) {
             setCurrentUserState(null);
             return;
