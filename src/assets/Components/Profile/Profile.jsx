@@ -12,9 +12,21 @@ import PostsSection from "./PostsSection";
 import EditProfileModal from "./EditProfileModal";
 import "./Profile.css";
 import { useUser } from "../../../context/UserContext";
+
+function readStoredJson(key, fallback) {
+    try {
+        const saved = localStorage.getItem(key);
+        return saved ? JSON.parse(saved) : fallback;
+    } catch (error) {
+        console.error(`Unable to read saved profile data (${key}):`, error);
+        return fallback;
+    }
+}
+
 function Profile() {
     const { currentUser: user, updateCurrentUser } = useUser();
     const [activeTab, setActiveTab] = useState("Overview");
+    const [loadedProfileUid] = useState(user?.uid || null);
 
     const userKey = user?.uid || user?.id || user?.email || "guest";
 
@@ -36,64 +48,23 @@ function Profile() {
         coverImage: user?.coverImage || "",
         isVerified: user?.isVerified || false
     };
-
     const [profile, setProfile] = useState(() => {
-        const savedProfile = localStorage.getItem(profileStorageKey);
-
-        if (!savedProfile) {
-            return defaultProfile;
-        }
-
-        try {
-            return {
-                ...defaultProfile,
-                ...JSON.parse(savedProfile)
-            };
-        } catch  {
-            return defaultProfile;
-        }
+        return {
+            ...defaultProfile,
+            ...readStoredJson(profileStorageKey, {})
+        };
     });
 
     const [projects, setProjects] = useState(() => {
-        const savedProjects = localStorage.getItem(projectsStorageKey);
-
-        if (!savedProjects) {
-            return [];
-        }
-
-        try {
-            return JSON.parse(savedProjects);
-        } catch {
-            return [];
-        }
+        return readStoredJson(projectsStorageKey, []);
     });
 
     const [education, setEducation] = useState(() => {
-        const savedEducation = localStorage.getItem(educationStorageKey);
-
-        if (!savedEducation) {
-            return [];
-        }
-
-        try {
-            return JSON.parse(savedEducation);
-        } catch  {
-            return [];
-        }
+        return readStoredJson(educationStorageKey, []);
     });
 
     const [experiences, setExperiences] = useState(() => {
-        const savedExperiences = localStorage.getItem(experiencesStorageKey);
-
-        if (!savedExperiences) {
-            return [];
-        }
-
-        try {
-            return JSON.parse(savedExperiences);
-        } catch  {
-            return [];
-        }
+        return readStoredJson(experiencesStorageKey, []);
     });
     const [connections, setConnections] = useState(() => {
     const savedConnections = localStorage.getItem(
@@ -137,36 +108,16 @@ useEffect(() => {
     };
 }, [userKey]);
 const [posts, setPosts] = useState(() => {
-    const savedPosts = localStorage.getItem(
-        `talentforge_posts_${userKey}`
-    );
-
-    if (!savedPosts) {
-        return [];
-    }
-
-    try {
-        return JSON.parse(savedPosts);
-    } catch  {
-        return [];
-    }
+    return readStoredJson(`talentforge_posts_${userKey}`, []);
 });
-useEffect(() => {
-    try {
-        localStorage.setItem(
-            `talentforge_posts_${userKey}`,
-            JSON.stringify(posts)
-        );
-    } catch (e) {
-        console.error("Failed to save posts to localStorage:", e);
-    }
-}, [posts, userKey]);
 
     const [isEditing, setIsEditing] = useState(false);
     const [skillsInput, setSkillsInput] = useState("");
     const [interestsInput, setInterestsInput] = useState("");
 
     useEffect(() => {
+        if (!user?.uid || loadedProfileUid !== user.uid) return;
+
         try {
             localStorage.setItem(
                 profileStorageKey,
@@ -175,9 +126,11 @@ useEffect(() => {
         } catch (e) {
             console.error("Failed to save profile to localStorage:", e);
         }
-    }, [profile, profileStorageKey]);
+    }, [profile, profileStorageKey, loadedProfileUid, user?.uid]);
 
     useEffect(() => {
+        if (!user?.uid || loadedProfileUid !== user.uid) return;
+
         try {
             localStorage.setItem(
                 projectsStorageKey,
@@ -186,21 +139,38 @@ useEffect(() => {
         } catch (e) {
             console.error("Failed to save projects to localStorage:", e);
         }
-    }, [projects, projectsStorageKey]);
+    }, [projects, projectsStorageKey, loadedProfileUid, user?.uid]);
 
     useEffect(() => {
+        if (!user?.uid || loadedProfileUid !== user.uid) return;
+
         localStorage.setItem(
             educationStorageKey,
             JSON.stringify(education)
         );
-    }, [education, educationStorageKey]);
+    }, [education, educationStorageKey, loadedProfileUid, user?.uid]);
 
     useEffect(() => {
+        if (!user?.uid || loadedProfileUid !== user.uid) return;
+
         localStorage.setItem(
             experiencesStorageKey,
             JSON.stringify(experiences)
         );
-    }, [experiences, experiencesStorageKey]);
+    }, [experiences, experiencesStorageKey, loadedProfileUid, user?.uid]);
+
+    useEffect(() => {
+        if (!user?.uid || loadedProfileUid !== user.uid) return;
+
+        try {
+            localStorage.setItem(
+                `talentforge_posts_${userKey}`,
+                JSON.stringify(posts)
+            );
+        } catch (error) {
+            console.error("Failed to save posts to localStorage:", error);
+        }
+    }, [posts, userKey, loadedProfileUid, user?.uid]);
 
     useEffect(() => {
   if (!isEditing) return;
@@ -416,10 +386,10 @@ function handleDeleteConnection(id) {
     profileViews: 0
 };
 
-    if (!user) {
-        return (
-            <div className="profile-loading">
-                Loading profile...
+if (!user) {
+    return (
+        <div className="profile-loading">
+            Loading profile...
             </div>
         );
     }
