@@ -5,23 +5,47 @@ import "./PostsSection.css";
 function PostsSection({ posts, onAdd, onDelete }) {
     const { t } = useTranslation();
     const [postText, setPostText] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState("");
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         const text = postText.trim();
 
-        if (!text) {
+        if (!text || isSubmitting) {
             return;
         }
 
-        onAdd({
-            id: Date.now(),
-            text,
-            createdAt: new Date().toLocaleString()
-        });
+        setIsSubmitting(true);
+        setError("");
 
-        setPostText("");
+        try {
+            await onAdd(text);
+            setPostText("");
+        } catch (submitError) {
+            console.error("Failed to create profile post:", submitError);
+            setError(
+                submitError.message ||
+                "Could not create your post. Please try again."
+            );
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
+    async function handleDelete(id) {
+        setError("");
+
+        try {
+            await onDelete(id);
+        } catch (deleteError) {
+            console.error("Failed to delete profile post:", deleteError);
+            setError(
+                deleteError.message ||
+                "Could not delete the post. Please try again."
+            );
+        }
     }
 
     return (
@@ -51,18 +75,20 @@ function PostsSection({ posts, onAdd, onDelete }) {
                         {t("profile.postsSection.createPost", "Create a post")}
                     </span>
 
-                    <button type="submit">
+                    <button type="submit" disabled={isSubmitting}>
                         <i className="bi bi-send"></i>
-                        {t("profile.postsSection.postButton", "Post")}
+                        {isSubmitting
+                            ? t("profile.postsSection.posting", "Posting...")
+                            : t("profile.postsSection.postButton", "Post")}
                     </button>
                 </div>
             </form>
 
+            {error && <p role="alert">{error}</p>}
+
             <div className="posts-list">
                 {posts.length > 0 ? (
                     posts
-                        .slice()
-                        .reverse()
                         .map(post => (
                             <article
                                 className="post-card"
@@ -79,8 +105,9 @@ function PostsSection({ posts, onAdd, onDelete }) {
                                     </div>
 
                                     <button
+                                        type="button"
                                         className="post-delete"
-                                        onClick={() => onDelete(post.id)}
+                                        onClick={() => handleDelete(post.id)}
                                         aria-label="Delete post"
                                     >
                                         <i className="bi bi-trash3"></i>
@@ -88,7 +115,7 @@ function PostsSection({ posts, onAdd, onDelete }) {
                                 </div>
 
                                 <div className="post-content">
-                                    <p>{post.text}</p>
+                                    <p>{post.text || post.description || post.title}</p>
                                 </div>
 
                                 <div className="post-actions">

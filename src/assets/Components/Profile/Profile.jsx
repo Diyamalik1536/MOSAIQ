@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import ProfileHeader from "./ProfileHeader";
 import ProfileStats from "./ProfileStats";
 import ProfileTabs from "./ProfileTabs";
@@ -12,6 +13,7 @@ import PostsSection from "./PostsSection";
 import EditProfileModal from "./EditProfileModal";
 import "./Profile.css";
 import { useUser } from "../../../context/UserContext";
+import { createPost, removePost } from "../../../services/postsService";
 
 function readStoredJson(key, fallback) {
     try {
@@ -107,9 +109,20 @@ useEffect(() => {
         window.removeEventListener("storage", handleSync);
     };
 }, [userKey]);
-const [posts, setPosts] = useState(() => {
+const [legacyPosts, setLegacyPosts] = useState(() => {
     return readStoredJson(`talentforge_posts_${userKey}`, []);
 });
+const communityPosts = useSelector((state) => state.posts.items);
+const posts = [
+    ...legacyPosts,
+    ...communityPosts.filter(
+        post => post.author?.uid === user?.uid || post.author?.id === user?.uid
+    )
+].sort(
+    (firstPost, secondPost) =>
+        new Date(secondPost.createdAt).getTime() -
+        new Date(firstPost.createdAt).getTime()
+);
 
     const [isEditing, setIsEditing] = useState(false);
     const [skillsInput, setSkillsInput] = useState("");
@@ -165,12 +178,12 @@ const [posts, setPosts] = useState(() => {
         try {
             localStorage.setItem(
                 `talentforge_posts_${userKey}`,
-                JSON.stringify(posts)
+                JSON.stringify(legacyPosts)
             );
         } catch (error) {
-            console.error("Failed to save posts to localStorage:", error);
+            console.error("Failed to save legacy posts to localStorage:", error);
         }
-    }, [posts, userKey, loadedProfileUid, user?.uid]);
+    }, [legacyPosts, userKey, loadedProfileUid, user?.uid]);
 
     useEffect(() => {
   if (!isEditing) return;
@@ -219,18 +232,29 @@ const [posts, setPosts] = useState(() => {
             interests
         }));
     }
-    function handleAddPost(post) {
-    setPosts(prev => [
-        ...prev,
-        post
-    ]);
-}
+    async function handleAddPost(text) {
+        await createPost({
+            type: "communityPost",
+            title: text,
+            description: "",
+            text,
+            author: {
+                id: user.uid,
+                name: user.displayName || user.name || "MOSAIQ User",
+                email: user.email || "",
+                avatar: user.photoURL || user.avatar || ""
+            }
+        });
+    }
 
-function handleDeletePost(id) {
-    setPosts(prev =>
-        prev.filter(post => post.id !== id)
-    );
-}
+    async function handleDeletePost(id) {
+        if (legacyPosts.some(post => post.id === id)) {
+            setLegacyPosts(prev => prev.filter(post => post.id !== id));
+            return;
+        }
+
+        await removePost(id);
+    }
 
     function handleSaveProfile() {
         updateCurrentUser(profile);
